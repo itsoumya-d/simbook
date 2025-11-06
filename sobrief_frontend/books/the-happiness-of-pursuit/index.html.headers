@@ -1,0 +1,18 @@
+{
+  "Date": "Wed, 29 Oct 2025 01:06:33 GMT",
+  "Content-Type": "text/html; charset=utf-8",
+  "Transfer-Encoding": "chunked",
+  "Connection": "keep-alive",
+  "Server": "cloudflare",
+  "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+  "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=M%2B0ojrTJEYPO%2BUPx6c9oFnWbNbJOc8B4z9Epa4KFvwVA7vYQTbGw6NMA%2FWW02LpeVqklDcaQ2TZw%2FGMCzK7EvCv%2FysN4PVSxbdI%3D\"}]}",
+  "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+  "rndr-id": "e0fffa7e-5581-4419",
+  "Vary": "Accept-Encoding",
+  "x-powered-by": "Express",
+  "x-render-origin-server": "Render",
+  "Cache-Control": "max-age=3600",
+  "CF-Cache-Status": "MISS",
+  "Content-Encoding": "gzip",
+  "CF-RAY": "995ec55ad8fdad28-MAA"
+}

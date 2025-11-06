@@ -1,0 +1,3855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Introduction to Algorithms | Summary, Quotes, FAQ, Audio</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="darkreader-lock">
+
+<meta name="theme-color" content="#ffffff">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="dns-prefetch" href="https://files.sobrief.com">
+<link rel="preconnect" href="https://files.sobrief.com" crossorigin>
+
+<link rel="icon" href="https://files.sobrief.com/public/logo-circle-lines-32.png" />
+<link rel="apple-touch-icon" href="https://files.sobrief.com/public/icon-512.png" />
+
+<script>
+(function() {
+  try {
+    var m = (document.cookie || '').match(/(?:^|; )sobrief_theme=(dark|light|system)/);
+    var t = m ? m[1] : 'light';
+    if (t === 'system') {
+      t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var root = document.documentElement;
+    root.classList.remove('theme-light', 'theme-dark');
+    root.classList.add('theme-' + t);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#121212' : '#ffffff');
+  } catch (e) {
+    // no-op
+  }
+})();
+</script>
+
+<style>
+
+
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Arial, 'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  
+  --font-serif: "Iowan Old Style", "New York", "Sitka Text", Palatino, "Book Antiqua", "Noto Serif", "Roboto Serif", 'Georgia Pro', Georgia, 'Times New Roman', 'DejaVu Serif', 'Merriweather', serif;
+
+	--transition-secs: 0.06s;
+	--transition-ease: ease-in-out;
+
+	scroll-padding: 155px;
+
+	--safe-area-top: env(safe-area-inset-top);
+	--safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 600px) {
+  :root {
+    scroll-padding: calc(120px + env(safe-area-inset-top));
+  }
+}
+
+
+:root,
+.theme-light {
+    --page-bg-colors: 255, 255, 255;
+    --page-bg: rgb(var(--page-bg-colors));
+    --text-color: rgb(0, 0, 0);
+    --text-color2: rgba(0, 0, 0, 0.6);
+    --text-color3: rgba(0, 0, 0, 0.45);
+    --text-color4: #333;
+    --text-color5: #ddd;
+    --text-color6: #444;
+    --text-color-alt: var(--text-color);
+
+    --link-color: rgb(52, 101, 204);
+
+    --selection-bg: rgb(0, 0, 0);
+    --selection-color: rgba(255, 255, 255, 0.95);
+    --placeholder-color: rgba(0,0,0,0.5);
+    --border-color: rgba(0, 0, 0, 0.24);
+    --border-color2: #eee;
+    --border-color3: #eaeaea;
+    --border-color3: #e0e0e0;
+
+    --bg1: rgb(255, 255, 255);
+    --bg2: rgb(250, 250, 250);
+    --bg3: rgb(247, 247, 247);
+    --bg4: rgb(248, 248, 248);
+    --bg5: rgb(240, 240, 240);
+    --bg6: rgb(255, 255, 255);
+    --bg7: rgb(244, 244, 244);
+    --bg8: rgb(253, 253, 253);
+
+    --input-bg: rgb(255, 255, 255);
+    --toolbar-cta-bg: rgb(255, 255, 255);
+    --toolbar-cta-color: rgb(0, 0, 0);
+    --toolbar-cta-border: 1px solid rgba(0, 0, 0, 0.1);
+
+    --input-bg-hover: #f9f9f9;
+
+    --menu-bg: rgb(255, 255, 255);
+    --menu-bg-alt: rgb(255, 255, 255);
+    --menu-bg-hover: rgb(247, 247, 247);
+    --menu-sep-bg: rgb(241, 241, 241);
+
+    --dialog-wrap-bg: rgba(255,255,255,0.5);
+    --dialog-bg: rgb(255, 255, 255);
+    --play-button-bg: rgb(51, 51, 54);
+    --dialog-button-bg: #000;
+
+    --progress-bg: rgb(0,0,0,0.11);
+    --progress-bg2: rgb(0,0,0,0.05);
+    --progress-handle: rgb(72, 72, 72);
+    --progress-handle: rgba(0,0,0,0.9);
+    --progress-handle: rgb(51,51,54);
+
+    --onboard-progress-bg: rgb(0,0,0,0.95);
+
+    --player-handle: rgb(0,0,0,0.12);
+
+    --image-invert: none;
+    --image-invert2: invert(100%);
+
+    --badge-border-color: rgba(0, 0, 0, 0.82);
+    --cover-radius: 2px;
+    --cover-radius2: 2px;
+
+    --filled-button-bg: rgb(30, 25, 35);
+    --filled-button-bg: rgb(0,0,0);
+    --filled-button-color: #fff;
+
+    --filled-button-choice-bg: rgb(30, 25, 35);
+    --filled-button-choice-bg: rgb(0,0,0);
+    --filled-button-choice-color: #eee;
+
+    --box-bg: #fff;
+    --box-border: #eaeaea;
+
+    --button-badge-bg: rgb(234, 234, 234);
+    --button-badge-color: var(--text-color);
+    --button-badge-selected-bg: rgb(30, 25, 35);
+    --button-badge-selected-color: #fff;
+
+    --inline-link-border: 2px solid rgba(0,0,0,0.1);
+    --inline-link-over-border: 2px solid rgba(0,0,0,0.8);
+    --inline-link-border: 1px solid rgba(0,0,0,0.2);
+    --inline-link-over-border: 1px solid rgba(0,0,0,0.9);
+    --inline-link-over-border: 1px solid transparent;
+
+    --inline-link-color: var(--text-color);
+    --inline-link-over-color: var(--link-color);
+    --inline-link-bg: transparent;
+    --inline-link-over-bg: transparent;
+
+    --popover-bg: #fff;
+    --popover-border: 1px solid rgba(0, 0, 0, 0.2);
+    --popover-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    --header-inset-bg: rgba(0,0,0,0.03);
+    --header-inset-bg: #fff;
+}
+
+.theme-dark {
+    --page-bg-colors: 18, 18, 18;
+    --page-bg: rgb(var(--page-bg-colors));
+    --text-color: rgb(236, 236, 236);
+    --text-color2: rgba(255, 255, 255, 0.5);
+    --text-color3: rgba(255, 255, 255, 0.35);
+    --text-color4: rgba(255, 255, 255, 0.8);
+    --text-color5: rgba(255, 255, 255, 0.25);
+    --text-color6: rgba(255, 255, 255, 0.8);
+    --text-color-alt: rgba(0,0,0,0.9);
+
+    --link-color: rgb(50, 145, 242);
+    --link-color: rgb(77, 163, 255);
+
+    --selection-bg: rgba(255, 255, 255, 0.9);
+    --selection-color: rgba(0,0,0,0.95);
+    --placeholder-color: rgba(255, 255, 255, 0.45);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --border-color2: rgba(255, 255, 255, 0.2);
+    --border-color3: rgb(70, 70, 70);
+
+    --bg1: rgb(44, 44, 44);
+    --bg2: rgb(30, 30, 30);
+    --bg3: rgb(34, 34, 34);
+    --bg4: rgb(35, 35, 35);
+    --bg5: rgb(40, 40, 40);
+    --bg6: rgb(47, 47, 47);
+    --bg7: rgb(44, 44, 44);
+    --bg8: rgb(47, 47, 47);
+
+    --input-bg: rgb(45, 45, 45);
+    --toolbar-cta-bg: rgb(255, 255, 255);
+    --toolbar-cta-color: rgb(0, 0, 0);
+    --toolbar-cta-border: 1px solid rgba(0, 0, 0, 0);
+
+    --input-bg-hover: transparent;
+
+    --menu-bg: rgb(44, 44, 44);
+    --menu-bg-alt: rgb(50, 50, 50);
+    --menu-bg-hover: rgb(59, 59, 59);
+    --menu-sep-bg: rgb(64, 64, 64);
+
+    --dialog-wrap-bg: rgba(255,255,255,0.15);
+    --dialog-bg: rgb(24, 24, 24);
+    --play-button-bg: rgba(255, 255, 255, 0.9);
+    --dialog-button-bg: rgb(24, 24, 24);
+
+    --progress-bg: rgba(255, 255, 255, 0.25);
+    --progress-bg2: rgba(255, 255, 255, 0.1);
+    --progress-handle: rgba(255, 255, 255, 1);
+
+    --onboard-progress-bg: rgba(255, 255, 255, 0.95);
+
+    --player-handle: rgba(255, 255, 255, 0.3);
+
+    --image-invert: invert(100%);
+    --image-invert2: none;
+
+    --badge-border-color: transparent;
+    --cover-radius: 12px;
+    --cover-radius2: 6px;
+
+    --filled-button-bg: #fff;
+    --filled-button-color: #000;
+
+    --filled-button-choice-bg: #fff;
+    --filled-button-choice-color: #000;
+
+    --box-bg: rgb(25, 25, 25);
+    --box-border: rgb(55, 55, 55);
+
+    --button-badge-bg: rgb(70, 70, 70);
+    --button-badge-color: #fff;
+    --button-badge-selected-bg: rgb(236, 236, 236);
+    --button-badge-selected-color: #000;
+
+    --inline-link-border: 1px solid rgba(255,255,255,0.4);
+    --inline-link-over-border: 1px solid rgba(255,255,255,0.8);
+    --inline-link-over-border: 1px solid transparent;
+
+    --inline-link-color: var(--text-color);
+    --inline-link-over-color: var(--link-color);
+    --inline-link-bg: transparent;
+    --inline-link-over-bg: rgba(255,255,255,0);
+
+    --popover-bg: var(--bg4);
+    --popover-border: 0px solid rgba(55, 55, 55, 1);
+    --popover-box-shadow: 0px 0px 3px rgba(18, 18, 18, 0.5);
+
+    --header-inset-bg: rgb(39, 39, 39);
+    --header-inset-bg: rgb(24, 24, 24);
+}
+
+
+* {
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+input, textarea {
+	-webkit-user-select: text;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box !important;
+     -moz-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+	/*
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px; */
+	line-height: 1.24;
+	-webkit-text-size-adjust: 100%;
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+body {
+	background: var(--page-bg);
+	color: var(--text-color);
+	font-family: var(--font-sans);
+/*
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+
+  /* handles dynamic island, notch, and other safe areas */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  touch-action: manipulation;
+}
+.body-toolbar-fixed {
+  padding-top: calc(66px + env(safe-area-inset-top));
+}
+
+.cloak { 
+    visibility: hidden; 
+}
+
+::selection {
+	background-color: var(--selection-bg);
+	color: var(--selection-color);
+}
+
+a:link, a:visited, a:active {
+	color: var(--text-color);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.container {/*
+	background: var(--settings-bg);
+	background: var(--page-bg);
+	min-height: 100%;*/
+	/*z-index: 3;*/
+	position: relative;
+}
+.onboard-container { 
+	min-height: 100vh;
+	overflow-x: hidden;
+  display: none;
+}
+body.onboarding-active .onboard-container {
+  min-height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top));
+}
+.onboard-container-web {
+	min-height: 0px;
+}
+
+
+.wrap {
+	padding-bottom: 40px;
+	background: var(--page-bg);
+	min-height: 100vh;
+
+	display: flex;
+  align-items: center;
+}
+
+.wrap-content {
+  
+}
+
+.wrap-inner {
+	width: 100%;
+	max-width: 1150px;
+	max-width: 1088px;
+	max-width: 1107px;
+	margin: 0px auto;
+	padding: 0px 17px 0px 17px;
+	position: relative;
+}
+@media (max-width: 600px)
+{
+	.wrap-inner {
+		
+	}
+}
+
+
+
+.footer {
+	padding: 50px 0px 0px 0px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+  content-visibility: auto;
+}
+@media (max-width: 600px)
+{
+	.footer {
+		text-align: left;
+		padding-left: 10px;
+		padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+	}
+}
+.footer > span {
+	display: inline-block;
+	opacity: 1;
+	font-size: 12px;
+	position: relative;
+	top: -1px;
+}
+.footer a {
+	display: inline-block;
+	padding: 6px 5px;
+}
+@media (max-width: 600px)
+{
+	.footer a span {
+		display: none;
+	}
+}
+
+/* Rating rotation FOUC prevention - hide Trustpilot div from start */
+.rating-rotation-container .rating-rotation-item:nth-child(2) {
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+</style>
+
+
+
+<!-- Debug comment: isLocalEnvironment = false -->
+
+<!-- Critical CSS -->
+<link rel="preload" href="https://files.sobrief.com/public/scripts/style_1761597186757.css" as="style" fetchpriority="high">
+<link rel="stylesheet" href="https://files.sobrief.com/public/scripts/style_1761597186757.css">
+
+
+
+<!-- Non-critical CSS - Deferred loading -->
+<script>
+  // Try to use requestIdleCallback for optimal timing when browser is idle
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function() {
+      loadNonCriticalCSS();
+    });
+  } else {
+    // Fallback to window load event (no delay needed)
+    window.addEventListener('load', loadNonCriticalCSS);
+  }
+  
+  function loadNonCriticalCSS() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://files.sobrief.com/public/scripts/style2_1761597186757.css';
+    document.head.appendChild(link);
+  }
+</script>
+
+<!-- Fallback for JS disabled browsers -->
+<noscript>
+  <link href="https://files.sobrief.com/public/scripts/style2_1761597186757.css" rel="stylesheet">
+</noscript>
+
+
+
+<link rel="manifest" href="https://files.sobrief.com/public/manifest2.json">
+
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7607519495133548"
+     crossorigin="anonymous"></script> -->
+
+
+
+
+
+  <link rel="preload" as="image" href="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" fetchpriority="high">
+
+  <link rel="canonical" href="https://sobrief.com/books/introduction-to-algorithms" />
+  
+  <meta property="og:title" content="Introduction to Algorithms | Summary, Quotes, FAQ, Audio" />
+  <meta property="og:description" content="10 Takeaways: 1) Algorithms: The Unsung Heroes of Computing 2) Efficiency Matters: Algorithms as a Critical Technology 3) Pseudocode: A Universal Language for Algorithms" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sobrief.com/books/introduction-to-algorithms" />
+  <meta property="og:image" content="https://files.sobrief.com/social/book_2490066.png" />
+
+  <meta name="twitter:title" content="Introduction to Algorithms | Summary, Quotes, FAQ, Audio" />
+  <meta name="twitter:description" content="10 Takeaways: 1) Algorithms: The Unsung Heroes of Computing 2) Efficiency Matters: Algorithms as a Critical Technology 3) Pseudocode: A Universal Language for Algorithms" />
+  <meta name="twitter:url" content="https://sobrief.com/books/introduction-to-algorithms" />
+  <meta name="twitter:image" content="https://files.sobrief.com/social/book_2490066.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="description" content="10 Takeaways: 1) Algorithms: The Unsung Heroes of Computing 2) Efficiency Matters: Algorithms as a Critical Technology 3) Pseudocode: A Universal Language for Algorithms" />
+
+  <meta http-equiv="content-language" content="en">
+
+  <link rel="alternate" hreflang="en" href="https://sobrief.com/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="fa" href="https://sobrief.com/fa/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="id" href="https://sobrief.com/id/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="vi" href="https://sobrief.com/vi/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="it" href="https://sobrief.com/it/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="fr" href="https://sobrief.com/fr/books/introduction-to-algorithms" />
+  <link rel="alternate" hreflang="es" href="https://sobrief.com/es/books/introduction-to-algorithms" />
+  
+
+  
+
+  <script type="application/ld+json">
+  [
+    
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Books",
+          "item": "https://sobrief.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Computer Science",
+          "item": "https://sobrief.com/genres/computer-science"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Introduction to Algorithms",
+          "item": "https://sobrief.com/books/introduction-to-algorithms"
+        }
+      ]
+    },
+    
+    {
+      "@context": "http://schema.org",
+      "@type": "Book",
+      "@id": "https://sobrief.com/books/introduction-to-algorithms",
+      "url": "https://sobrief.com/books/introduction-to-algorithms",
+      "name": "Introduction to Algorithms",
+      "description": "10 Takeaways: 1) Algorithms: The Unsung Heroes of Computing 2) Efficiency Matters: Algorithms as a Critical Technology 3) Pseudocode: A Universal Language for Algorithms",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Thomas H. Cormen",
+          "url": "https://sobrief.com/books/introduction-to-algorithms#Author"
+        }
+      ],
+      "datePublished": "2025-02-21T15:03:38.093Z",
+      "dateModified": "2025-04-24T03:00:42.844Z",
+      "isbn": "9780262032933",
+      "numberOfPages": 1184,
+      "bookEdition": "2nd",
+      "genre": "Computer Science",
+      "image": "https://files.sobrief.com/social/book_2490066.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "160"
+      }
+      
+    }
+  ]
+</script>
+
+</head>
+<body class="body-toolbar-fixed">
+
+<div class="menu-bg" id="menu_bg" onclick="toggleContents()"></div>
+
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6R665R5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+<div class="notch-blur"></div>
+
+<div id="toolbar" class="toolbar  toolbar-center -toolbar-with-button ">
+  <div class="wrap-inner">
+
+  	<div id="back_button" class="back-button"></div>
+
+    <a href="/" class="logo" alt="SoBrief" aria-label="SoBrief"><span></span><b>SoBrief</b></a>
+
+    <div class="toolbar-links">
+      <a href="/lists">Lists</a> <a href="/trending">Trending</a> <a href="/new">New</a>  
+    </div>
+
+    <div class="toolbar-right">
+
+    	
+
+	    
+	    	<div id="instant_input_container" class="instant-input-container">
+
+		    <form action="/search" method="get" onsubmit="return showSearchLoading()">
+			    <div id="instant_input_wrap" class="instant-input-wrap">
+
+			      <div class="instant-input-icon" onclick="document.getElementById('instant_input').focus()"></div>
+				  
+			      <input id="instant_input_top" type="text" name="q" class="instant-input" placeholder="Find a book..." title="Title | Author | Topic | ISBN" />
+
+				  <div class="instant-input-barcode" onclick="openBookScanner()"></div>
+
+			    </div>
+				</form>
+
+			</div>
+
+
+			<div id="toolbar_button" class="toolbar-button -toolbar-button-visible" onclick="toolbarButtonClick()">Start free trial</div>
+
+
+			<div id="main_menu_wrap" class="main-menu-wrap">
+
+				<div id="search_toggle_button" class="search-toggle-button" onclick="toggleSearch()"><span></span></div>
+
+				<div id="main_menu_button" class="main-menu-button" onclick="toggleMainMenu()"><span></span></div>
+
+	      <div id="main_menu" class="main-menu">
+
+	      	<div id="main_menu_header" class="main-menu-header" style="display:none;">
+
+	      		<div id="main_menu_email" class="main-menu-email"></div>
+	      		<div id="main_menu_plan" class="main-menu-plan"></div>
+	      		<div id="main_menu_refresh" class="main-menu-refresh" onclick="refreshUserStatus(); return false;">Refresh Status</div>
+	      		<!-- <a id="main_menu_refresh" class="main-menu-refresh" href="" onclick="refreshUserStatus(); return false;">
+	      			<span>refresh status</span>
+	      		</a> -->
+
+	      	</div>
+
+			<a id="sign_in_link_menu" href="" onclick="showSignInDialog(); return false;" class="menu-item-sign-in"><span></span>Sign In</a>
+
+	      	<div id="main_menu_header_sep" class="main-menu-sep"><div></div></div>
+
+			<!-- Payment-related items at top -->
+			<a id="upgrade_link_menu" href="" onclick="upgradeMenuItemClick(); return false;" class="menu-item-upgrade" style="display:none"><span></span>Upgrade to Pro</a>
+	        <a id="lifetime_link_menu" href="" onclick="showLifetimeDialog(); return false;" class="menu-item-lifetime" style="display:none"><span></span>Get Lifetime Access</a>
+			<a id="manage_link_menu" href="" onclick="manageSubscription(); return false;" class="menu-item-manage" style="display:none"><span></span>Manage Subscription</a>
+
+	        <div id="payment_menu_sep" class="main-menu-sep"><div></div></div>
+
+	      	<a class="menu-item-mobile menu-item-lists" href="/lists"><span></span>Lists</a>
+	        <a class="menu-item-mobile menu-item-trending" href="/trending"><span></span>Trending</a>
+	        <a class="menu-item-mobile menu-item-new" href="/new"><span></span>New</a>
+	        <a id="bookmarks_link_menu" href="/library" onclick="return openLibrary()" class="menu-item-bookmarks"><span></span>Your Library</a>
+
+	        <!-- <div class="main-menu-sep menu-item-mobile"><div></div></div> -->
+
+			<a id="app_link_menu" href="/app" class="menu-item-app"><span></span>Get the App</a>
+
+	        <div id="bookmarks_menu_sep" class="main-menu-sep" style="display:none"><div></div></div>
+
+			<a id="settings_link_menu" href="" onclick="showSettingsDialog(); return false;" class="menu-item-settings"><span></span>Settings</a>
+
+	      	<div id="affiliate_menu_sep" class="main-menu-sep"><div></div></div>
+
+			<a href="" onclick="showIntercom(); return false;" class="menu-item-support"><span></span>Support</a>
+			<a href="" onclick="showFeedbackDialog(); return false;" class="menu-item-feedback"><span></span>Feedback</a>
+	      	<a id="affiliate_link_menu" href="/affiliate" class="menu-item-affiliate"><span></span>Affiliate</a>
+
+			
+
+	        
+	        
+	        <a id="sign_out_link_menu" href="" onclick="signOut(); return false;" class="menu-item-sign-out" style="display:none"><span></span>Sign Out</a>
+	      
+	      </div>
+
+			</div>
+
+		</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div id="search_loading" class="search-loading ">
+
+	<div class="wrap-inner">
+
+		<div class="instant-progress-top-wrap">
+
+      <div class="instant-progress instant-progress-top"><div></div></div>
+      <div class="instant-loading-text">Searching...</div>
+
+    </div>
+
+	</div>
+
+</div>
+
+
+<div id="book_header_wrap" class="book-header-wrap">
+
+  <div class="wrap-inner" style="z-index:3">
+
+    
+
+    
+    <div class="book-language-wrap">
+
+      <div id="book_language_button" class="book-language" onclick="toggleLanguageMenu(this)">
+        <i></i><div>English</div><span></span>
+      </div>
+      <div class="book-language-menu">
+        
+          
+            <div id="lang_en" onclick="if (false) { handleFictionTranslation('en', 2490066, 'introduction-to-algorithms') } else { getTranslation('en', this) }; return false;" data-lang-code="en" data-native="English"><span></span>English<b>English</b></div>
+          
+        
+          
+            <div id="lang_es" onclick="if (false) { handleFictionTranslation('es', 2490066, 'introduction-to-algorithms') } else { getTranslation('es', this) }; return false;" data-lang-code="es" data-native="Español"><span></span>Español<b>Spanish</b></div>
+          
+        
+          
+            <div id="lang_zh" onclick="if (false) { handleFictionTranslation('zh', 2490066, 'introduction-to-algorithms') } else { getTranslation('zh', this) }; return false;" data-lang-code="zh" data-native="简体中文"><span></span>简体中文<b>Chinese</b></div>
+          
+        
+          
+            <div id="lang_fr" onclick="if (false) { handleFictionTranslation('fr', 2490066, 'introduction-to-algorithms') } else { getTranslation('fr', this) }; return false;" data-lang-code="fr" data-native="Français"><span></span>Français<b>French</b></div>
+          
+        
+          
+            <div id="lang_de" onclick="if (false) { handleFictionTranslation('de', 2490066, 'introduction-to-algorithms') } else { getTranslation('de', this) }; return false;" data-lang-code="de" data-native="Deutsch"><span></span>Deutsch<b>German</b></div>
+          
+        
+          
+            <div id="lang_ja" onclick="if (false) { handleFictionTranslation('ja', 2490066, 'introduction-to-algorithms') } else { getTranslation('ja', this) }; return false;" data-lang-code="ja" data-native="日本語"><span></span>日本語<b>Japanese</b></div>
+          
+        
+          
+            <div id="lang_pt" onclick="if (false) { handleFictionTranslation('pt', 2490066, 'introduction-to-algorithms') } else { getTranslation('pt', this) }; return false;" data-lang-code="pt" data-native="Português"><span></span>Português<b>Portuguese</b></div>
+          
+        
+          
+            <div id="lang_it" onclick="if (false) { handleFictionTranslation('it', 2490066, 'introduction-to-algorithms') } else { getTranslation('it', this) }; return false;" data-lang-code="it" data-native="Italiano"><span></span>Italiano<b>Italian</b></div>
+          
+        
+          
+            <div id="lang_ko" onclick="if (false) { handleFictionTranslation('ko', 2490066, 'introduction-to-algorithms') } else { getTranslation('ko', this) }; return false;" data-lang-code="ko" data-native="한국어"><span></span>한국어<b>Korean</b></div>
+          
+        
+          
+            <div id="lang_ru" onclick="if (false) { handleFictionTranslation('ru', 2490066, 'introduction-to-algorithms') } else { getTranslation('ru', this) }; return false;" data-lang-code="ru" data-native="Русский"><span></span>Русский<b>Russian</b></div>
+          
+        
+          
+            <div id="lang_nl" onclick="if (false) { handleFictionTranslation('nl', 2490066, 'introduction-to-algorithms') } else { getTranslation('nl', this) }; return false;" data-lang-code="nl" data-native="Nederlands"><span></span>Nederlands<b>Dutch</b></div>
+          
+        
+          
+            <div id="lang_ar" onclick="if (false) { handleFictionTranslation('ar', 2490066, 'introduction-to-algorithms') } else { getTranslation('ar', this) }; return false;" data-lang-code="ar" data-native="العربية"><span></span>العربية<b>Arabic</b></div>
+          
+        
+          
+            <div id="lang_pl" onclick="if (false) { handleFictionTranslation('pl', 2490066, 'introduction-to-algorithms') } else { getTranslation('pl', this) }; return false;" data-lang-code="pl" data-native="Polski"><span></span>Polski<b>Polish</b></div>
+          
+        
+          
+            <div id="lang_hi" onclick="if (false) { handleFictionTranslation('hi', 2490066, 'introduction-to-algorithms') } else { getTranslation('hi', this) }; return false;" data-lang-code="hi" data-native="हिन्दी"><span></span>हिन्दी<b>Hindi</b></div>
+          
+        
+          
+            <div id="lang_vi" onclick="if (false) { handleFictionTranslation('vi', 2490066, 'introduction-to-algorithms') } else { getTranslation('vi', this) }; return false;" data-lang-code="vi" data-native="Tiếng Việt"><span></span>Tiếng Việt<b>Vietnamese</b></div>
+          
+        
+          
+            <div id="lang_sv" onclick="if (false) { handleFictionTranslation('sv', 2490066, 'introduction-to-algorithms') } else { getTranslation('sv', this) }; return false;" data-lang-code="sv" data-native="Svenska"><span></span>Svenska<b>Swedish</b></div>
+          
+        
+          
+            <div id="lang_el" onclick="if (false) { handleFictionTranslation('el', 2490066, 'introduction-to-algorithms') } else { getTranslation('el', this) }; return false;" data-lang-code="el" data-native="Ελληνικά"><span></span>Ελληνικά<b>Greek</b></div>
+          
+        
+          
+            <div id="lang_tr" onclick="if (false) { handleFictionTranslation('tr', 2490066, 'introduction-to-algorithms') } else { getTranslation('tr', this) }; return false;" data-lang-code="tr" data-native="Türkçe"><span></span>Türkçe<b>Turkish</b></div>
+          
+        
+          
+            <div id="lang_th" onclick="if (false) { handleFictionTranslation('th', 2490066, 'introduction-to-algorithms') } else { getTranslation('th', this) }; return false;" data-lang-code="th" data-native="ไทย"><span></span>ไทย<b>Thai</b></div>
+          
+        
+          
+            <div id="lang_cs" onclick="if (false) { handleFictionTranslation('cs', 2490066, 'introduction-to-algorithms') } else { getTranslation('cs', this) }; return false;" data-lang-code="cs" data-native="Čeština"><span></span>Čeština<b>Czech</b></div>
+          
+        
+          
+            <div id="lang_ro" onclick="if (false) { handleFictionTranslation('ro', 2490066, 'introduction-to-algorithms') } else { getTranslation('ro', this) }; return false;" data-lang-code="ro" data-native="Română"><span></span>Română<b>Romanian</b></div>
+          
+        
+          
+            <div id="lang_hu" onclick="if (false) { handleFictionTranslation('hu', 2490066, 'introduction-to-algorithms') } else { getTranslation('hu', this) }; return false;" data-lang-code="hu" data-native="Magyar"><span></span>Magyar<b>Hungarian</b></div>
+          
+        
+          
+            <div id="lang_uk" onclick="if (false) { handleFictionTranslation('uk', 2490066, 'introduction-to-algorithms') } else { getTranslation('uk', this) }; return false;" data-lang-code="uk" data-native="Українська"><span></span>Українська<b>Ukrainian</b></div>
+          
+        
+          
+            <div id="lang_id" onclick="if (false) { handleFictionTranslation('id', 2490066, 'introduction-to-algorithms') } else { getTranslation('id', this) }; return false;" data-lang-code="id" data-native="Bahasa Indonesia"><span></span>Bahasa Indonesia<b>Indonesian</b></div>
+          
+        
+          
+            <div id="lang_da" onclick="if (false) { handleFictionTranslation('da', 2490066, 'introduction-to-algorithms') } else { getTranslation('da', this) }; return false;" data-lang-code="da" data-native="Dansk"><span></span>Dansk<b>Danish</b></div>
+          
+        
+          
+            <div id="lang_fi" onclick="if (false) { handleFictionTranslation('fi', 2490066, 'introduction-to-algorithms') } else { getTranslation('fi', this) }; return false;" data-lang-code="fi" data-native="Suomi"><span></span>Suomi<b>Finnish</b></div>
+          
+        
+          
+            <div id="lang_bg" onclick="if (false) { handleFictionTranslation('bg', 2490066, 'introduction-to-algorithms') } else { getTranslation('bg', this) }; return false;" data-lang-code="bg" data-native="Български"><span></span>Български<b>Bulgarian</b></div>
+          
+        
+          
+            <div id="lang_he" onclick="if (false) { handleFictionTranslation('he', 2490066, 'introduction-to-algorithms') } else { getTranslation('he', this) }; return false;" data-lang-code="he" data-native="עברית"><span></span>עברית<b>Hebrew</b></div>
+          
+        
+          
+            <div id="lang_no" onclick="if (false) { handleFictionTranslation('no', 2490066, 'introduction-to-algorithms') } else { getTranslation('no', this) }; return false;" data-lang-code="no" data-native="Norsk"><span></span>Norsk<b>Norwegian</b></div>
+          
+        
+          
+            <div id="lang_hr" onclick="if (false) { handleFictionTranslation('hr', 2490066, 'introduction-to-algorithms') } else { getTranslation('hr', this) }; return false;" data-lang-code="hr" data-native="Hrvatski"><span></span>Hrvatski<b>Croatian</b></div>
+          
+        
+          
+            <div id="lang_ca" onclick="if (false) { handleFictionTranslation('ca', 2490066, 'introduction-to-algorithms') } else { getTranslation('ca', this) }; return false;" data-lang-code="ca" data-native="Català"><span></span>Català<b>Catalan</b></div>
+          
+        
+          
+            <div id="lang_sk" onclick="if (false) { handleFictionTranslation('sk', 2490066, 'introduction-to-algorithms') } else { getTranslation('sk', this) }; return false;" data-lang-code="sk" data-native="Slovenčina"><span></span>Slovenčina<b>Slovak</b></div>
+          
+        
+          
+            <div id="lang_lt" onclick="if (false) { handleFictionTranslation('lt', 2490066, 'introduction-to-algorithms') } else { getTranslation('lt', this) }; return false;" data-lang-code="lt" data-native="Lietuvių"><span></span>Lietuvių<b>Lithuanian</b></div>
+          
+        
+          
+            <div id="lang_sl" onclick="if (false) { handleFictionTranslation('sl', 2490066, 'introduction-to-algorithms') } else { getTranslation('sl', this) }; return false;" data-lang-code="sl" data-native="Slovenščina"><span></span>Slovenščina<b>Slovenian</b></div>
+          
+        
+          
+            <div id="lang_sr" onclick="if (false) { handleFictionTranslation('sr', 2490066, 'introduction-to-algorithms') } else { getTranslation('sr', this) }; return false;" data-lang-code="sr" data-native="Српски"><span></span>Српски<b>Serbian</b></div>
+          
+        
+          
+            <div id="lang_et" onclick="if (false) { handleFictionTranslation('et', 2490066, 'introduction-to-algorithms') } else { getTranslation('et', this) }; return false;" data-lang-code="et" data-native="Eesti"><span></span>Eesti<b>Estonian</b></div>
+          
+        
+          
+            <div id="lang_lv" onclick="if (false) { handleFictionTranslation('lv', 2490066, 'introduction-to-algorithms') } else { getTranslation('lv', this) }; return false;" data-lang-code="lv" data-native="Latviešu"><span></span>Latviešu<b>Latvian</b></div>
+          
+        
+          
+            <div id="lang_fa" onclick="if (false) { handleFictionTranslation('fa', 2490066, 'introduction-to-algorithms') } else { getTranslation('fa', this) }; return false;" data-lang-code="fa" data-native="فارسی"><span></span>فارسی<b>Persian</b></div>
+          
+        
+          
+            <div id="lang_ml" onclick="if (false) { handleFictionTranslation('ml', 2490066, 'introduction-to-algorithms') } else { getTranslation('ml', this) }; return false;" data-lang-code="ml" data-native="മലയാളം"><span></span>മലയാളം<b>Malayalam</b></div>
+          
+        
+          
+            <div id="lang_ta" onclick="if (false) { handleFictionTranslation('ta', 2490066, 'introduction-to-algorithms') } else { getTranslation('ta', this) }; return false;" data-lang-code="ta" data-native="தமிழ்"><span></span>தமிழ்<b>Tamil</b></div>
+          
+        
+          
+            <div id="lang_ur" onclick="if (false) { handleFictionTranslation('ur', 2490066, 'introduction-to-algorithms') } else { getTranslation('ur', this) }; return false;" data-lang-code="ur" data-native="اردو"><span></span>اردو<b>Urdu</b></div>
+          
+        
+      </div>
+
+    </div>
+    
+
+    <nav class="breadcrumbs">
+      <a href="/">Books</a> <span class="breadcrumbs-chevron"></span><a href="/genres/computer-science" style="font-weight:600">Computer Science</a> <span class="breadcrumbs-chevron mobile-hide"></span><span class="mobile-hide" style="opacity:0.7">Introduction to Algorithms</span>
+    </nav>
+
+    <div class="book-header">
+
+      <div id="bookmark_button" class="book-button book-button-bookmark" onclick="saveBookmark(2490066)"><span></span></div>
+      <div id="share_button" class="book-button book-button-share" onclick="shareBook()"><span></span></div>
+
+      <div class="book-header-left">
+      <picture>
+        <source srcset="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.webp" type="image/webp">
+        <source srcset="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" type="image/jpeg">
+        <img class="cover" src="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" alt="Introduction to Algorithms" fetchpriority="high" />
+      </picture>
+      </div>
+
+      <div class="book-header-right">
+
+        
+
+        <h1 data-highlight="true">Introduction to Algorithms</h1>
+
+        
+        <div class="book-subtitle" data-highlight="true"></div>
+        
+        <div class="book-author">
+          <i data-highlight="true">by </i><span data-highlight="true"><a href="/authors/thomas-h-cormen">Thomas H. Cormen</a></span> <span class="book-year">1989</span> <span class="book-pages">1184 pages</span>
+
+          
+        </div>
+
+        
+          <a class="rating" href="#Reviews">
+
+            
+
+            <div class="rating-value" style="padding-left:0px; padding-right:8px;">
+              4.35
+            </div>
+
+            <div class="rating-stars">
+              
+              
+              
+
+              
+                <div class="rating-star"></div>
+              
+                <div class="rating-star"></div>
+              
+                <div class="rating-star"></div>
+              
+                <div class="rating-star"></div>
+              
+              
+              
+                <div class="rating-star-off"></div>
+              
+
+              <div class="ratings-value">
+                9.2K ratings
+              </div>
+            </div>
+
+          </a>
+        
+
+        
+        <div class="instant-book-topics">
+          <a class="instant-book-topic" href="/genres/computer-science">Computer Science</a><a class="instant-book-topic" href="/genres/programming">Programming</a><a class="instant-book-topic" href="/genres/algorithms">Algorithms</a>
+        </div>
+        
+
+        
+
+        <div class="play-button-container">
+
+          <div id="play_button_wrap" class="play-button-wrap" onclick="toggleBookAudio()">
+            <div id="play_button" class="play-button"><div></div></div>
+            <div class="play-button-label" id="listen_button">Listen</div>
+          </div>
+
+          
+          <div class="book-duration">11 minutes</div>
+          
+
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="wrap" class="wrap-content">
+
+  <div class="wrap-inner">
+
+    <div id="loading" class="instant-loading" style="display:none">
+
+      <div id="instant_progress" class="instant-progress"><div></div></div>
+      <div class="instant-loading-text" id="instant_loading_text">Loading... Do not refresh.</div>
+      <!-- <div class="instant-loading-warning" id="instant_loading_warning">(Please do not close or refresh the page)</div> -->
+
+    </div>
+
+    <div id="translate_loading" class="instant-loading" style="display:none;">
+
+      <div class="instant-progress"><div></div></div>
+      <div class="instant-loading-text">Translating...</div>
+
+    </div>
+
+    <div id="content_main" class="content-main">
+
+      <div class="content-main-right">
+
+        
+        <nav class="book-toc" id="toc" >
+
+          <div class="book-toc-header">
+              <div class="book-toc-header-left">
+                  <picture>
+                    <source srcset="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.webp" type="image/webp">
+                    <source srcset="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" type="image/jpeg">
+                    <img class="book-toc-cover" onclick="scrollToTop()" src="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" alt="Introduction to Algorithms" />
+                  </picture>
+              </div>
+              <div class="book-toc-header-right">
+                  <div class="book-toc-header-title">Introduction to Algorithms</div>
+                  <div class="book-toc-header-author"><span>by </span><a href="/authors/thomas-h-cormen">Thomas H. Cormen</a></div>
+
+              </div>
+          </div>
+
+          <div class="book-toc-toggle" onclick="toggleContents()"></div>
+
+          <div class="book-toc-heading">Table of Contents</div>
+
+          <div class="book-toc-header-cta">
+            
+<div class="book-buy-button-wrap">
+
+  <div class="book-buy-button">
+    <i></i>
+    <a href="/buy/amazon/introduction-to-algorithms" target="_blank" rel="nofollow">Amazon</a>
+    <span onclick="toggleBuyMenu(this)"></span>
+  </div>
+
+  <div class="book-buy-button-menu">
+    <a href="/buy/kindle/introduction-to-algorithms" target="_blank" rel="nofollow" class="book-buy-item-kindle"><span></span>Kindle</a>
+    <a href="/buy/audible/introduction-to-algorithms" target="_blank" rel="nofollow" class="book-buy-item-audible"><span></span>Audible</a>
+  </div>
+
+</div>
+
+            <div id="listen_button_small_wrap" onclick="toggleBookAudio(false, true)" class="book-listen-button"><div><span></span></div><b id="listen_button_small">Listen</b></div><div id="toc_bookmark_button" class="book-bookmark-button" onclick="saveBookmark(2490066)"><div><span></span></div></div><div class="book-share-button" onclick="shareBook()"><div><span></span></div></div>
+          </div>
+
+          <div class="book-toc-inner">
+
+            
+
+            <ul>
+    
+              <li id="toc_takeaways" class="book-toc-selected" >
+                <a href="#Key_Takeaways">Key Takeaways</a>
+              </li>
+
+              <ol id="toc_takeaways_list" class="book-toc-takeaways" >
+                
+                  
+                    <li><a href="#1_Algorithms_The_Unsung_Heroes_of_Computing" data-number="1">Algorithms: The Unsung Heroes of Computing</a></li>
+                  
+                    <li><a href="#2_Efficiency_Matters_Algorithms_as_a_Critical_Technology" data-number="2">Efficiency Matters: Algorithms as a Critical Technology</a></li>
+                  
+                    <li><a href="#3_Pseudocode_A_Universal_Language_for_Algorithms" data-number="3">Pseudocode: A Universal Language for Algorithms</a></li>
+                  
+                    <li><a href="#4_Insertion_Sort_Simplicity_and_Incremental_Design" data-number="4">Insertion Sort: Simplicity and Incremental Design</a></li>
+                  
+                    <li><a href="#5_Merge_Sort_Divide_Conquer_and_Combine" data-number="5">Merge Sort: Divide, Conquer, and Combine</a></li>
+                  
+                    <li><a href="#6_Asymptotic_Notation_Focusing_on_Growth" data-number="6">Asymptotic Notation: Focusing on Growth</a></li>
+                  
+                    <li><a href="#7_Divide-and-Conquer_A_Powerful_Design_Paradigm" data-number="7">Divide-and-Conquer: A Powerful Design Paradigm</a></li>
+                  
+                    <li><a href="#8_Randomized_Algorithms_Embracing_Uncertainty" data-number="8">Randomized Algorithms: Embracing Uncertainty</a></li>
+                  
+                    <li><a href="#9_Data_Structures_Organizing_Information" data-number="9">Data Structures: Organizing Information</a></li>
+                  
+                    <li><a href="#10_NP-Completeness_Understanding_Intractability" data-number="10">NP-Completeness: Understanding Intractability</a></li>
+                  
+                
+              </ol>
+
+              
+
+<li id="toc_answers" style="margin-top:15px;"><a href="#Answers">FAQ</a></li>
+
+<ol id="toc_answers_list" class="book-toc-takeaways" style="margin-bottom:15px">
+  
+    
+      <li><a href="#Whats_Introduction_to_Algorithms_about" data-number="1">What&#39;s Introduction to Algorithms about?</a></li>
+    
+      <li><a href="#Why_should_I_read_Introduction_to_Algorithms" data-number="2">Why should I read Introduction to Algorithms?</a></li>
+    
+      <li><a href="#What_are_the_key_takeaways_of_Introduction_to_Algorithms" data-number="3">What are the key takeaways of Introduction to Algorithms?</a></li>
+    
+      <li><a href="#What_are_the_best_quotes_from_Introduction_to_Algorithms_and_what_do_they_mean" data-number="4">What are the best quotes from Introduction to Algorithms and what do they mean?</a></li>
+    
+      <li><a href="#How_does_Introduction_to_Algorithms_define_dynamic_programming" data-number="5">How does Introduction to Algorithms define dynamic programming?</a></li>
+    
+      <li><a href="#What_is_the_divide-and-conquer_strategy_in_Introduction_to_Algorithms" data-number="6">What is the divide-and-conquer strategy in Introduction to Algorithms?</a></li>
+    
+      <li><a href="#What_is_the_significance_of_the_master_theorem_in_Introduction_to_Algorithms" data-number="7">What is the significance of the master theorem in Introduction to Algorithms?</a></li>
+    
+      <li><a href="#How_does_Introduction_to_Algorithms_approach_graph_algorithms" data-number="8">How does Introduction to Algorithms approach graph algorithms?</a></li>
+    
+      <li><a href="#What_is_the_Bellman-Ford_algorithm_in_Introduction_to_Algorithms" data-number="9">What is the Bellman-Ford algorithm in Introduction to Algorithms?</a></li>
+    
+      <li><a href="#What_is_the_significance_of_the_maximum-flow_min-cut_theorem_in_Introduction_to_Algorithms" data-number="10">What is the significance of the maximum-flow min-cut theorem in Introduction to Algorithms?</a></li>
+    
+      <li><a href="#How_does_Introduction_to_Algorithms_explain_the_concept_of_NP-completeness" data-number="11">How does Introduction to Algorithms explain the concept of NP-completeness?</a></li>
+    
+      <li><a href="#What_is_the_role_of_data_structures_in_Introduction_to_Algorithms" data-number="12">What is the role of data structures in Introduction to Algorithms?</a></li>
+    
+  
+</ol>
+
+
+
+<li id="toc_reviews" style=""><a href="#Reviews">Review Summary</a></li>
+
+
+
+
+<li id="toc_similar"><a href="#Similar_Books">Similar Books</a></li>
+
+
+<li id="toc_author" style="margin-top:20px; "><a href="#Author">About the Author</a></li>
+
+
+
+
+<li id="toc_pdf" style="margin-top:20px"><a href="#Download_PDF">Download PDF</a></li>
+
+
+
+<li id="toc_epub"><a href="#Download_EPUB">Download EPUB</a></li>
+
+
+             
+            </ul>
+
+            
+
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="content-main-left">
+
+        <div class="book-nav">
+          <div class="book-nav-inner">
+
+            <a class="book-nav-item book-nav-selected" href="#Key_Takeaways">Summary</a>
+            
+            
+            <a class="book-nav-item" href="#Answers">FAQ</a> 
+            
+            <a class="book-nav-item" href="#Reviews">Reviews</a>
+            
+            
+            <a class="book-nav-item" href="#Similar_Books">Similar</a> 
+            
+            <a class="book-nav-item" href="#Author">Author</a>
+            
+            <a class="book-nav-item" href="#Download_PDF">Download</a>
+            
+
+          </div>
+        </div>
+
+        <div id="Key_Takeaways" style="margin-bottom:40px"></div>
+
+        <div class="book-content">
+
+          <div id="cta_book_top" class="book-cta book-cta-top">
+            <div class="book-cta-inner">
+              <div class="book-cta-title">Try Full Access for 7 Days</div>
+              <div class="book-cta-description">Unlock listening & more!</div>
+            </div>
+            <div class="book-cta-button" onclick="ctaClick('book-top')">Continue</div>
+          </div>
+          
+          <!-- Book content paywall wrapper -->
+          <div id="book_content_paywall_wrap">
+
+          <div id="takeaways_wrap" >
+
+            
+            <h2 id="takeaways_heading" style="margin-top:0px; padding-top:0px">Key Takeaways</h2>
+            
+
+            <div class="chapter-wrap">
+
+              <div class="-book-card">
+
+                <div id="takeaways_text" class="chapter-summary instant-takeaways ">
+                  
+                    <div id="1_Algorithms_The_Unsung_Heroes_of_Computing"></div><h3>1. Algorithms: The Unsung Heroes of Computing</h3>
+<blockquote class="chapter-quote">
+<p>But now that there are computers, there are even more algorithms, and algorithms lie at the heart of computing.</p>
+</blockquote>
+<p><strong>Algorithms are fundamental.</strong> Before computers existed, algorithms were the foundation of problem-solving. Now, with the proliferation of computers, algorithms are even more critical, serving as the core logic behind every computation. They are the well-defined procedures that transform inputs into desired outputs, acting as the essential tools for solving computational problems.</p>
+<p><strong>Ubiquitous applications.</strong> Algorithms are not just theoretical constructs; they are deeply embedded in our daily lives. From the Human Genome Project's data analysis to the Internet's routing protocols and search engines, algorithms are the driving force behind countless technologies. They are also essential for securing electronic commerce through cryptography and optimizing resource allocation in manufacturing and logistics.</p>
+<p><strong>Beyond sorting.</strong> While sorting is a common example used to illustrate algorithmic concepts, the range of problems algorithms can solve is vast. They can find the shortest path on a map, identify similarities between DNA strands, schedule tasks, and even determine the vertices of a convex hull. The possibilities are endless.</p>
+<div id="2_Efficiency_Matters_Algorithms_as_a_Critical_Technology"></div><h3>2. Efficiency Matters: Algorithms as a Critical Technology</h3>
+<blockquote class="chapter-quote">
+<p>Total system performance depends on choosing efficient algorithms as much as on choosing fast hardware.</p>
+</blockquote>
+<p><strong>Hardware isn't everything.</strong> While fast processors and ample memory are important, the efficiency of the algorithm used can have a far greater impact on performance. A poorly designed algorithm can negate the benefits of even the most powerful hardware.</p>
+<p><strong>Dramatic differences.</strong> The difference in efficiency between algorithms can be dramatic. For example, insertion sort, with its ‚.n2/ running time, pales in comparison to merge sort's ‚.n lg n/ time for large datasets. This difference becomes increasingly significant as the problem size grows.</p>
+<p><strong>Algorithms are a technology.</strong> Just like hardware, algorithms should be considered a technology. Investing in the development and selection of efficient algorithms is just as crucial as investing in faster processors or more memory. A skilled programmer understands the importance of algorithmic knowledge and technique.</p>
+<div id="3_Pseudocode_A_Universal_Language_for_Algorithms"></div><h3>3. Pseudocode: A Universal Language for Algorithms</h3>
+<blockquote class="chapter-quote">
+<p>The only requirement is that the specification must provide a precise description of the computational procedure to be followed.</p>
+</blockquote>
+<p><strong>Clarity over code.</strong> Pseudocode serves as a bridge between human understanding and machine execution. It is a way to express algorithms in a clear, concise, and unambiguous manner, without getting bogged down in the specifics of a particular programming language.</p>
+<p><strong>Expressive freedom.</strong> Unlike real code, pseudocode allows for the use of English phrases, mathematical notation, and other expressive methods to convey the essence of an algorithm. The goal is to communicate the algorithm's logic in the most accessible way possible.</p>
+<p><strong>Focus on logic.</strong> Pseudocode is not typically concerned with software engineering issues such as data abstraction, modularity, or error handling. It focuses solely on the computational procedure itself, allowing the reader to understand the algorithm's core logic without unnecessary distractions.</p>
+<div id="4_Insertion_Sort_Simplicity_and_Incremental_Design"></div><h3>4. Insertion Sort: Simplicity and Incremental Design</h3>
+<blockquote class="chapter-quote">
+<p>Insertion sort works the way many people sort a hand of playing cards.</p>
+</blockquote>
+<p><strong>Incremental approach.</strong> Insertion sort is a simple sorting algorithm that builds a sorted array one element at a time. It iterates through the input, inserting each element into its correct position within the already sorted portion of the array.</p>
+<p><strong>Loop invariants.</strong> Loop invariants are crucial for understanding and proving the correctness of iterative algorithms. They define a property that holds true at the start of each iteration of a loop, allowing us to reason about the algorithm's behavior.</p>
+<p><strong>Correctness.</strong> The loop invariant for insertion sort states that at the start of each iteration, the subarray to the left of the current element is always sorted. By proving that this invariant holds true throughout the algorithm, we can demonstrate that insertion sort correctly sorts the entire array upon termination.</p>
+<div id="5_Merge_Sort_Divide_Conquer_and_Combine"></div><h3>5. Merge Sort: Divide, Conquer, and Combine</h3>
+<blockquote class="chapter-quote">
+<p>The divide-and-conquer paradigm involves three steps at each level of the recursion.</p>
+</blockquote>
+<p><strong>Divide and conquer.</strong> Merge sort exemplifies the divide-and-conquer paradigm, breaking down the sorting problem into smaller subproblems, recursively sorting them, and then merging the sorted subproblems to produce the final sorted array.</p>
+<p><strong>Merging is key.</strong> The merging process, which combines two sorted subarrays into a single sorted array, is the heart of merge sort. This process takes linear time and is implemented by comparing elements from the two subarrays and placing them into the output array in sorted order.</p>
+<p><strong>Recurrences.</strong> The running time of merge sort can be described by a recurrence equation, which expresses the overall running time in terms of the running time on smaller inputs. Solving this recurrence reveals that merge sort has a worst-case running time of ‚.n lg n/.</p>
+<div id="6_Asymptotic_Notation_Focusing_on_Growth"></div><h3>6. Asymptotic Notation: Focusing on Growth</h3>
+<blockquote class="chapter-quote">
+<p>It is the rate of growth, or order of growth, of the running time that really interests us.</p>
+</blockquote>
+<p><strong>Ignoring details.</strong> Asymptotic notation provides a way to simplify the analysis of algorithms by focusing on the rate of growth of their running times, ignoring constant factors and lower-order terms. This allows us to compare the efficiency of different algorithms for large input sizes.</p>
+<p><strong>Theta, Big-O, and Omega.</strong> The most common asymptotic notations are:</p>
+<ul>
+<li>‚-notation: Provides an asymptotically tight bound.</li>
+<li>O-notation: Provides an asymptotic upper bound.</li>
+<li>-notation: Provides an asymptotic lower bound.</li>
+</ul>
+<p><strong>Order of growth.</strong> By using asymptotic notation, we can compare algorithms based on their order of growth. An algorithm with a lower order of growth is generally considered more efficient for large inputs, even if it has a larger constant factor for small inputs.</p>
+<div id="7_Divide-and-Conquer_A_Powerful_Design_Paradigm"></div><h3>7. Divide-and-Conquer: A Powerful Design Paradigm</h3>
+<blockquote class="chapter-quote">
+<p>Many useful algorithms are recursive in structure: to solve a given problem, they call themselves recursively one or more times to deal with closely related subproblems.</p>
+</blockquote>
+<p><strong>Recursive problem solving.</strong> Divide-and-conquer is a powerful technique for designing algorithms. It involves breaking a problem into smaller subproblems, solving the subproblems recursively, and then combining the solutions to the subproblems to solve the original problem.</p>
+<p><strong>Three steps:</strong></p>
+<ol>
+<li>Divide: Break the problem into smaller subproblems.</li>
+<li>Conquer: Solve the subproblems recursively.</li>
+<li>Combine: Combine the solutions to the subproblems.</li>
+</ol>
+<p><strong>Recurrences.</strong> Divide-and-conquer algorithms often lead to recurrences that describe their running times. These recurrences can be solved using techniques such as the substitution method, recursion trees, or the master method.</p>
+<div id="8_Randomized_Algorithms_Embracing_Uncertainty"></div><h3>8. Randomized Algorithms: Embracing Uncertainty</h3>
+<blockquote class="chapter-quote">
+<p>An algorithm whose behavior is determined not only by its input but by the values produced by a random-number generator is a randomized algorithm.</p>
+</blockquote>
+<p><strong>Randomness as a tool.</strong> Randomized algorithms use random choices during their execution to achieve better performance or to avoid worst-case scenarios. They can be particularly useful when the input distribution is unknown or when deterministic algorithms are too complex or inefficient.</p>
+<p><strong>Probabilistic analysis.</strong> Probabilistic analysis is used to determine the expected running time of an algorithm, where the expectation is taken over the distribution of random choices made by the algorithm. This is different from average-case analysis, where the expectation is taken over the distribution of inputs.</p>
+<p><strong>NP-Completeness.</strong> Randomized algorithms can be used to enforce a probability distribution on the inputs—thereby ensuring that no particular input always causes poor performance—or even to bound the error rate of algorithms that are allowed to produce incorrect results on a limited basis.</p>
+<div id="9_Data_Structures_Organizing_Information"></div><h3>9. Data Structures: Organizing Information</h3>
+<blockquote class="chapter-quote">
+<p>A data structure is a way to store and organize data in order to facilitate access and modifications.</p>
+</blockquote>
+<p><strong>Efficient access.</strong> Data structures are fundamental to algorithm design, providing ways to store and organize data to facilitate efficient access and modification. The choice of data structure can significantly impact the performance of an algorithm.</p>
+<p><strong>Trade-offs.</strong> No single data structure is ideal for all purposes. Different data structures offer different trade-offs between storage space, access time, and the efficiency of various operations.</p>
+<p><strong>Examples.</strong> Common data structures include:</p>
+<ul>
+<li>Stacks and queues: Simple linear structures with specific access patterns.</li>
+<li>Linked lists: Flexible structures that allow for efficient insertion and deletion.</li>
+<li>Hash tables: Structures that provide fast average-case access to elements.</li>
+<li>Binary search trees: Tree-based structures that allow for efficient searching, insertion, and deletion.</li>
+</ul>
+<div id="10_NP-Completeness_Understanding_Intractability"></div><h3>10. NP-Completeness: Understanding Intractability</h3>
+<blockquote class="chapter-quote">
+<p>If you are called upon to produce an efficient algorithm for an NP-complete problem, you are likely to spend a lot of time in a fruitless search.</p>
+</blockquote>
+<p><strong>Hard problems.</strong> NP-complete problems are a class of problems for which no efficient (polynomial-time) solution is known. While no one has proven that efficient algorithms cannot exist, the lack of such solutions despite extensive research suggests that these problems are inherently difficult.</p>
+<p><strong>Reducibility.</strong> The remarkable property of NP-complete problems is that if an efficient algorithm exists for any one of them, then efficient algorithms exist for all of them. This relationship makes the lack of efficient solutions all the more tantalizing.</p>
+<p><strong>Approximation.</strong> If you encounter an NP-complete problem, it is often more productive to focus on developing an efficient algorithm that gives a good, but not necessarily optimal, solution. These are known as approximation algorithms.</p>
+
+
+                    
+                      
+                      <p class="instant-takeaways-date">Last updated: <time datetime="2025-04-24">April 24, 2025</time></p>
+                    
+                  
+                </div>
+
+              </div>
+
+              <div>
+                <a id="report_issue_button" class="inline-button inline-button-small" href="?report_issues=true">Report Issue</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Paywall overlay positioned after takeaways but covers all content below -->
+          <div class="takeaways-paywall-overlay">
+            <div class="takeaways-paywall-gradient"></div>
+            <div class="takeaways-paywall-cta">
+              <button class="takeaways-continue-btn" onclick="handleTakeawaysPaywall()">
+                Continue Reading
+              </button>
+            </div>
+          </div>
+
+          
+          <!-- Purchase Card -->
+          <div class="chapter-wrap">
+            <div class="purchase-card">
+              <div class="purchase-card-heading">Want to read the full book?</div>
+              <div class="purchase-card-links">
+                <a href="/buy/amazon/introduction-to-algorithms" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-amazon"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Amazon
+                </a>
+                <a href="/buy/kindle/introduction-to-algorithms" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-kindle"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Kindle
+                </a>
+                <a href="/buy/audible/introduction-to-algorithms" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-audible"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Audible
+                </a>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          <div id="Answers"></div>
+          <div id="answers_wrap" >
+
+            <h2 id="answers_heading">FAQ</h2>
+
+            <div class="chapter-wrap answers-wrap">
+
+              <div class="-book-card">
+
+                <div id="" class="chapter-summary">
+
+                  
+                  
+                    <div id="Whats_Introduction_to_Algorithms_about"></div>
+                    <h3>What's <em>Introduction to Algorithms</em> about?</h3>
+<ul>
+<li><strong>Comprehensive Guide</strong>: <em>Introduction to Algorithms</em> by Thomas H. Cormen is a detailed textbook that covers a wide range of algorithms and data structures, providing both theoretical foundations and practical applications.</li>
+<li><strong>Focus on Design and Analysis</strong>: The book emphasizes the design and analysis of algorithms, including their efficiency and complexity, making it suitable for both undergraduate and graduate courses.</li>
+<li><strong>Structured Learning Approach</strong>: It is organized into chapters that progressively build on each other, allowing readers to develop a deep understanding of algorithmic principles and their applications.</li>
+</ul>
+
+                  
+                    <div id="Why_should_I_read_Introduction_to_Algorithms"></div>
+                    <h3>Why should I read <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Foundational Knowledge</strong>: This book provides essential knowledge for anyone interested in computer science, programming, or software engineering.</li>
+<li><strong>Widely Used Textbook</strong>: It is a standard reference in computer science education and is used in many university courses, making it a valuable resource for students and professionals alike.</li>
+<li><strong>Real-World Applications</strong>: The algorithms discussed are applicable to real-world problems, making the knowledge gained from this book directly useful in software development and engineering.</li>
+</ul>
+
+                  
+                    <div id="What_are_the_key_takeaways_of_Introduction_to_Algorithms"></div>
+                    <h3>What are the key takeaways of <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Algorithm Efficiency</strong>: Understanding how to analyze the efficiency of algorithms using Big O notation is a crucial takeaway, as it helps in evaluating performance.</li>
+<li><strong>Diverse Algorithm Techniques</strong>: The book covers various algorithmic strategies, including greedy algorithms, dynamic programming, and graph algorithms, each illustrated with examples and applications.</li>
+<li><strong>Data Structures Importance</strong>: It emphasizes the relationship between algorithms and data structures, showing how the choice of data structure can significantly impact algorithm performance.</li>
+</ul>
+
+                  
+                    <div id="What_are_the_best_quotes_from_Introduction_to_Algorithms_and_what_do_they_mean"></div>
+                    <h3>What are the best quotes from <em>Introduction to Algorithms</em> and what do they mean?</h3>
+<ul>
+<li><strong>&quot;Algorithms lie at the heart of computing.&quot;</strong>: This quote emphasizes the fundamental role algorithms play in computer science and technology, underscoring their importance in problem-solving.</li>
+<li><strong>&quot;Efficiency is a design criterion.&quot;</strong>: This highlights the necessity of considering efficiency in algorithm design, as it directly impacts performance and resource utilization.</li>
+<li><strong>&quot;Understanding algorithms is essential for any programmer.&quot;</strong>: This quote stresses that a solid grasp of algorithms is crucial for effective programming and software development, as it enhances problem-solving skills.</li>
+</ul>
+
+                  
+                    <div id="How_does_Introduction_to_Algorithms_define_dynamic_programming"></div>
+                    <h3>How does <em>Introduction to Algorithms</em> define dynamic programming?</h3>
+<ul>
+<li><strong>Optimization Technique</strong>: Dynamic programming is defined as a method for solving complex problems by breaking them down into simpler subproblems, solving each subproblem just once, and storing their solutions.</li>
+<li><strong>Overlapping Subproblems</strong>: The technique is effective when the problem has overlapping subproblems, meaning the same subproblems are solved multiple times, avoiding redundant calculations.</li>
+<li><strong>Examples Provided</strong>: The book includes various examples, such as the matrix-chain multiplication problem, to demonstrate how dynamic programming can be applied to achieve efficient solutions.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_divide-and-conquer_strategy_in_Introduction_to_Algorithms"></div>
+                    <h3>What is the divide-and-conquer strategy in <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Problem-Solving Method</strong>: Divide-and-conquer is a strategy where a problem is divided into smaller subproblems, solved independently, and then combined to form a solution to the original problem.</li>
+<li><strong>Efficiency</strong>: This approach often leads to more efficient algorithms, as seen in sorting and searching algorithms, which can significantly reduce time complexity.</li>
+<li><strong>Examples in Algorithms</strong>: The book provides examples of divide-and-conquer algorithms, such as mergesort and the closest pair of points, demonstrating its effectiveness in various scenarios.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_significance_of_the_master_theorem_in_Introduction_to_Algorithms"></div>
+                    <h3>What is the significance of the master theorem in <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Solving Recurrences</strong>: The master theorem provides a method for solving recurrences of the form T(n) = aT(n/b) + f(n), which frequently arise in divide-and-conquer algorithms.</li>
+<li><strong>Three Cases</strong>: It outlines three cases based on the relationship between f(n) and n^(log_b(a)), allowing for quick determination of asymptotic bounds.</li>
+<li><strong>Widely Applicable</strong>: This theorem is a powerful tool for analyzing the running time of many algorithms, making it a crucial concept in the book.</li>
+</ul>
+
+                  
+                    <div id="How_does_Introduction_to_Algorithms_approach_graph_algorithms"></div>
+                    <h3>How does <em>Introduction to Algorithms</em> approach graph algorithms?</h3>
+<ul>
+<li><strong>Graph Representation</strong>: The book discusses various ways to represent graphs, including adjacency lists and adjacency matrices, and explains the trade-offs between these representations.</li>
+<li><strong>Key Algorithms</strong>: It covers essential graph algorithms, such as Dijkstra's algorithm for shortest paths, Kruskal's and Prim's algorithms for minimum spanning trees, and depth-first and breadth-first search.</li>
+<li><strong>Complexity Analysis</strong>: The text provides a thorough analysis of the time and space complexity of graph algorithms, enabling readers to evaluate their efficiency.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_Bellman-Ford_algorithm_in_Introduction_to_Algorithms"></div>
+                    <h3>What is the Bellman-Ford algorithm in <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Single-Source Shortest Paths</strong>: The Bellman-Ford algorithm is designed to find the shortest paths from a single source vertex to all other vertices in a weighted graph.</li>
+<li><strong>Handles Negative Weights</strong>: Unlike Dijkstra’s algorithm, it can handle graphs with negative-weight edges, making it versatile for various applications.</li>
+<li><strong>Iterative Relaxation</strong>: The algorithm works by iteratively relaxing edges, ensuring that the shortest path estimates converge to the correct values.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_significance_of_the_maximum-flow_min-cut_theorem_in_Introduction_to_Algorithms"></div>
+                    <h3>What is the significance of the maximum-flow min-cut theorem in <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Flow and Cuts Relationship</strong>: The max-flow min-cut theorem establishes a relationship between the maximum flow in a network and the minimum cut that separates the source from the sink.</li>
+<li><strong>Equivalence</strong>: It states that the value of the maximum flow is equal to the capacity of the minimum cut, providing a powerful tool for analyzing flow networks.</li>
+<li><strong>Applications</strong>: This theorem has numerous applications in network design, optimization, and resource allocation problems.</li>
+</ul>
+
+                  
+                    <div id="How_does_Introduction_to_Algorithms_explain_the_concept_of_NP-completeness"></div>
+                    <h3>How does <em>Introduction to Algorithms</em> explain the concept of NP-completeness?</h3>
+<ul>
+<li><strong>Understanding Computational Limits</strong>: The NP-completeness section helps readers understand the limits of what can be efficiently computed, introducing problems that are easy to verify but hard to solve.</li>
+<li><strong>Reduction Techniques</strong>: The text explains how to prove NP-completeness through reductions, providing a toolkit for identifying hard problems.</li>
+<li><strong>Real-World Implications</strong>: Understanding NP-completeness has practical implications for algorithm development, informing decisions about which problems can be tackled with efficient algorithms.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_role_of_data_structures_in_Introduction_to_Algorithms"></div>
+                    <h3>What is the role of data structures in <em>Introduction to Algorithms</em>?</h3>
+<ul>
+<li><strong>Foundation for Algorithms</strong>: Data structures are presented as the backbone of algorithm design, influencing the efficiency and performance of algorithms.</li>
+<li><strong>Variety of Structures</strong>: The book discusses various data structures, including arrays, linked lists, stacks, queues, trees, and hash tables, explaining their characteristics and use cases.</li>
+<li><strong>Implementation and Analysis</strong>: Each data structure is accompanied by implementation details and performance analysis, helping readers understand how to effectively use them in conjunction with algorithms.</li>
+</ul>
+
+                  
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          
+
+
+
+          
+          <div id="Reviews"></div>
+          <div id="reviews_wrap" >
+            
+            <h2 id="reviews_heading">Review Summary</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                
+                <div class="chapter-inlay">
+
+                  <div class="review">
+
+                    <div class="rating">
+
+                      <div class="rating-stars">
+                        
+                        
+                        
+                        
+
+                        
+                          <div class="rating-star"></div>
+                        
+                          <div class="rating-star"></div>
+                        
+                          <div class="rating-star"></div>
+                        
+                          <div class="rating-star"></div>
+                        
+                        
+                        
+                          <div class="rating-star-off"></div>
+                        
+
+                        <div class="rating-value">
+                          4.35 out of 5
+                        </div>
+                      </div>
+
+                      <div class="review-info">
+                        Average of <span>9.2K</span> ratings from <span>Goodreads</span> and <span>Amazon</span>.
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                
+
+                <div id="summary_reviews" class="chapter-summary chapter-summary-inlay">
+                  <p><strong>Introduction to Algorithms</strong> receives mixed reviews, with an overall high rating. Many praise it as comprehensive and essential for computer science, noting its thorough explanations and mathematical rigor. Critics argue it's too complex for beginners, focusing heavily on mathematical proofs rather than practical implementation. Some find the pseudocode difficult to understand. Supporters appreciate the detailed content and exercises, while detractors suggest alternative texts for learning algorithms. Despite criticisms, it's widely regarded as a fundamental resource for computer scientists and programmers seeking to improve their understanding of algorithms and data structures.</p>
+
+                </div>
+
+              </div>
+
+              <div class="book-card" id="your_rating_wrap" style="margin-top: 20px; padding: 28px 30px 23px 30px;">
+
+                <div class="rating-widget-label">Your rating:</div>
+
+                <div class="rating-widget-container" data-book-id="">
+                  <div class="rating-widget-stars">
+                    
+                    
+                    
+                    
+                    <div id="rating_widget_value" class="rating-widget-value" style="padding-left:0px; padding-right:12px; ">
+                      4.7
+                    </div>
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="1"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="2"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="3"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="4"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-half" data-value="5"></div>
+                      
+                    
+                    <div id="rating_widget_total" class="rating-widget-count">
+                      
+                      
+                        160 ratings
+                      
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+          
+
+
+          
+          <div id="Similar_Books"></div>
+          <div id="similar_wrap" >
+
+            <h2 id="similar_heading">Similar Books</h2>
+
+            <div class="scrollable-list scrollable-list-left-col">
+              
+                <a href="/books/the-c-programming-language-2" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_the-c-programming-language-2_360px_1747302156.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_the-c-programming-language-2_360px_1747302156.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_the-c-programming-language-2_360px_1747302156.jpg" alt="The C++ Programming Language Summary" loading="lazy" data-id="2507363" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">The C++ Programming Language</div>
+    <div class="scrollable-list-author">Bjarne Stroustrup</div>
+
+    
+    <div class="scrollable-list-subtitle"></div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.10
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (4.0K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/mythical-man-month-the" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_mythical-man-month-the_360px_1747141198.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_mythical-man-month-the_360px_1747141198.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_mythical-man-month-the_360px_1747141198.jpg" alt="The Mythical Man-Month Summary" loading="lazy" data-id="198237" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">The Mythical Man-Month</div>
+    <div class="scrollable-list-author">Frederick P. Brooks Jr.</div>
+
+    
+    <div class="scrollable-list-subtitle">Essays on Software Engineering</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.01
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (14.8K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/clean-architecture" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_clean-architecture_360px_1747139671.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_clean-architecture_360px_1747139671.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_clean-architecture_360px_1747139671.jpg" alt="Clean Architecture Summary" loading="lazy" data-id="146807" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Clean Architecture</div>
+    <div class="scrollable-list-author">Robert C. Martin</div>
+
+    
+    <div class="scrollable-list-subtitle"></div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.23
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (6.7K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curious-people" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curious-people_360px_1747213689.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curious-people_360px_1747213689.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curious-people_360px_1747213689.jpg" alt="Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People Summary" loading="lazy" data-id="2483553" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People</div>
+    <div class="scrollable-list-author">Aditya Y. Bhargava</div>
+
+    
+    <div class="scrollable-list-subtitle"></div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.42
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (5.1K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/effective-java" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_effective-java_360px_1747151961.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_effective-java_360px_1747151961.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_effective-java_360px_1747151961.jpg" alt="Effective Java Summary" loading="lazy" data-id="2484563" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Effective Java</div>
+    <div class="scrollable-list-author">Joshua Bloch</div>
+
+    
+    <div class="scrollable-list-subtitle">Programming Language Guide</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.51
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (8.0K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/clean-code" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_clean-code_360px_1747129246.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_clean-code_360px_1747129246.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_clean-code_360px_1747129246.jpg" alt="Clean Code Summary" loading="lazy" data-id="64591" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Clean Code</div>
+    <div class="scrollable-list-author">Robert C. Martin</div>
+
+    
+    <div class="scrollable-list-subtitle">A Handbook of Agile Software Craftsmanship</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.37
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (22.8K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/code-complete" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_code-complete_360px_1747145786.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_code-complete_360px_1747145786.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_code-complete_360px_1747145786.jpg" alt="Code Complete Summary" loading="lazy" data-id="2490060" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Code Complete</div>
+    <div class="scrollable-list-author">Steve McConnell</div>
+
+    
+    <div class="scrollable-list-subtitle">A Practical Handbook of Software Construction</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.30
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (9.4K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/system-design-interview-an-insiders-guide" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_system-design-interview-an-insiders-guide_360px_1747146525.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_system-design-interview-an-insiders-guide_360px_1747146525.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_system-design-interview-an-insiders-guide_360px_1747146525.jpg" alt="System Design Interview – An insider&amp;#039;s guide Summary" loading="lazy" data-id="2496906" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">System Design Interview – An insider&#39;s guide</div>
+    <div class="scrollable-list-author">Alex Xu</div>
+
+    
+    <div class="scrollable-list-subtitle"></div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.28
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (2.9K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/design-patterns" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_design-patterns_360px_1747188732.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_design-patterns_360px_1747188732.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_design-patterns_360px_1747188732.jpg" alt="Design Patterns Summary" loading="lazy" data-id="2495089" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Design Patterns</div>
+    <div class="scrollable-list-author">Erich Gamma</div>
+
+    
+    <div class="scrollable-list-subtitle">Elements of Reusable Object-Oriented Software</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.20
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (11.8K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+            </div>
+
+          </div>
+          
+
+          
+          <div id="Author"></div>
+          <div id="author_wrap" >
+
+            <h2 id="author_heading">About the Author</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div id="summary_author" class="chapter-summary"><p><strong>Thomas H. Cormen</strong> is a prominent figure in computer science education and research. As the co-author of the influential textbook &quot;Introduction to Algorithms,&quot; he has made significant contributions to the field of algorithm design and analysis. Cormen holds a Full Professor position in computer science at Dartmouth College, where he has been instrumental in shaping the curriculum and research initiatives. His expertise extends beyond algorithms, as evidenced by his current role as Chair of the Dartmouth College Writing Program. This position highlights Cormen's commitment to fostering effective communication skills among students across disciplines, recognizing the importance of clear expression in both technical and non-technical fields.</p>
+</div>
+
+              </div>
+
+            </div>
+
+            
+
+          </div>
+
+
+
+          
+          <div id="Download_PDF"></div>
+          <div id="pdf_wrap">
+
+            <h2 id="pdf_heading">Download PDF</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div class="chapter-summary">
+
+                  To save this <strong>Introduction to Algorithms</strong> summary for later, download the free PDF. You can print it out, or read offline at your convenience.
+
+                  <div class="button-wrap" style="padding-bottom:0px">
+                    <div class="button button-download" style="margin-right:0px" rel="alternate nofollow" title="introduction-to-algorithms.pdf" onclick="downloadPDF('/books/introduction-to-algorithms.pdf')"><div></div>Download PDF</div>
+                    <div class="button-info">
+                      File size: <b>0.20 MB</b> &nbsp; &nbsp; Pages: <b>13</b>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          
+
+          
+          <div id="Download_EPUB"></div>
+          <div id="epub_wrap">
+
+            <h2 id="epub_heading">Download EPUB</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div class="chapter-summary">
+
+                  To read this <strong>Introduction to Algorithms</strong> summary on your e-reader device or app, download the free EPUB. The <code>.epub</code> digital book format is ideal for reading ebooks on phones, tablets, and e-readers.
+
+                  <div class="button-wrap" style="padding-bottom:0px">
+                    <div class="button button-download" style="margin-right:0px" rel="alternate nofollow" title="introduction-to-algorithms.epub" onclick="downloadEPUB('/books/introduction-to-algorithms.epub')"><div></div>Download EPUB</div>
+                    <div class="button-info">
+                      File size: <b>2.96 MB</b> &nbsp; &nbsp; Pages: <b>10</b>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          
+
+          </div> <!-- End book content paywall wrapper -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+<div id="footer" class="footer">
+	<div class="wrap-inner">
+
+		<a href="/pricing" id="footer_pricing_link">Pricing</a> <span id="footer_pricing_bullet">&bull;</span> <a href="/terms">Terms<span> of Service</span></a> <span>&bull;</span> <a href="/privacy">Privacy<span> Policy</span></a> <span>&bull;</span> <a href="/refund-policy">7-Day<span> Refund Policy</span></a> <span>&bull;</span> <a href="/dmca">DMCA</a> <span>&bull;</span> <a href="/affiliate" id="footer_affiliate_link">Affiliate</a> <span id="footer_affiliate_bullet">&bull;</span><a href="https://x.com/automationism" target="_blank">Twitter</a> <span>&bull;</span> <a href="" onclick="showIntercom(); return false;">Support</a><span>&bull;</span> 
+
+		<div class="app-download-container app-download-container-footer">
+
+			<div class="app-store-button">
+			  <a href="https://apps.apple.com/us/app/sobrief-book-summaries/id6723865613" target="_blank" onclick="logEvent('download_ios_click')" style="margin-right:0px" aria-label="Download on the App Store"><img src="https://files.sobrief.com/public/app-store-button.png" loading="lazy" alt="Download on the App Store" /></a>
+			</div>
+
+			<div class="app-qr-code">
+			  <img src="https://files.sobrief.com/public/app-store-qr-code.png" loading="lazy" alt="QR Code" />
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="book_toolbar" class="book-toolbar book-toolbar-visible">
+
+  <div id="book_toolbar_button_listen" onclick="toggleBookAudio(false, true)" class="book-toolbar-button-listen"><div><span></span></div><b>Listen<i>11 mins</i></b></div>
+
+  <div id="book_toolbar_button_share" class="book-toolbar-button book-toolbar-button-share" onclick="shareBook()"><span></span></div>
+  <div id="book_toolbar_button_bookmark" class="book-toolbar-button book-toolbar-button-bookmark" onclick="saveBookmark(2490066)"><span></span></div>
+  <div id="book_toolbar_button_toc" class="book-toolbar-button book-toolbar-button-toc" onclick="toggleContents(); return false;"><span></span></div>
+
+</div>
+
+<div id="native_player" class="native-player-wrap">
+
+  <div class="native-player">
+
+    <div id="player_small" class="native-player-small">
+
+      <div class="native-player-cover" style="background-image:url('https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg')"></div>
+
+      <div class="native-player-info">
+        <div class="native-player-label">Now playing</div>
+        <div class="native-player-title">Introduction to Algorithms</div>
+        <div class="native-player-progress2"><div></div></div>
+      </div>
+
+      <div class="native-player-small-buttons">
+        <div class="native-player-small-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+        <div class="native-player-small-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+      </div>
+
+    </div>
+
+    <div id="player_medium" class="native-player-medium">
+
+      <div class="native-player-handle"><span></span></div>
+
+      <div id="player_buttons" class="native-player-buttons">
+
+        <div class="native-player-button-settings" onclick="togglePlayerSettings()"><span></span></div>
+        <div class="native-player-button-previous" onclick="stopBookAudio(); prevBookAudio(true)"><span></span></div>
+        <div class="native-player-button-back" onclick="skipAudioBack()"><span></span></div>
+        <div class="native-player-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+        <div class="native-player-button-forward" onclick="skipAudioForward()"><span></span></div>
+        <div class="native-player-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+        <div class="native-player-button-contents" onclick="toggleQueue()"><span></span></div>
+
+      </div>
+
+      <div class="native-player-progress-wrap">
+        <div class="native-player-time-elapsed">0:00</div>
+        <div class="native-player-time-remaining">-0:00</div>
+
+        <div class="native-player-progress">
+          <div class="native-player-progress-bar">
+            <span></span>
+            <div class="native-player-progress-bar-chunks"></div>
+          </div>
+          <div class="native-player-progress-chunks"></div>
+        </div>
+
+        <div class="native-player-progress-tooltip-wrap">
+          <div class="native-player-progress-tooltip"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="player_large" class="native-player-large">
+
+      <div class="native-player-handle"><span></span></div>
+
+      <div class="native-player-content-OFF">
+
+        <div class="native-player-cover-wrap">
+          <img src="https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg" />
+        </div>
+
+        <div class="native-player-large-info">
+          <div class="native-player-large-section">
+            <span class="native-player-large-section-text">Now playing</span>
+          </div>
+          <div class="native-player-large-title">Introduction to Algorithms</div>
+        </div>
+
+        <div class="native-player-progress-wrap">
+          
+          <div class="native-player-progress">
+            <div class="native-player-progress-bar">
+              <span></span>
+              <div class="native-player-progress-bar-chunks"></div>
+            </div>
+            <div class="native-player-progress-chunks"></div>
+          </div>
+
+          <div class="native-player-time-wrap">
+            <div class="native-player-time-elapsed">0:00</div>
+            <div class="native-player-time-remaining">-0:00</div>
+          </div>
+
+          <div class="native-player-progress-tooltip-wrap">
+            <div class="native-player-progress-tooltip"></div>
+          </div>
+        </div>
+
+        <div class="native-player-buttons">
+
+          <div class="native-player-button-previous" onclick="stopBookAudio(); prevBookAudio(true)"><span></span></div>
+          <div class="native-player-button-back" onclick="skipAudioBack()"><span></span></div>
+          <div class="native-player-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+          <div class="native-player-button-forward" onclick="skipAudioForward()"><span></span></div>
+          <div class="native-player-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+
+        </div>
+
+        <div class="native-player-buttons-small">
+
+          <div class="native-player-buttons-small-left">
+            <div class="native-player-button-settings" onclick="togglePlayerSettings()"><span></span></div>
+            <div class="native-player-button-voice" data-settings-section="voice"><span></span></div>
+            <div class="native-player-button-speed" data-settings-section="speed"><span>1x</span></div>
+            <div class="native-player-button-music" data-settings-section="music" style="display:none"><span></span></div>
+          </div>
+
+          <div class="native-player-buttons-small-right">
+            <div class="native-player-button-bookmark" onclick="saveBookmark(2490066)"><span></span></div>
+            <div class="native-player-button-share" onclick="shareBook()"><span></span></div>
+            <div class="native-player-button-contents" onclick="toggleQueue()"><span></span></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="player_settings" class="native-player-settings-menu">
+      
+      <div id="player_settings_switcher" class="native-player-switcher-wrap">
+        <div class="native-player-switcher">
+          <div id="settings_switch_voice" class="native-player-switcher-item native-player-switcher-item-selected" onclick="showPlayerSettings('voice', this)">Voice</div>
+          <div id="settings_switch_speed" class="native-player-switcher-item" onclick="showPlayerSettings('speed', this)">Speed</div>
+          <div id="settings_switch_music" class="native-player-switcher-item" onclick="showPlayerSettings('music', this)" style="display:none">Music</div>
+        </div>
+      </div>
+
+      <div class="native-player-settings-voice">
+
+        <div class="native-player-voice native-player-voice-selected" data-voice="onyx" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-dan.jpg');"></span>Dan</div>
+        <div style="display:none" class="native-player-voice" data-voice="alloy" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-scarlett.jpg');"></span>Jennifer</div>
+        <div class="native-player-voice" data-voice="echo" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-echo.jpg');"></span>Andrew</div>
+        <div style="display:none" class="native-player-voice" data-voice="fable" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-amy.jpg');"></span>Sarah</div>
+        <div class="native-player-voice" data-voice="nova" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-liv.jpg');"></span>Michelle</div>
+        <div class="native-player-voice" data-voice="shimmer" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-scarlett.jpg');"></span>Lauren</div>
+
+      </div>
+
+      <div class="native-player-settings-speed">
+
+        <div class="native-player-speed-control">
+
+          <div class="native-player-speed-button native-player-speed-button-down" onclick="setPlayerSpeed(false)">&ndash;</div>
+          <div class="native-player-speed-value"><span>1.0</span><i>&times;</i></div>
+          <div class="native-player-speed-button native-player-speed-button-up" onclick="setPlayerSpeed(true)">+</div>
+  
+        </div>
+  
+        <div class="native-player-speed-info"><span>200</span> words per minute</div>
+
+      </div>
+
+      <div class="native-player-settings-music" style="display:none">
+
+        <div class="native-player-music-volume" data-music-volume="none" onclick="setPlayerMusicVolume(this)">Off</div>
+        <div class="native-player-music-volume" data-music-volume="low" onclick="setPlayerMusicVolume(this)">Low</div>
+        <div class="native-player-music-volume native-player-music-volume-selected" data-music-volume="medium" onclick="setPlayerMusicVolume(this)">Medium</div>
+        <div class="native-player-music-volume" data-music-volume="high" onclick="setPlayerMusicVolume(this)">High</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="queue" class="queue">
+    <div class="queue-inner">
+  
+      <div class="queue-header">
+        <div class="queue-title">Queue</div>
+        <div id="queue_close" class="queue-close"></div>
+      </div>
+  
+      <div id="queue_list" class="queue-list">
+  
+      </div>
+  
+    </div>
+  </div>
+
+</div>
+
+
+<div class="top-button" id="top_button" onclick="scrollToTop()"></div>
+
+<div id="menu_button_wrap" class="menu-button-wrap">
+  <div id="menu_button_menu" class="menu-button-menu">
+    <a href="" onclick="toggleContents(); return false;"><span></span>Contents</a>
+    <a id="menu_bookmark_item" href="" onclick="saveBookmark(2490066); return false;"><span></span>Bookmark</a>
+    <a href="" onclick="shareBook(); return false;"><span></span>Share</a>
+  </div>
+  <div class="menu-button" id="menu_button" onclick="toggleBottomMenu(this)"><div></div></div>
+</div>
+
+
+
+<div id="toolbar_web" class="native-toolbar web-toolbar">
+  <div class="native-toolbar-button native-toolbar-button-home" onclick="toolbarAction('home')">Home</div>
+  <div class="native-toolbar-button native-toolbar-button-search" onclick="toolbarAction('search')">Search</div>
+  <div class="native-toolbar-button native-toolbar-button-swipe" onclick="toolbarAction('swipe')">
+    Swipe
+    <span class="toolbar-badge swipe-notification-badge" style="display: none;"></span>
+  </div>
+  <div class="native-toolbar-button native-toolbar-button-library" onclick="toolbarAction('library')">Library</div>
+  <div class="native-toolbar-button native-toolbar-button-app" onclick="toolbarAction('app')">Get App</div>
+</div>
+
+
+
+
+
+<div id="dialog_sign_in" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-signin">
+
+    <div class="dialog-close" onclick="hideSignInDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <a href="" class="logo" onclick="return false;"
+        style="top:-3px; margin-left:15px; cursor:default; pointer-events:none;"><span></span><b>SoBrief</b></a>
+
+      <div id="dialog_sign_in_text" class="dialog-text" style="padding-top:3px">
+
+        <div id="dialog_sign_in_message" class="dialog-info"></div>
+
+        <div id="dialog_sign_in_heading" style="padding-top:0px; padding-bottom:4px">Create a free account to unlock:</div>
+
+        <div id="dialog_sign_in_ticks" class="dialog-ticks"> 
+          <div class="dialog-tick"><b>Recommendations:</b> Personalized for you</div>
+          <div class="dialog-tick"><b>Requests:</b> Request new book summaries</div>
+          <div class="dialog-tick"><b>Bookmarks:</b> Save your favorite books</div>
+          <div class="dialog-tick"><b>History:</b> Revisit books later</div>
+          <div class="dialog-tick" style="padding-bottom:0px;"><b>Ratings:</b> Rate books & see your ratings</div>
+          <!-- <div class="dialog-tick" style="padding-bottom:3px; display:none"><b>Listening:</b> audio summaries<span>Listen to the first takeaway of every book for free, upgrade to Pro for unlimited listening.</span></div> -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <ul id="sign_in_buttons_native" class="firebaseui-idp-list" style="display:none">
+
+      <li class="firebaseui-list-item">
+        <button
+          class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-google firebaseui-id-idp-button"
+          style="background-color:#ffffff" onclick="nativeSignIn()"><span class="firebaseui-idp-icon-wrapper"><img
+              class="firebaseui-idp-icon" alt=""
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Google</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Google</span></button>
+      </li>
+
+      <li class="firebaseui-list-item">
+        <button
+          class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button"
+          data-provider-id="password" style="background-color:#db4437" onclick="showEmailSignIn()"><span
+            class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt=""
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/mail.svg" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with email</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Email</span></button>
+      </li>
+
+      <li id="sign_in_button_apple" style="display:none" class="firebaseui-list-item">
+        <button
+        class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button welcome-button-apple"
+        data-provider-id="password" onclick="showAppleSignIn()"><span
+            class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt=""
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/apple.png" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Apple</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Apple</span></button>
+       </li>
+
+    </ul>
+
+
+    <div id="dialog_sign_in_loading" class="dialog-loading"><span></span></div>
+
+    <div id="firebaseui-auth-container"></div>
+
+    <div id="dialog_sign_in_readers" class="onboard-users-say onboard-users-say-inline">
+
+      <div class="rating-social-wrap-nowrap" style="padding-bottom:16px; transform: scale(0.88); position: relative; top:0px; padding-top:6px">
+        
+        <div class="rating-social-wrap">
+          
+          <div class="rating-social rating-social-laurel">
+        
+            <div class="rating-content" style="text-align:center">
+                <div class="rating-stars social-rating">
+        
+                    <div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div>
+        
+                </div>
+                <div class="rating-info"><b>250,000+</b> readers</div>
+            </div>
+        
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div id="dialog_upgrade_new" class="dialog-wrap dialog-wrap-no-scroll">
+
+  <div class="dialog-inner dialog-inner-upgrade-new">
+
+    <div class="dialog-header">
+
+      <div class="dialog-close dialog-close-header" onclick="hideUpgradeDialog()"></div>
+
+      <a href="" class="logo" onclick="return false;"
+        style="top:-12px; margin-left:0px; cursor:default; pointer-events:none; padding-bottom:15px;"><span></span><b>SoBrief</b><i>Pro</i></a>
+
+    </div>
+
+    <div class="dialog-content-scrollable">
+      <!-- <div class="bounce-arrow">&gt;</div> -->
+      <div class="dialog-upgrade-wrap">
+
+        <div id="dialog_upgrade_view_features">
+
+          <div class="timeline" style="background:transparent; margin:0px; padding:3px 15px 0px 15px">
+
+            <div id="upgrade_regular_content">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>Try Full Access for 7 Days
+              </div>
+              <div class="timeline-subheading">Listen, bookmark, and more
+              </div>
+             
+
+            </div>
+
+            <div id="upgrade_first_year_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🚨 Last Offer: Take 50% Off
+              </div>
+              <div class="timeline-subheading"><s>$44.99</s> $22.49 for 1 year <br> then $44.99/year</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: First Payment of $22.49</div>
+      <div class="description">Your paid subscription begins immediately. 50% off your first year!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Oct 29, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div>
+
+            </div>
+
+            <div id="upgrade_first_year_25_off_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🎉 Limited Time: 25% Off
+              </div>
+              <div class="timeline-subheading"><s>$44.99</s> $33.74 for 1 year <br> then $44.99/year</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: Start 3-Day Trial</div>
+      <div class="description">Your trial begins immediately. Full access to all Pro features!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Day 4: First Payment of $33.74</div>
+      
+      <div class="description">On Nov 1, 2025, you'll be charged $33.74 for your first year (25% off).</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Nov 1, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div> 
+            </div>
+
+            <div id="upgrade_lifetime_20_off_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🎉 Best Value Ever
+              </div>
+              <div class="timeline-subheading">Get Pro for life for <br><s>$79.99</s> $59.99</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+
+              <!-- <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: First Payment of $22.49</div>
+      <div class="description">Your paid subscription begins immediately. 50% off your first year!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Oct 29, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div>
+ -->
+              <div class="dialog-benefits">
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Pay Once, Use Forever</div>
+                  <!-- <div class="dialog-benefit-info">No monthly fees, no subscriptions, no hidden costs.</div> -->
+                </div>
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">All Current & Future Pro Features</div>
+                  <!-- <div class="dialog-benefit-info">We'll add new features and books every week.</div> -->
+                </div>
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Save Money Over Time</div>
+                  <!-- <div class="dialog-benefit-info">If you were to pay $44.99/year for 3 years, you'd pay $134.97. With this offer, you pay $59.99 once.</div> -->
+                </div>
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Limited Time Offer</div>
+                  <!-- <div class="dialog-benefit-info">If you were to pay $44.99/year for 3 years, you'd pay $134.97. With this offer, you pay $59.99 once.</div> -->
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="dialog-text" style="padding-top:0px">
+
+            <div class="dialog-testimonials">
+
+              <div class="dialog-testimonial">
+
+                <div class="dialog-testimonial-stars"></div>
+                <div class="dialog-testimonial-review"></div>
+                <div class="dialog-testimonial-user"></div>
+
+              </div>
+
+            </div>
+
+            <div class="dialog-heading-small" style="display:none;">What's part of Pro?</div>
+
+            <div class="dialog-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="dialog-table-features-heading">Compare Features
+                    </th>
+                    <th>Free</th>
+                    <th class="dialog-table-pro-column dialog-table-pro-header">Pro</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📖</i> Read Summaries
+                      <div>Read unlimited summaries. Free users get 3 per month</div>
+                    </td>
+                    <td class="dialog-table-check"><span></span></td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>🎧</i> Listen to Summaries
+                      <div>Listen to unlimited summaries in 40 languages</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>❤️</i> Unlimited Bookmarks
+                      <div>Free users are limited to 4</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📜</i> Unlimited History
+                      <div>Free users are limited to 4</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📥</i> Unlimited Downloads
+                      <div>Free users are limited to 1</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check dialog-table-pro-footer"><span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="dialog-heading-small" style="padding-top:15px">Risk-Free Timeline</div>
+
+            
+<div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon lock">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: Get Instant Access</div>
+      <div class="description">Listen to full summaries of <b>73,530</b> books. That's <b>12,000+ hours</b> of audio!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon bell"></div>
+    <div class="timeline-text">
+      <div class="title">Day 4: Trial Reminder</div>
+      <div class="description">We'll send you a notification that your trial is ending soon.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Day 7: Your subscription begins</div>
+      
+      <div class="description">You'll be charged on Nov 5,<br /> cancel anytime before.</div>
+    </div>
+  </div>
+</div>
+
+
+            <div class="dialog-heading-small" style="padding-top:25px">Consume 2.8× More Books</div>
+
+            <div class="progress-chart">
+              <svg width="340" height="280">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#BBF7D0"></path>
+                  </marker>
+                  <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#E5E7EB"></path>
+                  </marker>
+                </defs>
+
+                <g class="fade-in-3">
+                  <circle cx="60" fill="#BBF7D0" r="42" cy="43"></circle>
+
+                  <text x="60" text-anchor="middle" fill="var(--text-color-alt)" style="font-size: 19px; font-weight: 600;" y="39">2.8×</text>
+                  <text x="60" text-anchor="middle" fill="var(--text-color-alt)" style="font-size: 12px;" y="56">more books</text>
+                </g>
+
+                <path class="fade-in-2" d="M 30,190 Q 170,150 310,30" stroke="#BBF7D0" fill="none" stroke-width="2" marker-end="url(#arrow)">
+                </path>
+                 <text class="fade-in-2" fill="var(--text-color)" style="font-size: 15px; font-weight: 400;" transform="rotate(-36 216 64)" y="81" x="219">Listening</text>
+                <line class="fade-in-1" x1="30" y1="190" x2="310" y2="130" stroke="#E5E7EB" stroke-width="2" marker-end="url(#arrow-gray)">
+                </line>
+                <text class="fade-in-1" fill="var(--text-color)" style="font-size: 15px; font-weight: 400; opacity:0.4;" transform="rotate(-12 250 164)" y="164" x="227">Reading</text>
+              </svg>
+            </div>
+
+            
+
+            <div class="dialog-heading-small" style="padding-top:0px">Our users love us</div>
+
+            <div class="rating-social-wrap-nowrap" style="padding-top:0px; padding-left:8px">
+              
+<div class="rating-social-wrap">
+  <div class="rating-social">
+
+    <!-- Keep avatars static -->
+    <div class="rating-avatars">
+        <div></div><div></div><div></div><div></div><div></div>
+    </div>
+    
+    
+      <!-- Animated content with rotation -->
+      <div class="rating-rotation-container">
+        
+        <!-- Social Rating Content -->
+        <div class="rating-content rating-rotation-item rating-rotation-active">
+            <div class="rating-stars social-rating">
+                <div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div>
+            </div>
+            <div class="rating-info"><b>250,000+</b> readers</div>
+        </div>
+
+        <!-- Trustpilot Rating Content -->
+        <div class="rating-content rating-rotation-item">
+            <img src="https://files.sobrief.com/public/trustpilot-stars.png" alt="Trustpilot Rating" class="trustpilot-stars">
+            <div class="trustpilot-text-container">
+                <div class="trustpilot-text trustpilot-brand-text trustpilot-text-active">TrustPilot</div>
+                <div class="trustpilot-text trustpilot-rating-text">4.6 <b>Excellent</b></div>
+            </div>
+        </div>
+        
+      </div>
+    
+
+  </div>
+</div>
+
+            </div>
+
+            <!-- Rotating Quote Cards -->
+            <div class="dialog-quote-cards-container">
+              <div id="dialog_quote_1" class="dialog-quote-card dialog-quote-card-active">
+                <div class="dialog-quote-text">This site is a total game-changer. I've been flying through book summaries like never before. Highly, highly recommend.</div>
+                <div class="dialog-quote-author">— Dave G</div>
+              </div>
+
+              <div id="dialog_quote_2" class="dialog-quote-card">
+                <div class="dialog-quote-text">Worth my money and time, and really well made. I've never seen this quality of summaries on other websites. Very helpful!</div>
+                <div class="dialog-quote-author">— Em</div>
+              </div>
+
+              <div id="dialog_quote_3" class="dialog-quote-card">
+                <div class="dialog-quote-text">Highly recommended!! Fantastic service. Perfect for those that want a little more than a teaser but not all the intricate details of a full audio book.</div>
+                <div class="dialog-quote-author">— Greg M</div>
+              </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div id="dialog_quote_dots" class="dialog-quote-dots">
+              <div class="dialog-quote-dot dialog-quote-dot-active"></div>
+              <div class="dialog-quote-dot"></div>
+              <div class="dialog-quote-dot"></div>
+            </div>
+
+
+            
+
+          </div>
+
+        </div>
+
+        <div id="dialog_upgrade_view_checkout" style="display:none;">
+
+          <div id="dialog_lifetime_message" class="dialog-lifetime-message">
+            <div class="dialog-lifetime-message-heading">A one-time payment to access SoBrief Pro forever.</div>
+            <div class="dialog-lifetime-message-note">
+
+
+              ✓ Already subscribed? We'll automatically cancel your current plan and refund unused time 
+
+            </div>
+          </div>
+
+          <div id="checkout" style="position:relative; top:-15px;">
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id="dialog_upgrade_panel" class="dialog-panel">
+
+      <div id="upgrade_regular_panel">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_yearly" class="dialog-price-box dialog-price-box-selected"
+            onclick="setUpgradePlan('yearly')">
+            <div class="dialog-price-badge">Save 62%</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$119.88</s> $44.99<span class="year-full">/year</span><span class="year-short">/yr</span>
+            </div>
+            <div class="dialog-price-monthly">$3.75<span>/mo</span></div>
+          </div>
+
+          <div id="dialog_upgrade_plan_monthly" class="dialog-price-box" onclick="setUpgradePlan('monthly')">
+            <div class="dialog-price-label">Monthly</div>
+            <div class="dialog-price-monthly">$9.99<span>/mo</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Start a 7-Day Free Trial</div>
+
+        <div class="dialog-button-info">
+          7 days free, then <span class="upgrade-feature-price">$44.99</span><span
+            class="upgrade-feature-price-period">/year</span>. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_first_year_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_first_year" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Best Deal</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$44.99</s> $22.49/year
+            </div>
+            <div class="dialog-price-monthly">$0.06<span>/day</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Take 50% Off Now</div>
+
+        <div class="dialog-button-info">
+          <span class="upgrade-feature-price">$22.49</span><span
+            class="upgrade-feature-price-period">/year</span>, then $44.99/year. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_first_year_25_off_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_first_year_25_off" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Special Offer</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$44.99</s> $33.74/year
+            </div>
+            <div class="dialog-price-monthly">3-day trial + $0.09<span>/day</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Start 3-Day Free Trial</div>
+
+        <div class="dialog-button-info">
+          3 days free, then <span class="upgrade-feature-price">$33.74</span><span class="upgrade-feature-price-period">/year</span>, then $44.99/year. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_lifetime_20_off_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_lifetime_20_off" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Best Value</div>
+            <div class="dialog-price-label">Lifetime</div>
+            <div class="dialog-price-amount">
+              <s>$79.99</s> $59.99 One-Time Payment
+            </div>
+            <!-- <div class="dialog-price-monthly">$2.25<span>/mo</span></div> -->
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Pay $59.99 One-Time
+        </div>
+
+        <div class="dialog-button-info">
+          One-time payment. No subscriptions.
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div id="dialog_onboarding" class="dialog-wrap dialog-wrap-no-scroll dialog-transparent">
+
+  <div class="dialog-inner dialog-inner-upgrade-new dialog-inner-onboard">
+
+    <div class="dialog-close dialog-close-header" onclick="hideDialog()" style="top: 15px; right: 15px; background-size: 18px;"></div>
+
+    <iframe id="onboard_iframe" src="" class="onboard-iframe" title="Onboarding"></iframe>
+
+  </div>
+</div>
+
+
+
+<div id="dialog_book_scanner" class="dialog-book-scanner">
+  <div class="dialog-book-scanner-inner">
+
+    <div class="book-scanner-logo">
+      <div>
+        <img src="https://files.sobrief.com/public/logo-full-trans.png" loading="lazy" />
+      </div>
+    </div>
+  
+    <div class="book-scanner-close" onclick="hideBookScanner()"><div></div></div>
+    
+    <div class="book-scanner-title">Scanner</div>
+    
+    <div id="scanner-instructions" class="book-scanner-instructions"><div>Find a barcode to scan</div></div>
+
+    <div id="video-container" class="book-scanner-video-container">
+
+      <video id="scanner-video" class="book-scanner-video" playsinline autoplay></video>
+
+      <div id="scanner_video_canvas" class="book-scanner-video-canvas"></div>
+
+      <div id="scanner-overlay" class="book-scanner-overlay">
+        <div class="corner-top-left"></div>
+        <div class="corner-top-right"></div>
+        <div class="corner-bottom-left"></div>
+        <div class="corner-bottom-right"></div>
+      </div>
+
+    </div>
+
+    <div class="book-scanner-loading" id="loading">
+      <p></p>
+    </div>
+
+    <div id="scan-result" class="book-scanner-result">
+      <div class="book-scanner-result-inner">
+        <img src="" class="scan-result-cover" />
+        <div class="scan-result-title"></div>
+        <div class="scan-result-author"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_gift" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-gift">
+
+    <div class="dialog-gift-wrap">
+      
+      <!-- Animated stars -->
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+
+      <img src="https://files.sobrief.com/public/icon-gift-large.png" class="dialog-gift-icon" loading="lazy" />
+
+      <div class="dialog-gift-title">We have a special gift for you</div>
+
+      <div class="dialog-gift-button" onclick="openGiftDialog()">Open</div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_discount" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-close dialog-close-left" onclick="hideDiscountDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div class="discount-dialog-wrap">
+        
+        <div class="discount-offer-badge">
+          <div class="discount-offer-percent">38% OFF</div>
+          <div class="discount-offer-label">DISCOUNT FOR YOU</div>
+        </div>
+
+        <div class="discount-gift-icon-wrap">
+          <!-- Animated stars -->
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          
+          <img src="https://files.sobrief.com/public/icon-gift-large.png" class="discount-gift-icon" loading="lazy" />
+        </div>
+
+        <div class="discount-pricing">
+          <div class="discount-original-price">$79.99</div>
+          <div class="discount-final-price">$49.99/year</div>
+          <div class="discount-monthly-price">only $4.16 per month</div>
+        </div>
+
+        <div class="discount-continue-button" onclick="continueDiscountPurchase()">
+          Continue
+        </div>
+
+        <div class="discount-terms">
+          2 taps to start, super easy to cancel
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div id="dialog_settings" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-title">Settings</div>
+
+    <div class="dialog-close" onclick="triggerNativeAction('link_click'); hideSpecificDialog('settings')"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div id="settings_switcher_wrap" class="switcher-wrap" style="text-align:left;">
+        <div class="switcher switcher-small">
+          <div id="settings_switch_general" class="switch switch-selected" onclick="showSettingsSection('general')">General</div><div id="settings_switch_widget" class="switch" onclick="showSettingsSection('widget')">Widget</div>
+        </div>
+      </div>
+
+      <div class="dialog-text" style="padding-top:20px; padding-left:10px; padding-bottom:0px">
+
+        <div id="settings_general_wrap" class="settings-section settings-section-visible">
+
+          <div class="dialog-row">
+            <label for="setting_theme" class="dialog-label">Appearance</label>
+            <div class="dialog-setting">
+
+              <select id="setting_theme" class="dialog-dropdown" oninput="updateThemeSetting()">
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div id="delete_account_wrap" class="dialog-row" style="display:none; margin-top:70px;">
+
+            <div class="inline-button inline-button-small inline-button-delete" onclick="deleteAccount()">Delete Account
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="settings_widget_wrap" class="settings-section">
+
+          <div id="widget_settings_loading" style="font-size:16px; text-align:center; margin-top:20px;">
+            Loading...
+          </div>
+
+          <div id="widget_settings_message" style="display:none; text-align:center; margin-top:5px; margin-bottom:10px;">
+
+            <img src="https://files.sobrief.com/public/screenshot-native-home-screen.jpg" style="width:100%; max-width:300px; border-radius:10px; margin-bottom:10px;" loading="lazy" />
+
+            <div style="font-size:15px; line-height:20px; text-align:center; margin-top:15px;">Download our iOS app, add the widget, then come back here to configure it.</div>
+
+            <a class="inline-button inline-button-small" style="margin-top:20px;" href="https://apps.apple.com/us/app/sobrief-book-summaries/id6723865613" target="_blank">Download iOS App</a>
+          </div>
+
+          <div id="widget_settings_wrap" style="display:none">
+
+            <div class="dialog-row">
+              <div class="dialog-label">Topic</div>
+              <div class="dialog-setting">
+
+                <select id="user_setting_widget_topic" class="dialog-dropdown" onchange="saveUserSettings()">
+                  <option value="best-self-help-books">Self-Help</option>
+                  <option value="best-productivity-books">Productivity</option>
+                  <option value="best-technology-books">Technology</option>
+                  <option value="best-mental-health-books">Mental Health</option>
+                  <option value="best-buisness-books">Buisness</option>
+                  <option value="best-inspirational-books">Inspirational</option>
+                  <option value="best-relationships-books">Relationships</option>
+                  <option value="best-design-books">Design</option>
+                  <option value="best-food-books">Food</option>
+                  <option value="best-family-books">Family</option>
+                  <option value="best-psychology-books">Psychology</option>
+                  <option value="best-philosophy-books">Philosophy</option>
+                  <option value="best-leadership-books">Leadership</option>
+                  <option value="best-science-books">Science</option>
+                  <option value="best-history-books">History</option>
+                  <option value="best-finance-books">Finance</option>
+                  <option value="best-spirituality-books">Spirituality</option>
+                  <option value="best-biography-books">Biography</option>
+                  <option value="best-economics-books">Economics</option>
+                  <option value="best-politics-books">Politics</option>
+                  <option value="best-management-books">Management</option>
+                  <option value="best-health-books">Health</option>
+                  <option value="best-entrepreneurship-books">Entrepreneurship</option>
+                </select>
+
+              </div>
+            </div>
+
+            <div class="dialog-row">
+              <div class="dialog-label">Start Time</div>
+              <div class="dialog-setting">
+
+                <select id="user_setting_widget_start_time" class="dialog-dropdown" onchange="saveUserSettings()">
+                  
+                  <option value="0">12 am</option>
+                  <option value="1">1 am</option>
+                  <option value="2">2 am</option>
+                  <option value="3">3 am</option> 
+                  <option value="4">4 am</option> 
+                  <option value="5">5 am</option> 
+                  <option value="6">6 am</option>
+                  <option value="7">7 am</option>
+                  <option value="8">8 am</option>
+                  <option value="9">9 am</option>
+                  <option value="10">10 am</option>
+                  <option value="11">11 am</option>
+                  <option value="12">12 pm</option> 
+                  <option value="13">1 pm</option>
+                  <option value="14">2 pm</option> 
+                  <option value="15">3 pm</option> 
+                  <option value="16">4 pm</option> 
+                  <option value="17">5 pm</option>
+                  <option value="18">6 pm</option>
+                  <option value="19">7 pm</option>
+                  <option value="20">8 pm</option>
+                  <option value="21">9 pm</option>
+                  <option value="22">10 pm</option>
+                  <option value="23">11 pm</option> 
+                </select>
+
+              </div>
+            </div>
+
+            <p style="margin-top:50px; font-size:14px; line-height:20px; opacity:0.82"><b>Note:</b> It takes a few seconds after changing settings here for iOS widgets to update.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- 
+<script>
+  document.querySelector('.dialog-content-scrollable').addEventListener('scroll', function() {
+    const arrow = this.querySelector('.bounce-arrow');
+    if (this.scrollTop > 20) { // Hide after scrolling 20px
+      arrow.style.display = 'none';
+    } else {
+      arrow.style.display = 'block';
+    }
+  });
+</script> -->
+
+
+
+    <!-- <div class="dialog" data-name="first-year-off">
+  <div class="dialog-content">
+    <div class="dialog-close">×</div>
+    <h2>Special Offer!</h2>
+    <p>Get your first year at 50% off</p>
+    <button class="upgrade-button">First Year 50% Off</button>
+  </div>
+</div>
+
+<div class="dialog" data-name="lifetime-20-off">
+  <div class="dialog-content">
+    <div class="dialog-close">×</div>
+    <h2>Special Offer!</h2>
+    <p>Get $20 off</p>
+    <button class="upgrade-button">Get $20 Off →</button>
+  </div>
+</div>
+
+ -->
+
+
+
+<div id="dialog_gift" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-gift">
+
+    <div class="dialog-gift-wrap">
+      
+      <!-- Animated stars -->
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+
+      <img src="https://files.sobrief.com/public/icon-gift-large.png" class="dialog-gift-icon" loading="lazy" />
+
+      <div class="dialog-gift-title">We have a special gift for you</div>
+
+      <div class="dialog-gift-button" onclick="openGiftDialog()">Open</div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_discount" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-close dialog-close-left" onclick="hideDiscountDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div class="discount-dialog-wrap">
+        
+        <div class="discount-offer-badge">
+          <div class="discount-offer-percent">38% OFF</div>
+          <div class="discount-offer-label">DISCOUNT FOR YOU</div>
+        </div>
+
+        <div class="discount-gift-icon-wrap">
+          <!-- Animated stars -->
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          
+          <img src="https://files.sobrief.com/public/icon-gift-large.png" class="discount-gift-icon" loading="lazy" />
+        </div>
+
+        <div class="discount-pricing">
+          <div class="discount-original-price">$79.99</div>
+          <div class="discount-final-price">$49.99/year</div>
+          <div class="discount-monthly-price">only $4.16 per month</div>
+        </div>
+
+        <div class="discount-continue-button" onclick="continueDiscountPurchase()">
+          Continue
+        </div>
+
+        <div class="discount-terms">
+          2 taps to start, super easy to cancel
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Debug comment: foot isLocalEnvironment = false -->
+
+<script data-cfasync="false">
+// Create priority queue system for scripts
+const scriptQueue = {
+  essential: [], // Core functionality needed immediately 
+  functional: [], // Enhances UX but not critical
+  marketing: []  // Analytics, tracking, etc.
+};
+
+// Helper function to add a script to the queue
+function queueScript(category, src, callback = null, isInline = false, inlineCode = '', scriptType = null) {
+  scriptQueue[category].push({
+    src: src,
+    callback: callback,
+    isInline: isInline,
+    inlineCode: inlineCode,
+    type: scriptType
+  });
+}
+
+// Helper to load a script properly
+function loadQueuedScript(scriptObj) {
+  if (scriptObj.isInline) {
+    // For inline scripts
+    const script = document.createElement('script');
+    script.textContent = scriptObj.inlineCode;
+    if (scriptObj.type) script.type = scriptObj.type;
+    script.setAttribute('data-cfasync', 'false'); // Bypass Cloudflare
+    document.head.appendChild(script);
+    if (scriptObj.callback) scriptObj.callback();
+    return;
+  }
+  
+  // For external scripts
+  const script = document.createElement('script');
+  script.src = scriptObj.src;
+  script.async = true;
+  script.setAttribute('data-cfasync', 'false'); // Bypass Cloudflare
+  if (scriptObj.type) script.type = scriptObj.type;
+  if (scriptObj.callback) {
+    script.onload = scriptObj.callback;
+  }
+  document.head.appendChild(script);
+}
+
+// Function to load a batch of scripts when browser is idle
+function loadScriptBatch(scripts, fallbackDelay = 100) {
+  if (scripts.length === 0) return;
+  
+  // Create a copy of the scripts array and clear the original to prevent reloading
+  const scriptsToLoad = [...scripts];
+  scripts.length = 0;
+  
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      scriptsToLoad.forEach(loadQueuedScript);
+    }, { timeout: 2000 });
+  } else {
+    setTimeout(() => {
+      scriptsToLoad.forEach(loadQueuedScript);
+    }, fallbackDelay);
+  }
+}
+
+// Load main scripts (jQuery, marked, and main.js)
+function loadMainScripts() {
+  // Load jQuery as essential script first
+  queueScript('essential', 'https://files.sobrief.com/public/scripts/jquery-3.5.1.min.js', function() {
+    // After jQuery loads, load marked as essential since main.js depends on it
+    queueScript('essential', 'https://files.sobrief.com/public/scripts/marked.min.js', function() {
+      // After marked loads, queue main.js as essential
+      queueScript('essential', 'https://files.sobrief.com/public/scripts/main_bundled_1761597186757.js', function() {
+        // Set up other scripts after main.js loads
+        setupMarketingScripts();
+      }, false, '', 'module');
+      
+      // Load essential scripts again to get main.js
+      loadScriptBatch(scriptQueue.essential);
+    });
+    
+    // Load essential scripts again to get marked
+    loadScriptBatch(scriptQueue.essential);
+  });
+  
+  // Load essential scripts immediately to start with jQuery
+  loadScriptBatch(scriptQueue.essential);
+}
+
+// Setup all marketing and functional scripts
+function setupMarketingScripts() {
+  // Add PostHog to functional queue for faster loading
+  queueScript('functional', '', () => {
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId setPersonProperties".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_OBwm9CCxFzaiEJ3cMO1e1bxngeSXD2r1GHd2V0bYMdp',{api_host:'https://php.sobrief.com', person_profiles: 'always', disable_session_recording: true});
+  }, true);
+  
+  // Add Quagga to functional queue
+  queueScript('functional', 'https://files.sobrief.com/public/scripts/quagga.min.js');
+  
+  // Add Intercom to marketing queue and load Firebase after Intercom is available
+  
+  queueScript('functional', '', () => {
+    console.log("Loading Intercom");
+    window.intercomSettings = {
+      api_base: "https://api-iam.intercom.io",
+      app_id: "qiymoi1o",
+      hide_default_launcher: true
+    };
+    
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/qiymoi1o';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};l();}})();
+    console.log("Intercom loaded, will load Firebase shortly");
+    
+    // Update Intercom theme once it's loaded
+    setTimeout(() => {
+      if (typeof window.updateIntercomTheme === 'function') {
+        window.updateIntercomTheme();
+      }
+    }, 100);
+    
+    // Load Firebase after Intercom has loaded with reduced timeout
+    setTimeout(function() {
+      loadFirebase();
+    }, 200); // Reduced from 500ms
+  }, true);
+  
+  
+  // Add GTM to functional queue for faster loading
+  queueScript('functional', '', () => {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6R665R5');
+  }, true);
+  
+  // Add GTM Ads to marketing queue
+  queueScript('marketing', 'https://www.googletagmanager.com/gtag/js?id=AW-835161720', function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-835161720');
+  });
+  
+  // Add Reddit Pixel to marketing queue
+  queueScript('marketing', '', () => {
+    !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','t2_tj0mkt7');rdt('track', 'PageVisit');
+  }, true);
+  
+  // Add Meta Pixel to marketing queue
+  queueScript('marketing', '', () => {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '7071272849663998');
+    fbq('track', 'PageView');
+  }, true);
+  
+  // Add Twitter UWT to marketing queue
+  queueScript('marketing', '', () => {
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('config','oere4');
+  }, true);
+  
+  // Add Rewardful to marketing queue
+  queueScript('marketing', '', function() {
+    // Create script with the proper attribute
+    const rewardfulScript = document.createElement('script');
+    rewardfulScript.src = 'https://r.wdfl.co/rw.js';
+    rewardfulScript.setAttribute('data-rewardful', '155fb3');
+    document.head.appendChild(rewardfulScript);
+
+    // Initialize Rewardful
+    (function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');
+  }, true);
+
+  // Begin loading functional scripts with a small delay
+  setTimeout(() => {
+    console.log("Loading functional scripts batch");
+    loadScriptBatch(scriptQueue.functional, 200);
+  }, 500);
+  
+  // Set up interaction-based loading for marketing scripts
+  initMarketingScriptsLoadingStrategy();
+}
+
+// The new improved initialization method using interaction detection
+function initMarketingScriptsLoadingStrategy() {
+  let hasInteracted = false;
+  let marketingLoaded = false;
+  
+  function userInteracted() {
+    if (hasInteracted || marketingLoaded) return;
+    hasInteracted = true;
+    
+    // Load marketing scripts after first interaction
+    loadScriptBatch(scriptQueue.marketing);
+    marketingLoaded = true;
+    
+    // Clean up event listeners
+    document.removeEventListener('scroll', userInteracted, {passive: true});
+    document.removeEventListener('mousemove', userInteracted, {passive: true});
+    document.removeEventListener('touchstart', userInteracted, {passive: true});
+    document.removeEventListener('click', userInteracted, {passive: true});
+  }
+  
+  // Add interaction listeners
+  document.addEventListener('scroll', userInteracted, {passive: true, once: true});
+  document.addEventListener('mousemove', userInteracted, {passive: true, once: true});
+  document.addEventListener('touchstart', userInteracted, {passive: true, once: true});
+  document.addEventListener('click', userInteracted, {passive: true, once: true});
+  
+  // Fallback - load marketing after 5 seconds regardless of interaction
+  setTimeout(function() {
+    if (!marketingLoaded) {
+      loadScriptBatch(scriptQueue.marketing);
+      marketingLoaded = true;
+    }
+  }, 5000);
+}
+
+// Delay main script loading very slightly for better initial render
+function loadMainScriptsAfterDelay() {
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    // Use requestIdleCallback if available for better timing
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => loadMainScripts(), { timeout: 1000 });
+    } else {
+      setTimeout(loadMainScripts, 500); // Original 500ms delay as fallback
+    }
+  } else {
+    // Wait for DOMContentLoaded for better initial paint
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(loadMainScripts, 100);
+    });
+  }
+}
+
+// Optimize Firebase loading function
+function loadFirebase() {
+  console.log("Starting Firebase loading process");
+  // Add retry counter to the function itself
+  loadFirebase.retryCount = (loadFirebase.retryCount || 0) + 1;
+  if (loadFirebase.retryCount > 3) {
+    console.error("Failed to load Firebase after multiple attempts");
+    return; // Prevent infinite retries
+  }
+
+  // Load firebase CSS after delay
+  const uiStylesheet = document.createElement('link');
+  uiStylesheet.type = "text/css";
+  uiStylesheet.rel = "stylesheet";
+  uiStylesheet.href = "https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css";
+  uiStylesheet.media = "print";
+  uiStylesheet.onload = function() { this.media = 'all'; };
+  document.head.appendChild(uiStylesheet);
+  console.log("Firebase CSS loaded");
+  
+  // Load JS files in sequence
+  const appScript = document.createElement('script');
+  appScript.src = "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js";
+  
+  // Add error handling for app script
+  appScript.onerror = function() {
+    console.error("Failed to load Firebase app script, retrying...");
+    setTimeout(loadFirebase, 300); // Reduced retry delay
+  };
+  
+  appScript.onload = function() {
+    console.log("Firebase app script loaded");
+    const authScript = document.createElement('script');
+    authScript.src = "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js";
+    
+    // Add error handling for auth script
+    authScript.onerror = function() {
+      console.error("Failed to load Firebase auth script, retrying...");
+      setTimeout(loadFirebase, 300); // Reduced retry delay
+    };
+    
+    authScript.onload = function() {
+      console.log("Firebase auth script loaded");
+      const uiScript = document.createElement('script');
+      uiScript.src = "https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js";
+      
+      // Add error handling for UI script
+      uiScript.onerror = function() {
+        console.error("Failed to load Firebase UI script, retrying...");
+        setTimeout(loadFirebase, 300); // Reduced retry delay
+      };
+      
+      uiScript.onload = function() {
+        console.log("Firebase UI script loaded");
+        // Reduced delay to ensure everything is initialized
+        setTimeout(function() {
+          if (typeof firebase === 'undefined') {
+            console.error("Firebase not initialized properly, retrying...");
+            setTimeout(loadFirebase, 300); // Reduced retry delay
+            return;
+          }
+          console.log("Setting up Firebase");
+          checkAndSetupFirebase();
+        }, 10); // Reduced from 50ms
+      };
+      document.head.appendChild(uiScript);
+    };
+    document.head.appendChild(authScript);
+  };
+  document.head.appendChild(appScript);
+  
+  // Add a verification timeout to check if Firebase loaded successfully
+  setTimeout(function() {
+    if (typeof firebase === 'undefined' && loadFirebase.retryCount <= 3) {
+      console.error("Firebase failed to initialize, triggering retry");
+      loadFirebase();
+    }
+  }, 3000); // Reduced from 5000ms
+}
+
+// Robust Firebase setup checker
+function checkAndSetupFirebase() {
+  const maxAttempts = 100; // 10 seconds total (100 * 100ms)
+  let attempts = 0;
+  
+  function attemptSetup() {
+    attempts++;
+    
+    if (typeof window.setupFirebase === 'function') {
+      if (attempts > 1) {
+        console.log(`setupFirebase found after ${attempts} attempts`);
+      }
+      window.setupFirebase();
+      return;
+    }
+    
+    if (attempts >= maxAttempts) {
+      console.error('setupFirebase not available after 10 seconds - main2.js may have failed to load');
+      return;
+    }
+    
+    // Try again in 100ms
+    setTimeout(attemptSetup, 100);
+  }
+  
+  // Start checking immediately
+  attemptSetup();
+}
+
+// Start loading process
+loadMainScriptsAfterDelay();
+</script>
+
+
+<script>
+// native app?
+if (navigator.userAgent.indexOf('SoBrief/') !== -1) 
+{
+  // add native class
+  document.body.classList.add("native-app");
+
+  // onboarded? show body instantly
+  if (localStorage.getItem("onboard_finished") == "true") {
+    $("#body_wrap").show();
+  }
+}
+</script>
+
+
+
+<script id="page_script">
+var bookId = 2490066;
+var lang = 'en';
+var requestId = 82506;
+var fiction = false;
+
+function initPage()
+{
+  trackBookOpen(false);
+
+  
+
+    
+    loadBookPlaylist(false, false);
+    
+
+    updateMediaControls({
+      title: 'Introduction to Algorithms',
+      artist: 'Thomas H. Cormen',
+      album: 'SoBrief',
+      artwork: [
+        { src: 'https://files.sobrief.com/social/cover_introduction-to-algorithms_360px_1747173429.jpg' }
+      ]
+    });
+
+    
+
+    
+
+  
+}
+window.initPage = initPage;
+
+function handleFictionTranslation(languageCode, bookId, urlTitle) {
+  // console.log('fiction_translation_attempt', languageCode, bookId, urlTitle);
+  logEvent('fiction_translation_attempt', { book_id: bookId, language: languageCode, url_title: urlTitle });
+  showAlert(getTranslatedMessage(languageCode));
+}
+</script>
+
+</body>
+</html>
+

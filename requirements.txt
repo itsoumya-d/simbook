@@ -1,0 +1,9 @@
+aiohttp==3.9.1
+aiofiles==23.2.1
+playwright==1.40.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+requests==2.31.0
+urllib3==2.1.0
+pathlib2==2.3.7
+asyncio==3.4.3

@@ -1,0 +1,3813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Rules by Michael Pollan | Summary, Quotes, FAQ, Audio</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="darkreader-lock">
+
+<meta name="theme-color" content="#ffffff">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="dns-prefetch" href="https://files.sobrief.com">
+<link rel="preconnect" href="https://files.sobrief.com" crossorigin>
+
+<link rel="icon" href="https://files.sobrief.com/public/logo-circle-lines-32.png" />
+<link rel="apple-touch-icon" href="https://files.sobrief.com/public/icon-512.png" />
+
+<script>
+(function() {
+  try {
+    var m = (document.cookie || '').match(/(?:^|; )sobrief_theme=(dark|light|system)/);
+    var t = m ? m[1] : 'light';
+    if (t === 'system') {
+      t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var root = document.documentElement;
+    root.classList.remove('theme-light', 'theme-dark');
+    root.classList.add('theme-' + t);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#121212' : '#ffffff');
+  } catch (e) {
+    // no-op
+  }
+})();
+</script>
+
+<style>
+
+
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Arial, 'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  
+  --font-serif: "Iowan Old Style", "New York", "Sitka Text", Palatino, "Book Antiqua", "Noto Serif", "Roboto Serif", 'Georgia Pro', Georgia, 'Times New Roman', 'DejaVu Serif', 'Merriweather', serif;
+
+	--transition-secs: 0.06s;
+	--transition-ease: ease-in-out;
+
+	scroll-padding: 155px;
+
+	--safe-area-top: env(safe-area-inset-top);
+	--safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 600px) {
+  :root {
+    scroll-padding: calc(120px + env(safe-area-inset-top));
+  }
+}
+
+
+:root,
+.theme-light {
+    --page-bg-colors: 255, 255, 255;
+    --page-bg: rgb(var(--page-bg-colors));
+    --text-color: rgb(0, 0, 0);
+    --text-color2: rgba(0, 0, 0, 0.6);
+    --text-color3: rgba(0, 0, 0, 0.45);
+    --text-color4: #333;
+    --text-color5: #ddd;
+    --text-color6: #444;
+    --text-color-alt: var(--text-color);
+
+    --link-color: rgb(52, 101, 204);
+
+    --selection-bg: rgb(0, 0, 0);
+    --selection-color: rgba(255, 255, 255, 0.95);
+    --placeholder-color: rgba(0,0,0,0.5);
+    --border-color: rgba(0, 0, 0, 0.24);
+    --border-color2: #eee;
+    --border-color3: #eaeaea;
+    --border-color3: #e0e0e0;
+
+    --bg1: rgb(255, 255, 255);
+    --bg2: rgb(250, 250, 250);
+    --bg3: rgb(247, 247, 247);
+    --bg4: rgb(248, 248, 248);
+    --bg5: rgb(240, 240, 240);
+    --bg6: rgb(255, 255, 255);
+    --bg7: rgb(244, 244, 244);
+    --bg8: rgb(253, 253, 253);
+
+    --input-bg: rgb(255, 255, 255);
+    --toolbar-cta-bg: rgb(255, 255, 255);
+    --toolbar-cta-color: rgb(0, 0, 0);
+    --toolbar-cta-border: 1px solid rgba(0, 0, 0, 0.1);
+
+    --input-bg-hover: #f9f9f9;
+
+    --menu-bg: rgb(255, 255, 255);
+    --menu-bg-alt: rgb(255, 255, 255);
+    --menu-bg-hover: rgb(247, 247, 247);
+    --menu-sep-bg: rgb(241, 241, 241);
+
+    --dialog-wrap-bg: rgba(255,255,255,0.5);
+    --dialog-bg: rgb(255, 255, 255);
+    --play-button-bg: rgb(51, 51, 54);
+    --dialog-button-bg: #000;
+
+    --progress-bg: rgb(0,0,0,0.11);
+    --progress-bg2: rgb(0,0,0,0.05);
+    --progress-handle: rgb(72, 72, 72);
+    --progress-handle: rgba(0,0,0,0.9);
+    --progress-handle: rgb(51,51,54);
+
+    --onboard-progress-bg: rgb(0,0,0,0.95);
+
+    --player-handle: rgb(0,0,0,0.12);
+
+    --image-invert: none;
+    --image-invert2: invert(100%);
+
+    --badge-border-color: rgba(0, 0, 0, 0.82);
+    --cover-radius: 2px;
+    --cover-radius2: 2px;
+
+    --filled-button-bg: rgb(30, 25, 35);
+    --filled-button-bg: rgb(0,0,0);
+    --filled-button-color: #fff;
+
+    --filled-button-choice-bg: rgb(30, 25, 35);
+    --filled-button-choice-bg: rgb(0,0,0);
+    --filled-button-choice-color: #eee;
+
+    --box-bg: #fff;
+    --box-border: #eaeaea;
+
+    --button-badge-bg: rgb(234, 234, 234);
+    --button-badge-color: var(--text-color);
+    --button-badge-selected-bg: rgb(30, 25, 35);
+    --button-badge-selected-color: #fff;
+
+    --inline-link-border: 2px solid rgba(0,0,0,0.1);
+    --inline-link-over-border: 2px solid rgba(0,0,0,0.8);
+    --inline-link-border: 1px solid rgba(0,0,0,0.2);
+    --inline-link-over-border: 1px solid rgba(0,0,0,0.9);
+    --inline-link-over-border: 1px solid transparent;
+
+    --inline-link-color: var(--text-color);
+    --inline-link-over-color: var(--link-color);
+    --inline-link-bg: transparent;
+    --inline-link-over-bg: transparent;
+
+    --popover-bg: #fff;
+    --popover-border: 1px solid rgba(0, 0, 0, 0.2);
+    --popover-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    --header-inset-bg: rgba(0,0,0,0.03);
+    --header-inset-bg: #fff;
+}
+
+.theme-dark {
+    --page-bg-colors: 18, 18, 18;
+    --page-bg: rgb(var(--page-bg-colors));
+    --text-color: rgb(236, 236, 236);
+    --text-color2: rgba(255, 255, 255, 0.5);
+    --text-color3: rgba(255, 255, 255, 0.35);
+    --text-color4: rgba(255, 255, 255, 0.8);
+    --text-color5: rgba(255, 255, 255, 0.25);
+    --text-color6: rgba(255, 255, 255, 0.8);
+    --text-color-alt: rgba(0,0,0,0.9);
+
+    --link-color: rgb(50, 145, 242);
+    --link-color: rgb(77, 163, 255);
+
+    --selection-bg: rgba(255, 255, 255, 0.9);
+    --selection-color: rgba(0,0,0,0.95);
+    --placeholder-color: rgba(255, 255, 255, 0.45);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --border-color2: rgba(255, 255, 255, 0.2);
+    --border-color3: rgb(70, 70, 70);
+
+    --bg1: rgb(44, 44, 44);
+    --bg2: rgb(30, 30, 30);
+    --bg3: rgb(34, 34, 34);
+    --bg4: rgb(35, 35, 35);
+    --bg5: rgb(40, 40, 40);
+    --bg6: rgb(47, 47, 47);
+    --bg7: rgb(44, 44, 44);
+    --bg8: rgb(47, 47, 47);
+
+    --input-bg: rgb(45, 45, 45);
+    --toolbar-cta-bg: rgb(255, 255, 255);
+    --toolbar-cta-color: rgb(0, 0, 0);
+    --toolbar-cta-border: 1px solid rgba(0, 0, 0, 0);
+
+    --input-bg-hover: transparent;
+
+    --menu-bg: rgb(44, 44, 44);
+    --menu-bg-alt: rgb(50, 50, 50);
+    --menu-bg-hover: rgb(59, 59, 59);
+    --menu-sep-bg: rgb(64, 64, 64);
+
+    --dialog-wrap-bg: rgba(255,255,255,0.15);
+    --dialog-bg: rgb(24, 24, 24);
+    --play-button-bg: rgba(255, 255, 255, 0.9);
+    --dialog-button-bg: rgb(24, 24, 24);
+
+    --progress-bg: rgba(255, 255, 255, 0.25);
+    --progress-bg2: rgba(255, 255, 255, 0.1);
+    --progress-handle: rgba(255, 255, 255, 1);
+
+    --onboard-progress-bg: rgba(255, 255, 255, 0.95);
+
+    --player-handle: rgba(255, 255, 255, 0.3);
+
+    --image-invert: invert(100%);
+    --image-invert2: none;
+
+    --badge-border-color: transparent;
+    --cover-radius: 12px;
+    --cover-radius2: 6px;
+
+    --filled-button-bg: #fff;
+    --filled-button-color: #000;
+
+    --filled-button-choice-bg: #fff;
+    --filled-button-choice-color: #000;
+
+    --box-bg: rgb(25, 25, 25);
+    --box-border: rgb(55, 55, 55);
+
+    --button-badge-bg: rgb(70, 70, 70);
+    --button-badge-color: #fff;
+    --button-badge-selected-bg: rgb(236, 236, 236);
+    --button-badge-selected-color: #000;
+
+    --inline-link-border: 1px solid rgba(255,255,255,0.4);
+    --inline-link-over-border: 1px solid rgba(255,255,255,0.8);
+    --inline-link-over-border: 1px solid transparent;
+
+    --inline-link-color: var(--text-color);
+    --inline-link-over-color: var(--link-color);
+    --inline-link-bg: transparent;
+    --inline-link-over-bg: rgba(255,255,255,0);
+
+    --popover-bg: var(--bg4);
+    --popover-border: 0px solid rgba(55, 55, 55, 1);
+    --popover-box-shadow: 0px 0px 3px rgba(18, 18, 18, 0.5);
+
+    --header-inset-bg: rgb(39, 39, 39);
+    --header-inset-bg: rgb(24, 24, 24);
+}
+
+
+* {
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+input, textarea {
+	-webkit-user-select: text;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box !important;
+     -moz-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+	/*
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px; */
+	line-height: 1.24;
+	-webkit-text-size-adjust: 100%;
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+body {
+	background: var(--page-bg);
+	color: var(--text-color);
+	font-family: var(--font-sans);
+/*
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+
+  /* handles dynamic island, notch, and other safe areas */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  touch-action: manipulation;
+}
+.body-toolbar-fixed {
+  padding-top: calc(66px + env(safe-area-inset-top));
+}
+
+.cloak { 
+    visibility: hidden; 
+}
+
+::selection {
+	background-color: var(--selection-bg);
+	color: var(--selection-color);
+}
+
+a:link, a:visited, a:active {
+	color: var(--text-color);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.container {/*
+	background: var(--settings-bg);
+	background: var(--page-bg);
+	min-height: 100%;*/
+	/*z-index: 3;*/
+	position: relative;
+}
+.onboard-container { 
+	min-height: 100vh;
+	overflow-x: hidden;
+  display: none;
+}
+body.onboarding-active .onboard-container {
+  min-height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top));
+}
+.onboard-container-web {
+	min-height: 0px;
+}
+
+
+.wrap {
+	padding-bottom: 40px;
+	background: var(--page-bg);
+	min-height: 100vh;
+
+	display: flex;
+  align-items: center;
+}
+
+.wrap-content {
+  
+}
+
+.wrap-inner {
+	width: 100%;
+	max-width: 1150px;
+	max-width: 1088px;
+	max-width: 1107px;
+	margin: 0px auto;
+	padding: 0px 17px 0px 17px;
+	position: relative;
+}
+@media (max-width: 600px)
+{
+	.wrap-inner {
+		
+	}
+}
+
+
+
+.footer {
+	padding: 50px 0px 0px 0px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+  content-visibility: auto;
+}
+@media (max-width: 600px)
+{
+	.footer {
+		text-align: left;
+		padding-left: 10px;
+		padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+	}
+}
+.footer > span {
+	display: inline-block;
+	opacity: 1;
+	font-size: 12px;
+	position: relative;
+	top: -1px;
+}
+.footer a {
+	display: inline-block;
+	padding: 6px 5px;
+}
+@media (max-width: 600px)
+{
+	.footer a span {
+		display: none;
+	}
+}
+
+/* Rating rotation FOUC prevention - hide Trustpilot div from start */
+.rating-rotation-container .rating-rotation-item:nth-child(2) {
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+</style>
+
+
+
+<!-- Debug comment: isLocalEnvironment = false -->
+
+<!-- Critical CSS -->
+<link rel="preload" href="https://files.sobrief.com/public/scripts/style_1761597186757.css" as="style" fetchpriority="high">
+<link rel="stylesheet" href="https://files.sobrief.com/public/scripts/style_1761597186757.css">
+
+
+
+<!-- Non-critical CSS - Deferred loading -->
+<script>
+  // Try to use requestIdleCallback for optimal timing when browser is idle
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function() {
+      loadNonCriticalCSS();
+    });
+  } else {
+    // Fallback to window load event (no delay needed)
+    window.addEventListener('load', loadNonCriticalCSS);
+  }
+  
+  function loadNonCriticalCSS() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://files.sobrief.com/public/scripts/style2_1761597186757.css';
+    document.head.appendChild(link);
+  }
+</script>
+
+<!-- Fallback for JS disabled browsers -->
+<noscript>
+  <link href="https://files.sobrief.com/public/scripts/style2_1761597186757.css" rel="stylesheet">
+</noscript>
+
+
+
+<link rel="manifest" href="https://files.sobrief.com/public/manifest2.json">
+
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7607519495133548"
+     crossorigin="anonymous"></script> -->
+
+
+
+
+
+  <link rel="preload" as="image" href="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" fetchpriority="high">
+
+  <link rel="canonical" href="https://sobrief.com/books/food-rules" />
+  
+  <meta property="og:title" content="Food Rules by Michael Pollan | Summary, Quotes, FAQ, Audio" />
+  <meta property="og:description" content="10 Takeaways: 1) Eat real, whole foods and avoid processed items 2) Choose plants as your primary food source 3) Moderation is key: Eat less and savor more" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sobrief.com/books/food-rules" />
+  <meta property="og:image" content="https://files.sobrief.com/social/book_9078.png" />
+
+  <meta name="twitter:title" content="Food Rules by Michael Pollan | Summary, Quotes, FAQ, Audio" />
+  <meta name="twitter:description" content="10 Takeaways: 1) Eat real, whole foods and avoid processed items 2) Choose plants as your primary food source 3) Moderation is key: Eat less and savor more" />
+  <meta name="twitter:url" content="https://sobrief.com/books/food-rules" />
+  <meta name="twitter:image" content="https://files.sobrief.com/social/book_9078.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="description" content="10 Takeaways: 1) Eat real, whole foods and avoid processed items 2) Choose plants as your primary food source 3) Moderation is key: Eat less and savor more" />
+
+  <meta http-equiv="content-language" content="en">
+
+  <link rel="alternate" hreflang="en" href="https://sobrief.com/books/food-rules" />
+  <link rel="alternate" hreflang="fr" href="https://sobrief.com/fr/books/food-rules" />
+  <link rel="alternate" hreflang="de" href="https://sobrief.com/de/books/food-rules" />
+  <link rel="alternate" hreflang="fa" href="https://sobrief.com/fa/books/food-rules" />
+  
+
+  
+
+  <script type="application/ld+json">
+  [
+    
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Books",
+          "item": "https://sobrief.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Food",
+          "item": "https://sobrief.com/genres/food"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Food Rules",
+          "item": "https://sobrief.com/books/food-rules"
+        }
+      ]
+    },
+    
+    {
+      "@context": "http://schema.org",
+      "@type": "Book",
+      "@id": "https://sobrief.com/books/food-rules",
+      "url": "https://sobrief.com/books/food-rules",
+      "name": "Food Rules",
+      "description": "10 Takeaways: 1) Eat real, whole foods and avoid processed items 2) Choose plants as your primary food source 3) Moderation is key: Eat less and savor more",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Michael Pollan",
+          "url": "https://sobrief.com/books/food-rules#Author"
+        }
+      ],
+      "datePublished": "2024-08-13T19:03:27.443Z",
+      "dateModified": "2025-01-22T16:14:21.544Z",
+      "isbn": "9780143116387",
+      "numberOfPages": 152,
+      "bookEdition": "1",
+      "genre": "Food",
+      "image": "https://files.sobrief.com/social/book_9078.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.43",
+        "ratingCount": "128"
+      }
+      
+    }
+  ]
+</script>
+
+</head>
+<body class="body-toolbar-fixed">
+
+<div class="menu-bg" id="menu_bg" onclick="toggleContents()"></div>
+
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6R665R5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+<div class="notch-blur"></div>
+
+<div id="toolbar" class="toolbar  toolbar-center -toolbar-with-button ">
+  <div class="wrap-inner">
+
+  	<div id="back_button" class="back-button"></div>
+
+    <a href="/" class="logo" alt="SoBrief" aria-label="SoBrief"><span></span><b>SoBrief</b></a>
+
+    <div class="toolbar-links">
+      <a href="/lists">Lists</a> <a href="/trending">Trending</a> <a href="/new">New</a>  
+    </div>
+
+    <div class="toolbar-right">
+
+    	
+
+	    
+	    	<div id="instant_input_container" class="instant-input-container">
+
+		    <form action="/search" method="get" onsubmit="return showSearchLoading()">
+			    <div id="instant_input_wrap" class="instant-input-wrap">
+
+			      <div class="instant-input-icon" onclick="document.getElementById('instant_input').focus()"></div>
+				  
+			      <input id="instant_input_top" type="text" name="q" class="instant-input" placeholder="Find a book..." title="Title | Author | Topic | ISBN" />
+
+				  <div class="instant-input-barcode" onclick="openBookScanner()"></div>
+
+			    </div>
+				</form>
+
+			</div>
+
+
+			<div id="toolbar_button" class="toolbar-button -toolbar-button-visible" onclick="toolbarButtonClick()">Start free trial</div>
+
+
+			<div id="main_menu_wrap" class="main-menu-wrap">
+
+				<div id="search_toggle_button" class="search-toggle-button" onclick="toggleSearch()"><span></span></div>
+
+				<div id="main_menu_button" class="main-menu-button" onclick="toggleMainMenu()"><span></span></div>
+
+	      <div id="main_menu" class="main-menu">
+
+	      	<div id="main_menu_header" class="main-menu-header" style="display:none;">
+
+	      		<div id="main_menu_email" class="main-menu-email"></div>
+	      		<div id="main_menu_plan" class="main-menu-plan"></div>
+	      		<div id="main_menu_refresh" class="main-menu-refresh" onclick="refreshUserStatus(); return false;">Refresh Status</div>
+	      		<!-- <a id="main_menu_refresh" class="main-menu-refresh" href="" onclick="refreshUserStatus(); return false;">
+	      			<span>refresh status</span>
+	      		</a> -->
+
+	      	</div>
+
+			<a id="sign_in_link_menu" href="" onclick="showSignInDialog(); return false;" class="menu-item-sign-in"><span></span>Sign In</a>
+
+	      	<div id="main_menu_header_sep" class="main-menu-sep"><div></div></div>
+
+			<!-- Payment-related items at top -->
+			<a id="upgrade_link_menu" href="" onclick="upgradeMenuItemClick(); return false;" class="menu-item-upgrade" style="display:none"><span></span>Upgrade to Pro</a>
+	        <a id="lifetime_link_menu" href="" onclick="showLifetimeDialog(); return false;" class="menu-item-lifetime" style="display:none"><span></span>Get Lifetime Access</a>
+			<a id="manage_link_menu" href="" onclick="manageSubscription(); return false;" class="menu-item-manage" style="display:none"><span></span>Manage Subscription</a>
+
+	        <div id="payment_menu_sep" class="main-menu-sep"><div></div></div>
+
+	      	<a class="menu-item-mobile menu-item-lists" href="/lists"><span></span>Lists</a>
+	        <a class="menu-item-mobile menu-item-trending" href="/trending"><span></span>Trending</a>
+	        <a class="menu-item-mobile menu-item-new" href="/new"><span></span>New</a>
+	        <a id="bookmarks_link_menu" href="/library" onclick="return openLibrary()" class="menu-item-bookmarks"><span></span>Your Library</a>
+
+	        <!-- <div class="main-menu-sep menu-item-mobile"><div></div></div> -->
+
+			<a id="app_link_menu" href="/app" class="menu-item-app"><span></span>Get the App</a>
+
+	        <div id="bookmarks_menu_sep" class="main-menu-sep" style="display:none"><div></div></div>
+
+			<a id="settings_link_menu" href="" onclick="showSettingsDialog(); return false;" class="menu-item-settings"><span></span>Settings</a>
+
+	      	<div id="affiliate_menu_sep" class="main-menu-sep"><div></div></div>
+
+			<a href="" onclick="showIntercom(); return false;" class="menu-item-support"><span></span>Support</a>
+			<a href="" onclick="showFeedbackDialog(); return false;" class="menu-item-feedback"><span></span>Feedback</a>
+	      	<a id="affiliate_link_menu" href="/affiliate" class="menu-item-affiliate"><span></span>Affiliate</a>
+
+			
+
+	        
+	        
+	        <a id="sign_out_link_menu" href="" onclick="signOut(); return false;" class="menu-item-sign-out" style="display:none"><span></span>Sign Out</a>
+	      
+	      </div>
+
+			</div>
+
+		</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div id="search_loading" class="search-loading ">
+
+	<div class="wrap-inner">
+
+		<div class="instant-progress-top-wrap">
+
+      <div class="instant-progress instant-progress-top"><div></div></div>
+      <div class="instant-loading-text">Searching...</div>
+
+    </div>
+
+	</div>
+
+</div>
+
+
+<div id="book_header_wrap" class="book-header-wrap">
+
+  <div class="wrap-inner" style="z-index:3">
+
+    
+
+    
+    <div class="book-language-wrap">
+
+      <div id="book_language_button" class="book-language" onclick="toggleLanguageMenu(this)">
+        <i></i><div>English</div><span></span>
+      </div>
+      <div class="book-language-menu">
+        
+          
+            <div id="lang_en" onclick="if (false) { handleFictionTranslation('en', 9078, 'food-rules') } else { getTranslation('en', this) }; return false;" data-lang-code="en" data-native="English"><span></span>English<b>English</b></div>
+          
+        
+          
+            <div id="lang_es" onclick="if (false) { handleFictionTranslation('es', 9078, 'food-rules') } else { getTranslation('es', this) }; return false;" data-lang-code="es" data-native="Español"><span></span>Español<b>Spanish</b></div>
+          
+        
+          
+            <div id="lang_zh" onclick="if (false) { handleFictionTranslation('zh', 9078, 'food-rules') } else { getTranslation('zh', this) }; return false;" data-lang-code="zh" data-native="简体中文"><span></span>简体中文<b>Chinese</b></div>
+          
+        
+          
+            <div id="lang_fr" onclick="if (false) { handleFictionTranslation('fr', 9078, 'food-rules') } else { getTranslation('fr', this) }; return false;" data-lang-code="fr" data-native="Français"><span></span>Français<b>French</b></div>
+          
+        
+          
+            <div id="lang_de" onclick="if (false) { handleFictionTranslation('de', 9078, 'food-rules') } else { getTranslation('de', this) }; return false;" data-lang-code="de" data-native="Deutsch"><span></span>Deutsch<b>German</b></div>
+          
+        
+          
+            <div id="lang_ja" onclick="if (false) { handleFictionTranslation('ja', 9078, 'food-rules') } else { getTranslation('ja', this) }; return false;" data-lang-code="ja" data-native="日本語"><span></span>日本語<b>Japanese</b></div>
+          
+        
+          
+            <div id="lang_pt" onclick="if (false) { handleFictionTranslation('pt', 9078, 'food-rules') } else { getTranslation('pt', this) }; return false;" data-lang-code="pt" data-native="Português"><span></span>Português<b>Portuguese</b></div>
+          
+        
+          
+            <div id="lang_it" onclick="if (false) { handleFictionTranslation('it', 9078, 'food-rules') } else { getTranslation('it', this) }; return false;" data-lang-code="it" data-native="Italiano"><span></span>Italiano<b>Italian</b></div>
+          
+        
+          
+            <div id="lang_ko" onclick="if (false) { handleFictionTranslation('ko', 9078, 'food-rules') } else { getTranslation('ko', this) }; return false;" data-lang-code="ko" data-native="한국어"><span></span>한국어<b>Korean</b></div>
+          
+        
+          
+            <div id="lang_ru" onclick="if (false) { handleFictionTranslation('ru', 9078, 'food-rules') } else { getTranslation('ru', this) }; return false;" data-lang-code="ru" data-native="Русский"><span></span>Русский<b>Russian</b></div>
+          
+        
+          
+            <div id="lang_nl" onclick="if (false) { handleFictionTranslation('nl', 9078, 'food-rules') } else { getTranslation('nl', this) }; return false;" data-lang-code="nl" data-native="Nederlands"><span></span>Nederlands<b>Dutch</b></div>
+          
+        
+          
+            <div id="lang_ar" onclick="if (false) { handleFictionTranslation('ar', 9078, 'food-rules') } else { getTranslation('ar', this) }; return false;" data-lang-code="ar" data-native="العربية"><span></span>العربية<b>Arabic</b></div>
+          
+        
+          
+            <div id="lang_pl" onclick="if (false) { handleFictionTranslation('pl', 9078, 'food-rules') } else { getTranslation('pl', this) }; return false;" data-lang-code="pl" data-native="Polski"><span></span>Polski<b>Polish</b></div>
+          
+        
+          
+            <div id="lang_hi" onclick="if (false) { handleFictionTranslation('hi', 9078, 'food-rules') } else { getTranslation('hi', this) }; return false;" data-lang-code="hi" data-native="हिन्दी"><span></span>हिन्दी<b>Hindi</b></div>
+          
+        
+          
+            <div id="lang_vi" onclick="if (false) { handleFictionTranslation('vi', 9078, 'food-rules') } else { getTranslation('vi', this) }; return false;" data-lang-code="vi" data-native="Tiếng Việt"><span></span>Tiếng Việt<b>Vietnamese</b></div>
+          
+        
+          
+            <div id="lang_sv" onclick="if (false) { handleFictionTranslation('sv', 9078, 'food-rules') } else { getTranslation('sv', this) }; return false;" data-lang-code="sv" data-native="Svenska"><span></span>Svenska<b>Swedish</b></div>
+          
+        
+          
+            <div id="lang_el" onclick="if (false) { handleFictionTranslation('el', 9078, 'food-rules') } else { getTranslation('el', this) }; return false;" data-lang-code="el" data-native="Ελληνικά"><span></span>Ελληνικά<b>Greek</b></div>
+          
+        
+          
+            <div id="lang_tr" onclick="if (false) { handleFictionTranslation('tr', 9078, 'food-rules') } else { getTranslation('tr', this) }; return false;" data-lang-code="tr" data-native="Türkçe"><span></span>Türkçe<b>Turkish</b></div>
+          
+        
+          
+            <div id="lang_th" onclick="if (false) { handleFictionTranslation('th', 9078, 'food-rules') } else { getTranslation('th', this) }; return false;" data-lang-code="th" data-native="ไทย"><span></span>ไทย<b>Thai</b></div>
+          
+        
+          
+            <div id="lang_cs" onclick="if (false) { handleFictionTranslation('cs', 9078, 'food-rules') } else { getTranslation('cs', this) }; return false;" data-lang-code="cs" data-native="Čeština"><span></span>Čeština<b>Czech</b></div>
+          
+        
+          
+            <div id="lang_ro" onclick="if (false) { handleFictionTranslation('ro', 9078, 'food-rules') } else { getTranslation('ro', this) }; return false;" data-lang-code="ro" data-native="Română"><span></span>Română<b>Romanian</b></div>
+          
+        
+          
+            <div id="lang_hu" onclick="if (false) { handleFictionTranslation('hu', 9078, 'food-rules') } else { getTranslation('hu', this) }; return false;" data-lang-code="hu" data-native="Magyar"><span></span>Magyar<b>Hungarian</b></div>
+          
+        
+          
+            <div id="lang_uk" onclick="if (false) { handleFictionTranslation('uk', 9078, 'food-rules') } else { getTranslation('uk', this) }; return false;" data-lang-code="uk" data-native="Українська"><span></span>Українська<b>Ukrainian</b></div>
+          
+        
+          
+            <div id="lang_id" onclick="if (false) { handleFictionTranslation('id', 9078, 'food-rules') } else { getTranslation('id', this) }; return false;" data-lang-code="id" data-native="Bahasa Indonesia"><span></span>Bahasa Indonesia<b>Indonesian</b></div>
+          
+        
+          
+            <div id="lang_da" onclick="if (false) { handleFictionTranslation('da', 9078, 'food-rules') } else { getTranslation('da', this) }; return false;" data-lang-code="da" data-native="Dansk"><span></span>Dansk<b>Danish</b></div>
+          
+        
+          
+            <div id="lang_fi" onclick="if (false) { handleFictionTranslation('fi', 9078, 'food-rules') } else { getTranslation('fi', this) }; return false;" data-lang-code="fi" data-native="Suomi"><span></span>Suomi<b>Finnish</b></div>
+          
+        
+          
+            <div id="lang_bg" onclick="if (false) { handleFictionTranslation('bg', 9078, 'food-rules') } else { getTranslation('bg', this) }; return false;" data-lang-code="bg" data-native="Български"><span></span>Български<b>Bulgarian</b></div>
+          
+        
+          
+            <div id="lang_he" onclick="if (false) { handleFictionTranslation('he', 9078, 'food-rules') } else { getTranslation('he', this) }; return false;" data-lang-code="he" data-native="עברית"><span></span>עברית<b>Hebrew</b></div>
+          
+        
+          
+            <div id="lang_no" onclick="if (false) { handleFictionTranslation('no', 9078, 'food-rules') } else { getTranslation('no', this) }; return false;" data-lang-code="no" data-native="Norsk"><span></span>Norsk<b>Norwegian</b></div>
+          
+        
+          
+            <div id="lang_hr" onclick="if (false) { handleFictionTranslation('hr', 9078, 'food-rules') } else { getTranslation('hr', this) }; return false;" data-lang-code="hr" data-native="Hrvatski"><span></span>Hrvatski<b>Croatian</b></div>
+          
+        
+          
+            <div id="lang_ca" onclick="if (false) { handleFictionTranslation('ca', 9078, 'food-rules') } else { getTranslation('ca', this) }; return false;" data-lang-code="ca" data-native="Català"><span></span>Català<b>Catalan</b></div>
+          
+        
+          
+            <div id="lang_sk" onclick="if (false) { handleFictionTranslation('sk', 9078, 'food-rules') } else { getTranslation('sk', this) }; return false;" data-lang-code="sk" data-native="Slovenčina"><span></span>Slovenčina<b>Slovak</b></div>
+          
+        
+          
+            <div id="lang_lt" onclick="if (false) { handleFictionTranslation('lt', 9078, 'food-rules') } else { getTranslation('lt', this) }; return false;" data-lang-code="lt" data-native="Lietuvių"><span></span>Lietuvių<b>Lithuanian</b></div>
+          
+        
+          
+            <div id="lang_sl" onclick="if (false) { handleFictionTranslation('sl', 9078, 'food-rules') } else { getTranslation('sl', this) }; return false;" data-lang-code="sl" data-native="Slovenščina"><span></span>Slovenščina<b>Slovenian</b></div>
+          
+        
+          
+            <div id="lang_sr" onclick="if (false) { handleFictionTranslation('sr', 9078, 'food-rules') } else { getTranslation('sr', this) }; return false;" data-lang-code="sr" data-native="Српски"><span></span>Српски<b>Serbian</b></div>
+          
+        
+          
+            <div id="lang_et" onclick="if (false) { handleFictionTranslation('et', 9078, 'food-rules') } else { getTranslation('et', this) }; return false;" data-lang-code="et" data-native="Eesti"><span></span>Eesti<b>Estonian</b></div>
+          
+        
+          
+            <div id="lang_lv" onclick="if (false) { handleFictionTranslation('lv', 9078, 'food-rules') } else { getTranslation('lv', this) }; return false;" data-lang-code="lv" data-native="Latviešu"><span></span>Latviešu<b>Latvian</b></div>
+          
+        
+          
+            <div id="lang_fa" onclick="if (false) { handleFictionTranslation('fa', 9078, 'food-rules') } else { getTranslation('fa', this) }; return false;" data-lang-code="fa" data-native="فارسی"><span></span>فارسی<b>Persian</b></div>
+          
+        
+          
+            <div id="lang_ml" onclick="if (false) { handleFictionTranslation('ml', 9078, 'food-rules') } else { getTranslation('ml', this) }; return false;" data-lang-code="ml" data-native="മലയാളം"><span></span>മലയാളം<b>Malayalam</b></div>
+          
+        
+          
+            <div id="lang_ta" onclick="if (false) { handleFictionTranslation('ta', 9078, 'food-rules') } else { getTranslation('ta', this) }; return false;" data-lang-code="ta" data-native="தமிழ்"><span></span>தமிழ்<b>Tamil</b></div>
+          
+        
+          
+            <div id="lang_ur" onclick="if (false) { handleFictionTranslation('ur', 9078, 'food-rules') } else { getTranslation('ur', this) }; return false;" data-lang-code="ur" data-native="اردو"><span></span>اردو<b>Urdu</b></div>
+          
+        
+      </div>
+
+    </div>
+    
+
+    <nav class="breadcrumbs">
+      <a href="/">Books</a> <span class="breadcrumbs-chevron"></span><a href="/genres/food" style="font-weight:600">Food</a> <span class="breadcrumbs-chevron mobile-hide"></span><span class="mobile-hide" style="opacity:0.7">Food Rules</span>
+    </nav>
+
+    <div class="book-header">
+
+      <div id="bookmark_button" class="book-button book-button-bookmark" onclick="saveBookmark(9078)"><span></span></div>
+      <div id="share_button" class="book-button book-button-share" onclick="shareBook()"><span></span></div>
+
+      <div class="book-header-left">
+      <picture>
+        <source srcset="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.webp" type="image/webp">
+        <source srcset="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" type="image/jpeg">
+        <img class="cover" src="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" alt="Food Rules" fetchpriority="high" />
+      </picture>
+      </div>
+
+      <div class="book-header-right">
+
+        
+
+        <h1 data-highlight="true">Food Rules</h1>
+
+        
+        <div class="book-subtitle" data-highlight="true">An Eater's Manual</div>
+        
+        <div class="book-author">
+          <i data-highlight="true">by </i><span data-highlight="true"><a href="/authors/michael-pollan">Michael Pollan</a></span> <span class="book-year">2008</span> <span class="book-pages">152 pages</span>
+
+          
+        </div>
+
+        
+          <a class="rating" href="#Reviews">
+
+            
+
+            <div class="rating-value" style="padding-left:0px; padding-right:8px;">
+              3.99
+            </div>
+
+            <div class="rating-stars">
+              
+              
+              
+
+              
+                <div class="rating-star"></div>
+              
+                <div class="rating-star"></div>
+              
+                <div class="rating-star"></div>
+              
+              
+                <div class="rating-star-half"></div>
+              
+              
+                <div class="rating-star-off"></div>
+              
+
+              <div class="ratings-value">
+                48.1K ratings
+              </div>
+            </div>
+
+          </a>
+        
+
+        
+        <div class="instant-book-topics">
+          <a class="instant-book-topic" href="/genres/food">Food</a><a class="instant-book-topic" href="/genres/health">Health</a><a class="instant-book-topic" href="/genres/nutrition">Nutrition</a>
+        </div>
+        
+
+        
+
+        <div class="play-button-container">
+
+          <div id="play_button_wrap" class="play-button-wrap" onclick="toggleBookAudio()">
+            <div id="play_button" class="play-button"><div></div></div>
+            <div class="play-button-label" id="listen_button">Listen</div>
+          </div>
+
+          
+
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="wrap" class="wrap-content">
+
+  <div class="wrap-inner">
+
+    <div id="loading" class="instant-loading" style="display:none">
+
+      <div id="instant_progress" class="instant-progress"><div></div></div>
+      <div class="instant-loading-text" id="instant_loading_text">Loading... Do not refresh.</div>
+      <!-- <div class="instant-loading-warning" id="instant_loading_warning">(Please do not close or refresh the page)</div> -->
+
+    </div>
+
+    <div id="translate_loading" class="instant-loading" style="display:none;">
+
+      <div class="instant-progress"><div></div></div>
+      <div class="instant-loading-text">Translating...</div>
+
+    </div>
+
+    <div id="content_main" class="content-main">
+
+      <div class="content-main-right">
+
+        
+        <nav class="book-toc" id="toc" >
+
+          <div class="book-toc-header">
+              <div class="book-toc-header-left">
+                  <picture>
+                    <source srcset="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.webp" type="image/webp">
+                    <source srcset="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" type="image/jpeg">
+                    <img class="book-toc-cover" onclick="scrollToTop()" src="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" alt="Food Rules" />
+                  </picture>
+              </div>
+              <div class="book-toc-header-right">
+                  <div class="book-toc-header-title">Food Rules</div>
+                  <div class="book-toc-header-author"><span>by </span><a href="/authors/michael-pollan">Michael Pollan</a></div>
+
+              </div>
+          </div>
+
+          <div class="book-toc-toggle" onclick="toggleContents()"></div>
+
+          <div class="book-toc-heading">Table of Contents</div>
+
+          <div class="book-toc-header-cta">
+            
+<div class="book-buy-button-wrap">
+
+  <div class="book-buy-button">
+    <i></i>
+    <a href="/buy/amazon/food-rules" target="_blank" rel="nofollow">Amazon</a>
+    <span onclick="toggleBuyMenu(this)"></span>
+  </div>
+
+  <div class="book-buy-button-menu">
+    <a href="/buy/kindle/food-rules" target="_blank" rel="nofollow" class="book-buy-item-kindle"><span></span>Kindle</a>
+    <a href="/buy/audible/food-rules" target="_blank" rel="nofollow" class="book-buy-item-audible"><span></span>Audible</a>
+  </div>
+
+</div>
+
+            <div id="listen_button_small_wrap" onclick="toggleBookAudio(false, true)" class="book-listen-button"><div><span></span></div><b id="listen_button_small">Listen</b></div><div id="toc_bookmark_button" class="book-bookmark-button" onclick="saveBookmark(9078)"><div><span></span></div></div><div class="book-share-button" onclick="shareBook()"><div><span></span></div></div>
+          </div>
+
+          <div class="book-toc-inner">
+
+            
+
+            <ul>
+    
+              <li id="toc_takeaways" class="book-toc-selected" >
+                <a href="#Key_Takeaways">Key Takeaways</a>
+              </li>
+
+              <ol id="toc_takeaways_list" class="book-toc-takeaways" >
+                
+                  
+                    <li><a href="#1_Eat_real_whole_foods_and_avoid_processed_items" data-number="1">Eat real, whole foods and avoid processed items</a></li>
+                  
+                    <li><a href="#2_Choose_plants_as_your_primary_food_source" data-number="2">Choose plants as your primary food source</a></li>
+                  
+                    <li><a href="#3_Moderation_is_key_Eat_less_and_savor_more" data-number="3">Moderation is key: Eat less and savor more</a></li>
+                  
+                    <li><a href="#4_Cook_your_own_meals_and_eat_with_others" data-number="4">Cook your own meals and eat with others</a></li>
+                  
+                    <li><a href="#5_Be_mindful_of_your_eating_habits_and_environment" data-number="5">Be mindful of your eating habits and environment</a></li>
+                  
+                    <li><a href="#6_Embrace_traditional_food_cultures_and_skepticism_towards_food_novelties" data-number="6">Embrace traditional food cultures and skepticism towards food novelties</a></li>
+                  
+                    <li><a href="#7_Quality_over_quantity_Invest_in_better_food_and_eat_less" data-number="7">Quality over quantity: Invest in better food and eat less</a></li>
+                  
+                    <li><a href="#8_Listen_to_your_bodys_hunger_and_fullness_cues" data-number="8">Listen to your body&#39;s hunger and fullness cues</a></li>
+                  
+                    <li><a href="#9_Slow_down_and_enjoy_your_meals" data-number="9">Slow down and enjoy your meals</a></li>
+                  
+                    <li><a href="#10_Structure_your_eating_around_proper_meals_not_constant_snacking" data-number="10">Structure your eating around proper meals, not constant snacking</a></li>
+                  
+                
+              </ol>
+
+              
+
+<li id="toc_answers" style="margin-top:15px;"><a href="#Answers">FAQ</a></li>
+
+<ol id="toc_answers_list" class="book-toc-takeaways" style="margin-bottom:15px">
+  
+    
+      <li><a href="#Whats_Food_Rules_An_Eaters_Manual_about" data-number="1">What&#39;s &#34;Food Rules: An Eater&#39;s Manual&#34; about?</a></li>
+    
+      <li><a href="#Why_should_I_read_Food_Rules_An_Eaters_Manual" data-number="2">Why should I read &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#What_are_the_key_takeaways_of_Food_Rules_An_Eaters_Manual" data-number="3">What are the key takeaways of &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#What_are_the_best_quotes_from_Food_Rules_An_Eaters_Manual_and_what_do_they_mean" data-number="4">What are the best quotes from &#34;Food Rules: An Eater&#39;s Manual&#34; and what do they mean?</a></li>
+    
+      <li><a href="#How_does_Michael_Pollan_define_real_food_in_Food_Rules_An_Eaters_Manual" data-number="5">How does Michael Pollan define &#34;real food&#34; in &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#What_is_the_Western_diet_according_to_Food_Rules_An_Eaters_Manual" data-number="6">What is the &#34;Western diet&#34; according to &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#What_does_Michael_Pollan_suggest_about_portion_control_in_Food_Rules_An_Eaters_Manual" data-number="7">What does Michael Pollan suggest about portion control in &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#How_does_Food_Rules_An_Eaters_Manual_address_the_role_of_culture_in_eating_habits" data-number="8">How does &#34;Food Rules: An Eater&#39;s Manual&#34; address the role of culture in eating habits?</a></li>
+    
+      <li><a href="#What_are_some_practical_rules_from_Food_Rules_An_Eaters_Manual_for_healthier_eating" data-number="9">What are some practical rules from &#34;Food Rules: An Eater&#39;s Manual&#34; for healthier eating?</a></li>
+    
+      <li><a href="#How_does_Food_Rules_An_Eaters_Manual_suggest_dealing_with_cravings_for_junk_food" data-number="10">How does &#34;Food Rules: An Eater&#39;s Manual&#34; suggest dealing with cravings for junk food?</a></li>
+    
+      <li><a href="#What_does_Michael_Pollan_say_about_the_relationship_between_food_and_health_in_Food_Rules_An_Eaters_Manual" data-number="11">What does Michael Pollan say about the relationship between food and health in &#34;Food Rules: An Eater&#39;s Manual&#34;?</a></li>
+    
+      <li><a href="#How_does_Food_Rules_An_Eaters_Manual_suggest_improving_ones_relationship_with_food" data-number="12">How does &#34;Food Rules: An Eater&#39;s Manual&#34; suggest improving one&#39;s relationship with food?</a></li>
+    
+  
+</ol>
+
+
+
+<li id="toc_reviews" style=""><a href="#Reviews">Review Summary</a></li>
+
+
+
+
+<li id="toc_similar"><a href="#Similar_Books">Similar Books</a></li>
+
+
+<li id="toc_author" style="margin-top:20px; "><a href="#Author">About the Author</a></li>
+
+
+<li id="toc_author_books"><a href="#Other_Books_by_Author">Other Books by Author</a></li>
+
+
+
+<li id="toc_pdf" style="margin-top:20px"><a href="#Download_PDF">Download PDF</a></li>
+
+
+
+<li id="toc_epub"><a href="#Download_EPUB">Download EPUB</a></li>
+
+
+             
+            </ul>
+
+            
+
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="content-main-left">
+
+        <div class="book-nav">
+          <div class="book-nav-inner">
+
+            <a class="book-nav-item book-nav-selected" href="#Key_Takeaways">Summary</a>
+            
+            
+            <a class="book-nav-item" href="#Answers">FAQ</a> 
+            
+            <a class="book-nav-item" href="#Reviews">Reviews</a>
+            
+            
+            <a class="book-nav-item" href="#Similar_Books">Similar</a> 
+            
+            <a class="book-nav-item" href="#Author">Author</a>
+            
+            <a class="book-nav-item" href="#Download_PDF">Download</a>
+            
+
+          </div>
+        </div>
+
+        <div id="Key_Takeaways" style="margin-bottom:40px"></div>
+
+        <div class="book-content">
+
+          <div id="cta_book_top" class="book-cta book-cta-top">
+            <div class="book-cta-inner">
+              <div class="book-cta-title">Try Full Access for 7 Days</div>
+              <div class="book-cta-description">Unlock listening & more!</div>
+            </div>
+            <div class="book-cta-button" onclick="ctaClick('book-top')">Continue</div>
+          </div>
+          
+          <!-- Book content paywall wrapper -->
+          <div id="book_content_paywall_wrap">
+
+          <div id="takeaways_wrap" >
+
+            
+            <h2 id="takeaways_heading" style="margin-top:0px; padding-top:0px">Key Takeaways</h2>
+            
+
+            <div class="chapter-wrap">
+
+              <div class="-book-card">
+
+                <div id="takeaways_text" class="chapter-summary instant-takeaways ">
+                  
+                    <div id="1_Eat_real_whole_foods_and_avoid_processed_items"></div><h3>1. Eat real, whole foods and avoid processed items</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat food. Not too much. Mostly plants.&quot;</p>
+</blockquote>
+<p><strong>Real food vs. edible food-like substances.</strong> The modern food industry has flooded our markets with highly processed products that barely resemble real food. These items often contain unfamiliar ingredients, excessive amounts of sugar, salt, and unhealthy fats, and lack the nutrients found in whole foods.</p>
+<p>To identify real food:</p>
+<ul>
+<li>Choose items your great-grandmother would recognize</li>
+<li>Avoid products with more than five ingredients</li>
+<li>Steer clear of foods with unpronounceable ingredients</li>
+<li>Be wary of products making health claims</li>
+<li>Shop the perimeter of the supermarket, where fresh produce, meats, and dairy are usually located</li>
+</ul>
+<div id="2_Choose_plants_as_your_primary_food_source"></div><h3>2. Choose plants as your primary food source</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat mostly plants, especially leaves.&quot;</p>
+</blockquote>
+<p><strong>Plant-based diet benefits.</strong> Numerous studies have shown that diets rich in vegetables and fruits significantly reduce the risk of chronic diseases. Plant foods are generally less calorie-dense and more nutrient-dense than animal products, making them ideal for maintaining a healthy weight and overall well-being.</p>
+<p>Key points:</p>
+<ul>
+<li>Aim for a variety of colorful fruits and vegetables</li>
+<li>Include leafy greens in your diet regularly</li>
+<li>Consider meat as a flavoring or special occasion food</li>
+<li>Incorporate legumes, whole grains, and nuts into your meals</li>
+<li>Don't overlook the nutritional value of wild plants when available</li>
+</ul>
+<div id="3_Moderation_is_key_Eat_less_and_savor_more"></div><h3>3. Moderation is key: Eat less and savor more</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Stop eating before you're full.&quot;</p>
+</blockquote>
+<p><strong>Calorie restriction and health.</strong> Research consistently shows that eating less than we currently do can have significant health benefits, including slower aging and reduced cancer risk. Many cultures have traditional wisdom encouraging moderation in eating.</p>
+<p>Strategies for eating less:</p>
+<ul>
+<li>Follow the Japanese concept of &quot;hara hachi bu&quot; - eat until you're 80% full</li>
+<li>Ask yourself if your hunger is gone, rather than if you're full</li>
+<li>Leave something on your plate</li>
+<li>Use smaller plates and glasses to control portion sizes</li>
+<li>Avoid going back for seconds</li>
+</ul>
+<div id="4_Cook_your_own_meals_and_eat_with_others"></div><h3>4. Cook your own meals and eat with others</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat all the junk food you want as long as you cook it yourself.&quot;</p>
+</blockquote>
+<p><strong>Home cooking and social eating.</strong> Preparing your own meals gives you control over ingredients and portion sizes. It also makes treats less accessible, naturally reducing their consumption. Eating with others can promote mindful eating and limit overconsumption.</p>
+<p>Benefits of home cooking and social eating:</p>
+<ul>
+<li>Better control over ingredients and nutritional content</li>
+<li>Natural portion control for treats and indulgences</li>
+<li>Increased appreciation for food preparation</li>
+<li>Slower eating pace when dining with others</li>
+<li>Enhanced enjoyment of meals through social interaction</li>
+</ul>
+<div id="5_Be_mindful_of_your_eating_habits_and_environment"></div><h3>5. Be mindful of your eating habits and environment</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat when you are hungry, not when you are bored.&quot;</p>
+</blockquote>
+<p><strong>Conscious eating.</strong> Many people eat for reasons other than hunger, such as boredom, stress, or habit. By becoming more aware of our eating patterns and environment, we can make healthier choices and avoid unnecessary calorie consumption.</p>
+<p>Tips for mindful eating:</p>
+<ul>
+<li>Identify your reasons for eating before you start</li>
+<li>Avoid eating while distracted (e.g., watching TV or working)</li>
+<li>Eat at a table, not on the go</li>
+<li>Pay attention to your food's taste, texture, and aroma</li>
+<li>Listen to your body's hunger and fullness cues</li>
+</ul>
+<div id="6_Embrace_traditional_food_cultures_and_skepticism_towards_food_novelties"></div><h3>6. Embrace traditional food cultures and skepticism towards food novelties</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat more like the French. Or the Japanese. Or the Italians. Or the Greeks.&quot;</p>
+</blockquote>
+<p><strong>Wisdom of traditional diets.</strong> Many traditional food cultures have stood the test of time, providing balanced nutrition and promoting overall health. These diets often emphasize whole foods, moderation, and social eating habits.</p>
+<p>Key aspects of traditional food cultures:</p>
+<ul>
+<li>Emphasis on whole, minimally processed foods</li>
+<li>Balanced combinations of nutrients (e.g., beans and corn in Latin America)</li>
+<li>Moderate portion sizes</li>
+<li>Leisurely, social meals</li>
+<li>Skepticism towards food novelties and fads</li>
+</ul>
+<div id="7_Quality_over_quantity_Invest_in_better_food_and_eat_less"></div><h3>7. Quality over quantity: Invest in better food and eat less</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Pay more, eat less.&quot;</p>
+</blockquote>
+<p><strong>Value of high-quality food.</strong> Choosing higher quality, more expensive food often leads to eating less overall. These foods are typically more flavorful and satisfying, requiring smaller portions to feel content.</p>
+<p>Benefits of investing in quality food:</p>
+<ul>
+<li>Better taste and nutritional value</li>
+<li>Increased satisfaction from smaller portions</li>
+<li>Support for sustainable and ethical food production</li>
+<li>Reduced overall food consumption</li>
+<li>Potential long-term health benefits and healthcare cost savings</li>
+</ul>
+<div id="8_Listen_to_your_bodys_hunger_and_fullness_cues"></div><h3>8. Listen to your body's hunger and fullness cues</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Consult your gut.&quot;</p>
+</blockquote>
+<p><strong>Body awareness.</strong> Our bodies have evolved to signal hunger and fullness, but modern eating habits often override these cues. By learning to recognize and respond to our body's signals, we can eat more intuitively and maintain a healthy weight.</p>
+<p>Techniques for better body awareness:</p>
+<ul>
+<li>Eat slowly to allow time for fullness signals to reach the brain</li>
+<li>Check in with your hunger levels before and during meals</li>
+<li>Pay attention to how different foods make you feel</li>
+<li>Avoid eating out of boredom or emotional reasons</li>
+<li>Practice mindful eating techniques</li>
+</ul>
+<div id="9_Slow_down_and_enjoy_your_meals"></div><h3>9. Slow down and enjoy your meals</h3>
+<blockquote class="chapter-quote">
+<p>&quot;The banquet is in the first bite.&quot;</p>
+</blockquote>
+<p><strong>Savoring food.</strong> Eating slowly not only helps with portion control but also enhances the enjoyment of meals. By focusing on the flavors and textures of each bite, we can derive more pleasure from our food while consuming less overall.</p>
+<p>Ways to slow down and savor meals:</p>
+<ul>
+<li>Put down your fork between bites</li>
+<li>Chew thoroughly and focus on the flavors</li>
+<li>Engage in conversation during meals</li>
+<li>Take small bites and pause between them</li>
+<li>Appreciate the appearance and aroma of your food before eating</li>
+</ul>
+<div id="10_Structure_your_eating_around_proper_meals_not_constant_snacking"></div><h3>10. Structure your eating around proper meals, not constant snacking</h3>
+<blockquote class="chapter-quote">
+<p>&quot;Eat meals.&quot;</p>
+</blockquote>
+<p><strong>Importance of meal structure.</strong> The traditional concept of meals has been eroded by constant snacking and grazing. However, structured meals can help control overall calorie intake and promote better eating habits.</p>
+<p>Benefits of structured meals:</p>
+<ul>
+<li>Better portion control</li>
+<li>Reduced consumption of processed snack foods</li>
+<li>Opportunities for social eating and family time</li>
+<li>Improved digestion through regular eating patterns</li>
+<li>Clearer distinction between hunger and non-hunger eating</li>
+</ul>
+
+
+                    
+                      
+                      <p class="instant-takeaways-date">Last updated: <time datetime="2025-01-22">January 22, 2025</time></p>
+                    
+                  
+                </div>
+
+              </div>
+
+              <div>
+                <a id="report_issue_button" class="inline-button inline-button-small" href="?report_issues=true">Report Issue</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Paywall overlay positioned after takeaways but covers all content below -->
+          <div class="takeaways-paywall-overlay">
+            <div class="takeaways-paywall-gradient"></div>
+            <div class="takeaways-paywall-cta">
+              <button class="takeaways-continue-btn" onclick="handleTakeawaysPaywall()">
+                Continue Reading
+              </button>
+            </div>
+          </div>
+
+          
+          <!-- Purchase Card -->
+          <div class="chapter-wrap">
+            <div class="purchase-card">
+              <div class="purchase-card-heading">Want to read the full book?</div>
+              <div class="purchase-card-links">
+                <a href="/buy/amazon/food-rules" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-amazon"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Amazon
+                </a>
+                <a href="/buy/kindle/food-rules" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-kindle"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Kindle
+                </a>
+                <a href="/buy/audible/food-rules" 
+                   target="_blank" 
+                   rel="nofollow" 
+                   class="purchase-card-link purchase-card-link-audible"
+                   onclick="triggerNativeAction && triggerNativeAction('link_click')">
+                  <span class="purchase-card-link-icon"></span>
+                  Audible
+                </a>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          <div id="Answers"></div>
+          <div id="answers_wrap" >
+
+            <h2 id="answers_heading">FAQ</h2>
+
+            <div class="chapter-wrap answers-wrap">
+
+              <div class="-book-card">
+
+                <div id="" class="chapter-summary">
+
+                  
+                  
+                    <div id="Whats_Food_Rules_An_Eaters_Manual_about"></div>
+                    <h3>What's &quot;Food Rules: An Eater's Manual&quot; about?</h3>
+<ul>
+<li><strong>Simple dietary guidelines:</strong> The book provides straightforward rules to help people make healthier food choices without relying on complex nutritional science.</li>
+<li><strong>Focus on real food:</strong> It emphasizes eating whole, unprocessed foods and avoiding highly processed products that dominate the modern diet.</li>
+<li><strong>Cultural wisdom:</strong> Pollan draws on traditional food wisdom and practices, suggesting that these can guide healthier eating habits.</li>
+<li><strong>Practical advice:</strong> The book is structured to offer practical, everyday advice that can be easily incorporated into daily life.</li>
+</ul>
+
+                  
+                    <div id="Why_should_I_read_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>Why should I read &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Simplifies eating decisions:</strong> The book distills complex nutritional science into easy-to-follow rules, making healthy eating more accessible.</li>
+<li><strong>Improves health:</strong> Following the rules can lead to better health outcomes by reducing the risk of chronic diseases associated with the Western diet.</li>
+<li><strong>Cultural insights:</strong> It provides insights into how traditional diets and eating habits can contribute to better health.</li>
+<li><strong>Actionable tips:</strong> The book offers practical tips that can be immediately applied to improve one's diet and relationship with food.</li>
+</ul>
+
+                  
+                    <div id="What_are_the_key_takeaways_of_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>What are the key takeaways of &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Eat real food:</strong> Focus on consuming whole, unprocessed foods that your ancestors would recognize.</li>
+<li><strong>Mostly plants:</strong> Prioritize plant-based foods, especially leafy greens, for a healthier diet.</li>
+<li><strong>Moderation is key:</strong> Eat less and be mindful of portion sizes to maintain a healthy weight and lifestyle.</li>
+<li><strong>Cultural practices:</strong> Embrace traditional eating habits and practices for better health and well-being.</li>
+</ul>
+
+                  
+                    <div id="What_are_the_best_quotes_from_Food_Rules_An_Eaters_Manual_and_what_do_they_mean"></div>
+                    <h3>What are the best quotes from &quot;Food Rules: An Eater's Manual&quot; and what do they mean?</h3>
+<ul>
+<li><strong>&quot;Eat food. Not too much. Mostly plants.&quot;</strong> This encapsulates the book's core message: focus on real food, control portions, and prioritize plant-based eating.</li>
+<li><strong>&quot;Don't eat anything your great-grandmother wouldn't recognize as food.&quot;</strong> This quote emphasizes avoiding highly processed foods that are a modern invention.</li>
+<li><strong>&quot;The whiter the bread, the sooner you'll be dead.&quot;</strong> It highlights the health risks associated with consuming refined grains and encourages whole grain consumption.</li>
+<li><strong>&quot;Eat all the junk food you want as long as you cook it yourself.&quot;</strong> This suggests that the effort involved in preparing junk food will naturally limit its consumption.</li>
+</ul>
+
+                  
+                    <div id="How_does_Michael_Pollan_define_real_food_in_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>How does Michael Pollan define &quot;real food&quot; in &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Whole foods:</strong> Real food includes plants, animals, and fungi that have been consumed for generations.</li>
+<li><strong>Minimal processing:</strong> Foods should be minimally processed and free from artificial additives and preservatives.</li>
+<li><strong>Recognizable ingredients:</strong> Ingredients should be familiar and something you would keep in your pantry.</li>
+<li><strong>Avoidance of industrial products:</strong> Steer clear of products that are highly processed and designed for long shelf life.</li>
+</ul>
+
+                  
+                    <div id="What_is_the_Western_diet_according_to_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>What is the &quot;Western diet&quot; according to &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Processed foods:</strong> The Western diet is characterized by a high intake of processed foods and refined grains.</li>
+<li><strong>High in sugar and fat:</strong> It includes a lot of added sugars and unhealthy fats, contributing to chronic diseases.</li>
+<li><strong>Low in whole foods:</strong> There is a lack of vegetables, fruits, and whole grains in the Western diet.</li>
+<li><strong>Health consequences:</strong> This diet is linked to obesity, type 2 diabetes, cardiovascular disease, and certain cancers.</li>
+</ul>
+
+                  
+                    <div id="What_does_Michael_Pollan_suggest_about_portion_control_in_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>What does Michael Pollan suggest about portion control in &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Eat less:</strong> Pollan advises eating less overall, as most people consume more than necessary for health.</li>
+<li><strong>Stop before full:</strong> He suggests stopping eating before feeling completely full, following cultural practices like &quot;hara hachi bu.&quot;</li>
+<li><strong>Smaller portions:</strong> Use smaller plates and serve proper portions to naturally reduce food intake.</li>
+<li><strong>Mindful eating:</strong> Pay attention to hunger cues and eat slowly to better gauge when to stop eating.</li>
+</ul>
+
+                  
+                    <div id="How_does_Food_Rules_An_Eaters_Manual_address_the_role_of_culture_in_eating_habits"></div>
+                    <h3>How does &quot;Food Rules: An Eater's Manual&quot; address the role of culture in eating habits?</h3>
+<ul>
+<li><strong>Traditional wisdom:</strong> Pollan emphasizes the value of traditional food cultures and their health benefits.</li>
+<li><strong>Cultural practices:</strong> He suggests adopting eating habits from cultures known for their healthy diets, like the French or Japanese.</li>
+<li><strong>Food rituals:</strong> The book highlights the importance of communal meals and eating as a social activity.</li>
+<li><strong>Skepticism of new foods:</strong> Pollan advises caution with nontraditional foods and culinary innovations.</li>
+</ul>
+
+                  
+                    <div id="What_are_some_practical_rules_from_Food_Rules_An_Eaters_Manual_for_healthier_eating"></div>
+                    <h3>What are some practical rules from &quot;Food Rules: An Eater's Manual&quot; for healthier eating?</h3>
+<ul>
+<li><strong>Shop the peripheries:</strong> Focus on the outer aisles of the supermarket where fresh produce and whole foods are found.</li>
+<li><strong>Cook your own food:</strong> Preparing meals at home gives control over ingredients and portion sizes.</li>
+<li><strong>Avoid health claims:</strong> Be wary of processed foods that make health claims, as they are often misleading.</li>
+<li><strong>Limit snacks:</strong> Restrict snacks to unprocessed plant foods like fruits and nuts.</li>
+</ul>
+
+                  
+                    <div id="How_does_Food_Rules_An_Eaters_Manual_suggest_dealing_with_cravings_for_junk_food"></div>
+                    <h3>How does &quot;Food Rules: An Eater's Manual&quot; suggest dealing with cravings for junk food?</h3>
+<ul>
+<li><strong>Cook it yourself:</strong> Pollan suggests that making junk food at home will naturally limit its consumption due to the effort involved.</li>
+<li><strong>Treats as treats:</strong> Reserve junk food for special occasions rather than everyday consumption.</li>
+<li><strong>Mindful indulgence:</strong> Enjoy treats in moderation and savor them when you do indulge.</li>
+<li><strong>S policy:</strong> Follow a simple rule like &quot;no snacks, no seconds, no sweets—except on days that begin with the letter S.&quot;</li>
+</ul>
+
+                  
+                    <div id="What_does_Michael_Pollan_say_about_the_relationship_between_food_and_health_in_Food_Rules_An_Eaters_Manual"></div>
+                    <h3>What does Michael Pollan say about the relationship between food and health in &quot;Food Rules: An Eater's Manual&quot;?</h3>
+<ul>
+<li><strong>Diet and disease:</strong> He highlights the strong link between the Western diet and chronic diseases like obesity and diabetes.</li>
+<li><strong>Traditional diets:</strong> Populations with traditional diets generally have lower rates of these diseases.</li>
+<li><strong>Reversing effects:</strong> Switching away from the Western diet can lead to significant health improvements.</li>
+<li><strong>Focus on food, not nutrients:</strong> Pollan argues that focusing on whole foods rather than individual nutrients is key to better health.</li>
+</ul>
+
+                  
+                    <div id="How_does_Food_Rules_An_Eaters_Manual_suggest_improving_ones_relationship_with_food"></div>
+                    <h3>How does &quot;Food Rules: An Eater's Manual&quot; suggest improving one's relationship with food?</h3>
+<ul>
+<li><strong>Mindful eating:</strong> Be present and attentive during meals, savoring each bite.</li>
+<li><strong>Social meals:</strong> Share meals with others to enhance the eating experience and regulate portion sizes.</li>
+<li><strong>Cook and garden:</strong> Engage in cooking and growing food to reconnect with the food production process.</li>
+<li><strong>Relaxed attitude:</strong> Avoid obsessing over food rules and allow for occasional indulgences.</li>
+</ul>
+
+                  
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          
+
+
+
+          
+          <div id="Reviews"></div>
+          <div id="reviews_wrap" >
+            
+            <h2 id="reviews_heading">Review Summary</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                
+                <div class="chapter-inlay">
+
+                  <div class="review">
+
+                    <div class="rating">
+
+                      <div class="rating-stars">
+                        
+                        
+                        
+                        
+
+                        
+                          <div class="rating-star"></div>
+                        
+                          <div class="rating-star"></div>
+                        
+                          <div class="rating-star"></div>
+                        
+                        
+                          <div class="rating-star-half"></div>
+                        
+                        
+                          <div class="rating-star-off"></div>
+                        
+
+                        <div class="rating-value">
+                          3.99 out of 5
+                        </div>
+                      </div>
+
+                      <div class="review-info">
+                        Average of <span>48.1K</span> ratings from <span>Goodreads</span> and <span>Amazon</span>.
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                
+
+                <div id="summary_reviews" class="chapter-summary chapter-summary-inlay">
+                  <p><strong>Food Rules: An Eater's Manual</strong> is praised for its simplicity and practicality in providing guidelines for healthy eating. Many readers find the rules easy to understand and implement, appreciating Pollan's concise writing style and humor. The book's core message of &quot;Eat food. Not too much. Mostly plants&quot; resonates with readers. Some criticize the book for being too short and recycling content from Pollan's previous works. Overall, readers value the book as a quick reference guide for making better food choices, though some wish for more in-depth information on implementing the rules.</p>
+
+                </div>
+
+              </div>
+
+              <div class="book-card" id="your_rating_wrap" style="margin-top: 20px; padding: 28px 30px 23px 30px;">
+
+                <div class="rating-widget-label">Your rating:</div>
+
+                <div class="rating-widget-container" data-book-id="410637">
+                  <div class="rating-widget-stars">
+                    
+                    
+                    
+                    
+                    <div id="rating_widget_value" class="rating-widget-value" style="padding-left:0px; padding-right:12px; ">
+                      4.43
+                    </div>
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="1"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="2"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="3"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-full" data-value="4"></div>
+                      
+                    
+                      
+                        <div class="rating-widget-star rating-widget-star-off" data-value="5"></div>
+                      
+                    
+                    <div id="rating_widget_total" class="rating-widget-count">
+                      
+                      
+                        128 ratings
+                      
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+          
+
+
+          
+          <div id="Similar_Books"></div>
+          <div id="similar_wrap" >
+
+            <h2 id="similar_heading">Similar Books</h2>
+
+            <div class="scrollable-list scrollable-list-left-col">
+              
+                <a href="/books/ai-doctor" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_ai-doctor_360px_1747140058.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_ai-doctor_360px_1747140058.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_ai-doctor_360px_1747140058.jpg" alt="AI Doctor Summary" loading="lazy" data-id="2496602" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">AI Doctor</div>
+    <div class="scrollable-list-author">Ronald M. Razmi</div>
+
+    
+    <div class="scrollable-list-subtitle">The Rise of Artificial Intelligence in Healthcare - A Guide for Users, Buyers, Builders, and Investors</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.27
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (7.4K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+                <a href="/books/food-matters" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_food-matters_360px_1747157627.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_food-matters_360px_1747157627.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_food-matters_360px_1747157627.jpg" alt="Food Matters Summary" loading="lazy" data-id="8900" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Food Matters</div>
+    <div class="scrollable-list-author">Mark Bittman</div>
+
+    
+    <div class="scrollable-list-subtitle">A Guide to Conscious Eating with More Than 75 Recipes</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        3.97
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (11.2K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+              
+            </div>
+
+          </div>
+          
+
+          
+          <div id="Author"></div>
+          <div id="author_wrap" >
+
+            <h2 id="author_heading">About the Author</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div id="summary_author" class="chapter-summary"><p><strong>Michael Pollan</strong> is a prominent American author, journalist, and activist known for his work on food, agriculture, and the environment. As a professor of journalism at the University of California, Berkeley, he directs the Knight Program in Science and Environmental Journalism. Pollan has written several influential books on food and nutrition, including &quot;The Omnivore's Dilemma&quot; and &quot;In Defense of Food.&quot; His writing style combines personal narrative with investigative journalism, making complex topics accessible to a wide audience. Pollan's work has significantly impacted public discourse on food systems and nutrition, advocating for a return to whole, unprocessed foods and sustainable agricultural practices.</p>
+</div>
+
+              </div>
+
+            </div>
+
+            
+            <div id="author_books_wrap">
+              <div id="Other_Books_by_Author"></div>
+              <h2>Other books by <i>Michael Pollan</i></h2>
+
+              <div class="scrollable-list scrollable-list-left-col">
+                
+                  <a href="/books/the-omnivores-dilemma" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_the-omnivores-dilemma_360px_1747130857.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_the-omnivores-dilemma_360px_1747130857.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_the-omnivores-dilemma_360px_1747130857.jpg" alt="The Omnivore&amp;#039;s Dilemma Summary" loading="lazy" data-id="38919" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">The Omnivore&#39;s Dilemma</div>
+    <div class="scrollable-list-author">Michael Pollan</div>
+
+    
+    <div class="scrollable-list-subtitle">A Natural History of Four Meals</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.19
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (208.3K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+                
+                  <a href="/books/in-defense-of-food" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_in-defense-of-food_360px_1747148732.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_in-defense-of-food_360px_1747148732.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_in-defense-of-food_360px_1747148732.jpg" alt="In Defense of Food Summary" loading="lazy" data-id="16835" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">In Defense of Food</div>
+    <div class="scrollable-list-author">Michael Pollan</div>
+
+    
+    <div class="scrollable-list-subtitle">An Eater&#39;s Manifesto</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.07
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (118.2K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+                
+                  <a href="/books/how-to-change-your-mind" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_how-to-change-your-mind_360px_1747139806.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_how-to-change-your-mind_360px_1747139806.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_how-to-change-your-mind_360px_1747139806.jpg" alt="How to Change Your Mind Summary" loading="lazy" data-id="384487" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">How to Change Your Mind</div>
+    <div class="scrollable-list-author">Michael Pollan</div>
+
+    
+    <div class="scrollable-list-subtitle">The New Science of Psychedelics</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.27
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (81.6K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+                
+                  <a href="/books/this-is-your-mind-on-plants" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_this-is-your-mind-on-plants_360px_1747152765.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_this-is-your-mind-on-plants_360px_1747152765.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_this-is-your-mind-on-plants_360px_1747152765.jpg" alt="This Is Your Mind on Plants Summary" loading="lazy" data-id="205799" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">This Is Your Mind on Plants</div>
+    <div class="scrollable-list-author">Michael Pollan</div>
+
+    
+    <div class="scrollable-list-subtitle"></div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        3.87
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (32.1K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+                
+                  <a href="/books/cooked" class="scrollable-list-item scrollable-list-item-smaller">
+
+  
+  <picture>
+    <source srcset="https://files.sobrief.com/social/cover_cooked_360px_1747159316.webp" type="image/webp">
+    <source srcset="https://files.sobrief.com/social/cover_cooked_360px_1747159316.jpg" type="image/jpeg">
+    <img class="scrollable-list-image" src="https://files.sobrief.com/social/cover_cooked_360px_1747159316.jpg" alt="Cooked Summary" loading="lazy" data-id="53285" />
+  </picture>
+
+  <div class="scrollable-list-info">
+
+    
+    <div class="scrollable-list-title">Cooked</div>
+    <div class="scrollable-list-author">Michael Pollan</div>
+
+    
+    <div class="scrollable-list-subtitle">A Natural History of Transformation</div>
+    
+
+    
+    <div class="rating-stars scrollable-list-rating">
+      
+      
+      
+      
+
+      
+      <div class="rating-star" style="margin-right:5px"></div>
+      
+
+      <div class="rating-value" style="padding-left:0px; padding-right:12px; padding-right:2px;">
+        4.08
+      </div>
+
+      
+
+      <div class="ratings-value ratings-value-index">
+        (25.5K)
+      </div>
+
+    </div>
+    
+
+    
+
+  </div>
+
+</a>
+
+
+
+                
+              </div>
+            </div>
+            
+
+          </div>
+
+
+
+          
+          <div id="Download_PDF"></div>
+          <div id="pdf_wrap">
+
+            <h2 id="pdf_heading">Download PDF</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div class="chapter-summary">
+
+                  To save this <strong>Food Rules</strong> summary for later, download the free PDF. You can print it out, or read offline at your convenience.
+
+                  <div class="button-wrap" style="padding-bottom:0px">
+                    <div class="button button-download" style="margin-right:0px" rel="alternate nofollow" title="food-rules.pdf" onclick="downloadPDF('/books/food-rules.pdf')"><div></div>Download PDF</div>
+                    <div class="button-info">
+                      File size: <b>0.27 MB</b> &nbsp; &nbsp; Pages: <b>19</b>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          
+
+          
+          <div id="Download_EPUB"></div>
+          <div id="epub_wrap">
+
+            <h2 id="epub_heading">Download EPUB</h2>
+
+            <div class="chapter-wrap">
+
+              <div class="book-card">
+
+                <div class="chapter-summary">
+
+                  To read this <strong>Food Rules</strong> summary on your e-reader device or app, download the free EPUB. The <code>.epub</code> digital book format is ideal for reading ebooks on phones, tablets, and e-readers.
+
+                  <div class="button-wrap" style="padding-bottom:0px">
+                    <div class="button button-download" style="margin-right:0px" rel="alternate nofollow" title="food-rules.epub" onclick="downloadEPUB('/books/food-rules.epub')"><div></div>Download EPUB</div>
+                    <div class="button-info">
+                      File size: <b>2.94 MB</b> &nbsp; &nbsp; Pages: <b>7</b>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          
+
+          </div> <!-- End book content paywall wrapper -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+<div id="footer" class="footer">
+	<div class="wrap-inner">
+
+		<a href="/pricing" id="footer_pricing_link">Pricing</a> <span id="footer_pricing_bullet">&bull;</span> <a href="/terms">Terms<span> of Service</span></a> <span>&bull;</span> <a href="/privacy">Privacy<span> Policy</span></a> <span>&bull;</span> <a href="/refund-policy">7-Day<span> Refund Policy</span></a> <span>&bull;</span> <a href="/dmca">DMCA</a> <span>&bull;</span> <a href="/affiliate" id="footer_affiliate_link">Affiliate</a> <span id="footer_affiliate_bullet">&bull;</span><a href="https://x.com/automationism" target="_blank">Twitter</a> <span>&bull;</span> <a href="" onclick="showIntercom(); return false;">Support</a><span>&bull;</span> 
+
+		<div class="app-download-container app-download-container-footer">
+
+			<div class="app-store-button">
+			  <a href="https://apps.apple.com/us/app/sobrief-book-summaries/id6723865613" target="_blank" onclick="logEvent('download_ios_click')" style="margin-right:0px" aria-label="Download on the App Store"><img src="https://files.sobrief.com/public/app-store-button.png" loading="lazy" alt="Download on the App Store" /></a>
+			</div>
+
+			<div class="app-qr-code">
+			  <img src="https://files.sobrief.com/public/app-store-qr-code.png" loading="lazy" alt="QR Code" />
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="book_toolbar" class="book-toolbar book-toolbar-visible">
+
+  <div id="book_toolbar_button_listen" onclick="toggleBookAudio(false, true)" class="book-toolbar-button-listen"><div><span></span></div><b>Listen<i></i></b></div>
+
+  <div id="book_toolbar_button_share" class="book-toolbar-button book-toolbar-button-share" onclick="shareBook()"><span></span></div>
+  <div id="book_toolbar_button_bookmark" class="book-toolbar-button book-toolbar-button-bookmark" onclick="saveBookmark(9078)"><span></span></div>
+  <div id="book_toolbar_button_toc" class="book-toolbar-button book-toolbar-button-toc" onclick="toggleContents(); return false;"><span></span></div>
+
+</div>
+
+<div id="native_player" class="native-player-wrap">
+
+  <div class="native-player">
+
+    <div id="player_small" class="native-player-small">
+
+      <div class="native-player-cover" style="background-image:url('https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg')"></div>
+
+      <div class="native-player-info">
+        <div class="native-player-label">Now playing</div>
+        <div class="native-player-title">Food Rules</div>
+        <div class="native-player-progress2"><div></div></div>
+      </div>
+
+      <div class="native-player-small-buttons">
+        <div class="native-player-small-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+        <div class="native-player-small-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+      </div>
+
+    </div>
+
+    <div id="player_medium" class="native-player-medium">
+
+      <div class="native-player-handle"><span></span></div>
+
+      <div id="player_buttons" class="native-player-buttons">
+
+        <div class="native-player-button-settings" onclick="togglePlayerSettings()"><span></span></div>
+        <div class="native-player-button-previous" onclick="stopBookAudio(); prevBookAudio(true)"><span></span></div>
+        <div class="native-player-button-back" onclick="skipAudioBack()"><span></span></div>
+        <div class="native-player-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+        <div class="native-player-button-forward" onclick="skipAudioForward()"><span></span></div>
+        <div class="native-player-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+        <div class="native-player-button-contents" onclick="toggleQueue()"><span></span></div>
+
+      </div>
+
+      <div class="native-player-progress-wrap">
+        <div class="native-player-time-elapsed">0:00</div>
+        <div class="native-player-time-remaining">-0:00</div>
+
+        <div class="native-player-progress">
+          <div class="native-player-progress-bar">
+            <span></span>
+            <div class="native-player-progress-bar-chunks"></div>
+          </div>
+          <div class="native-player-progress-chunks"></div>
+        </div>
+
+        <div class="native-player-progress-tooltip-wrap">
+          <div class="native-player-progress-tooltip"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="player_large" class="native-player-large">
+
+      <div class="native-player-handle"><span></span></div>
+
+      <div class="native-player-content-OFF">
+
+        <div class="native-player-cover-wrap">
+          <img src="https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg" />
+        </div>
+
+        <div class="native-player-large-info">
+          <div class="native-player-large-section">
+            <span class="native-player-large-section-text">Now playing</span>
+          </div>
+          <div class="native-player-large-title">Food Rules</div>
+        </div>
+
+        <div class="native-player-progress-wrap">
+          
+          <div class="native-player-progress">
+            <div class="native-player-progress-bar">
+              <span></span>
+              <div class="native-player-progress-bar-chunks"></div>
+            </div>
+            <div class="native-player-progress-chunks"></div>
+          </div>
+
+          <div class="native-player-time-wrap">
+            <div class="native-player-time-elapsed">0:00</div>
+            <div class="native-player-time-remaining">-0:00</div>
+          </div>
+
+          <div class="native-player-progress-tooltip-wrap">
+            <div class="native-player-progress-tooltip"></div>
+          </div>
+        </div>
+
+        <div class="native-player-buttons">
+
+          <div class="native-player-button-previous" onclick="stopBookAudio(); prevBookAudio(true)"><span></span></div>
+          <div class="native-player-button-back" onclick="skipAudioBack()"><span></span></div>
+          <div class="native-player-button-play" onclick="toggleBookAudio(false)"><span><i></i></span></div>
+          <div class="native-player-button-forward" onclick="skipAudioForward()"><span></span></div>
+          <div class="native-player-button-next" onclick="stopBookAudio(); nextBookAudio(true)"><span></span></div>
+
+        </div>
+
+        <div class="native-player-buttons-small">
+
+          <div class="native-player-buttons-small-left">
+            <div class="native-player-button-settings" onclick="togglePlayerSettings()"><span></span></div>
+            <div class="native-player-button-voice" data-settings-section="voice"><span></span></div>
+            <div class="native-player-button-speed" data-settings-section="speed"><span>1x</span></div>
+            <div class="native-player-button-music" data-settings-section="music" style="display:none"><span></span></div>
+          </div>
+
+          <div class="native-player-buttons-small-right">
+            <div class="native-player-button-bookmark" onclick="saveBookmark(9078)"><span></span></div>
+            <div class="native-player-button-share" onclick="shareBook()"><span></span></div>
+            <div class="native-player-button-contents" onclick="toggleQueue()"><span></span></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="player_settings" class="native-player-settings-menu">
+      
+      <div id="player_settings_switcher" class="native-player-switcher-wrap">
+        <div class="native-player-switcher">
+          <div id="settings_switch_voice" class="native-player-switcher-item native-player-switcher-item-selected" onclick="showPlayerSettings('voice', this)">Voice</div>
+          <div id="settings_switch_speed" class="native-player-switcher-item" onclick="showPlayerSettings('speed', this)">Speed</div>
+          <div id="settings_switch_music" class="native-player-switcher-item" onclick="showPlayerSettings('music', this)" style="display:none">Music</div>
+        </div>
+      </div>
+
+      <div class="native-player-settings-voice">
+
+        <div class="native-player-voice native-player-voice-selected" data-voice="onyx" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-dan.jpg');"></span>Dan</div>
+        <div style="display:none" class="native-player-voice" data-voice="alloy" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-scarlett.jpg');"></span>Jennifer</div>
+        <div class="native-player-voice" data-voice="echo" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-echo.jpg');"></span>Andrew</div>
+        <div style="display:none" class="native-player-voice" data-voice="fable" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-amy.jpg');"></span>Sarah</div>
+        <div class="native-player-voice" data-voice="nova" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-liv.jpg');"></span>Michelle</div>
+        <div class="native-player-voice" data-voice="shimmer" onclick="setPlayerVoice(this)"><span style="background-image:url('https://files.sobrief.com/public/avatar-scarlett.jpg');"></span>Lauren</div>
+
+      </div>
+
+      <div class="native-player-settings-speed">
+
+        <div class="native-player-speed-control">
+
+          <div class="native-player-speed-button native-player-speed-button-down" onclick="setPlayerSpeed(false)">&ndash;</div>
+          <div class="native-player-speed-value"><span>1.0</span><i>&times;</i></div>
+          <div class="native-player-speed-button native-player-speed-button-up" onclick="setPlayerSpeed(true)">+</div>
+  
+        </div>
+  
+        <div class="native-player-speed-info"><span>200</span> words per minute</div>
+
+      </div>
+
+      <div class="native-player-settings-music" style="display:none">
+
+        <div class="native-player-music-volume" data-music-volume="none" onclick="setPlayerMusicVolume(this)">Off</div>
+        <div class="native-player-music-volume" data-music-volume="low" onclick="setPlayerMusicVolume(this)">Low</div>
+        <div class="native-player-music-volume native-player-music-volume-selected" data-music-volume="medium" onclick="setPlayerMusicVolume(this)">Medium</div>
+        <div class="native-player-music-volume" data-music-volume="high" onclick="setPlayerMusicVolume(this)">High</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="queue" class="queue">
+    <div class="queue-inner">
+  
+      <div class="queue-header">
+        <div class="queue-title">Queue</div>
+        <div id="queue_close" class="queue-close"></div>
+      </div>
+  
+      <div id="queue_list" class="queue-list">
+  
+      </div>
+  
+    </div>
+  </div>
+
+</div>
+
+
+<div class="top-button" id="top_button" onclick="scrollToTop()"></div>
+
+<div id="menu_button_wrap" class="menu-button-wrap">
+  <div id="menu_button_menu" class="menu-button-menu">
+    <a href="" onclick="toggleContents(); return false;"><span></span>Contents</a>
+    <a id="menu_bookmark_item" href="" onclick="saveBookmark(9078); return false;"><span></span>Bookmark</a>
+    <a href="" onclick="shareBook(); return false;"><span></span>Share</a>
+  </div>
+  <div class="menu-button" id="menu_button" onclick="toggleBottomMenu(this)"><div></div></div>
+</div>
+
+
+
+<div id="toolbar_web" class="native-toolbar web-toolbar">
+  <div class="native-toolbar-button native-toolbar-button-home" onclick="toolbarAction('home')">Home</div>
+  <div class="native-toolbar-button native-toolbar-button-search" onclick="toolbarAction('search')">Search</div>
+  <div class="native-toolbar-button native-toolbar-button-swipe" onclick="toolbarAction('swipe')">
+    Swipe
+    <span class="toolbar-badge swipe-notification-badge" style="display: none;"></span>
+  </div>
+  <div class="native-toolbar-button native-toolbar-button-library" onclick="toolbarAction('library')">Library</div>
+  <div class="native-toolbar-button native-toolbar-button-app" onclick="toolbarAction('app')">Get App</div>
+</div>
+
+
+
+
+
+<div id="dialog_sign_in" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-signin">
+
+    <div class="dialog-close" onclick="hideSignInDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <a href="" class="logo" onclick="return false;"
+        style="top:-3px; margin-left:15px; cursor:default; pointer-events:none;"><span></span><b>SoBrief</b></a>
+
+      <div id="dialog_sign_in_text" class="dialog-text" style="padding-top:3px">
+
+        <div id="dialog_sign_in_message" class="dialog-info"></div>
+
+        <div id="dialog_sign_in_heading" style="padding-top:0px; padding-bottom:4px">Create a free account to unlock:</div>
+
+        <div id="dialog_sign_in_ticks" class="dialog-ticks"> 
+          <div class="dialog-tick"><b>Recommendations:</b> Personalized for you</div>
+          <div class="dialog-tick"><b>Requests:</b> Request new book summaries</div>
+          <div class="dialog-tick"><b>Bookmarks:</b> Save your favorite books</div>
+          <div class="dialog-tick"><b>History:</b> Revisit books later</div>
+          <div class="dialog-tick" style="padding-bottom:0px;"><b>Ratings:</b> Rate books & see your ratings</div>
+          <!-- <div class="dialog-tick" style="padding-bottom:3px; display:none"><b>Listening:</b> audio summaries<span>Listen to the first takeaway of every book for free, upgrade to Pro for unlimited listening.</span></div> -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <ul id="sign_in_buttons_native" class="firebaseui-idp-list" style="display:none">
+
+      <li class="firebaseui-list-item">
+        <button
+          class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-google firebaseui-id-idp-button"
+          style="background-color:#ffffff" onclick="nativeSignIn()"><span class="firebaseui-idp-icon-wrapper"><img
+              class="firebaseui-idp-icon" alt=""
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Google</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Google</span></button>
+      </li>
+
+      <li class="firebaseui-list-item">
+        <button
+          class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button"
+          data-provider-id="password" style="background-color:#db4437" onclick="showEmailSignIn()"><span
+            class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt=""
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/mail.svg" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with email</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Email</span></button>
+      </li>
+
+      <li id="sign_in_button_apple" style="display:none" class="firebaseui-list-item">
+        <button
+        class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button welcome-button-apple"
+        data-provider-id="password" onclick="showAppleSignIn()"><span
+            class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt=""
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/apple.png" loading="lazy"></span><span
+            class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Apple</span><span
+            class="firebaseui-idp-text firebaseui-idp-text-short">Apple</span></button>
+       </li>
+
+    </ul>
+
+
+    <div id="dialog_sign_in_loading" class="dialog-loading"><span></span></div>
+
+    <div id="firebaseui-auth-container"></div>
+
+    <div id="dialog_sign_in_readers" class="onboard-users-say onboard-users-say-inline">
+
+      <div class="rating-social-wrap-nowrap" style="padding-bottom:16px; transform: scale(0.88); position: relative; top:0px; padding-top:6px">
+        
+        <div class="rating-social-wrap">
+          
+          <div class="rating-social rating-social-laurel">
+        
+            <div class="rating-content" style="text-align:center">
+                <div class="rating-stars social-rating">
+        
+                    <div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div>
+        
+                </div>
+                <div class="rating-info"><b>250,000+</b> readers</div>
+            </div>
+        
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div id="dialog_upgrade_new" class="dialog-wrap dialog-wrap-no-scroll">
+
+  <div class="dialog-inner dialog-inner-upgrade-new">
+
+    <div class="dialog-header">
+
+      <div class="dialog-close dialog-close-header" onclick="hideUpgradeDialog()"></div>
+
+      <a href="" class="logo" onclick="return false;"
+        style="top:-12px; margin-left:0px; cursor:default; pointer-events:none; padding-bottom:15px;"><span></span><b>SoBrief</b><i>Pro</i></a>
+
+    </div>
+
+    <div class="dialog-content-scrollable">
+      <!-- <div class="bounce-arrow">&gt;</div> -->
+      <div class="dialog-upgrade-wrap">
+
+        <div id="dialog_upgrade_view_features">
+
+          <div class="timeline" style="background:transparent; margin:0px; padding:3px 15px 0px 15px">
+
+            <div id="upgrade_regular_content">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>Try Full Access for 7 Days
+              </div>
+              <div class="timeline-subheading">Listen, bookmark, and more
+              </div>
+             
+
+            </div>
+
+            <div id="upgrade_first_year_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🚨 Last Offer: Take 50% Off
+              </div>
+              <div class="timeline-subheading"><s>$44.99</s> $22.49 for 1 year <br> then $44.99/year</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: First Payment of $22.49</div>
+      <div class="description">Your paid subscription begins immediately. 50% off your first year!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Oct 29, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div>
+
+            </div>
+
+            <div id="upgrade_first_year_25_off_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🎉 Limited Time: 25% Off
+              </div>
+              <div class="timeline-subheading"><s>$44.99</s> $33.74 for 1 year <br> then $44.99/year</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: Start 3-Day Trial</div>
+      <div class="description">Your trial begins immediately. Full access to all Pro features!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Day 4: First Payment of $33.74</div>
+      
+      <div class="description">On Nov 1, 2025, you'll be charged $33.74 for your first year (25% off).</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Nov 1, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div> 
+            </div>
+
+            <div id="upgrade_lifetime_20_off_content" style="display:none;">
+              <div class="timeline-heading-dialog">
+                <span id="upgrade_user_name" style="display:none;"></span>🎉 Best Value Ever
+              </div>
+              <div class="timeline-subheading">Get Pro for life for <br><s>$79.99</s> $59.99</div>
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <span class="timer-hours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-minutes">09</span>
+                  <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                  <span class="timer-seconds">59</span>
+                  <span class="timer-label">Seconds</span>
+                </div>
+              </div>
+
+              <!-- <div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon star">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: First Payment of $22.49</div>
+      <div class="description">Your paid subscription begins immediately. 50% off your first year!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon lock"></div>
+    <div class="timeline-text">
+      <div class="title">Instant Access: All Pro Features</div>
+      <div class="description">Listen to unlimited summaries, bookmark, and download immediately.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Year 2: Regular Pricing</div>
+      
+      <div class="description">On Oct 29, 2026, your subscription will renew at $44.99/year.</div>
+    </div>
+  </div>
+</div>
+ -->
+              <div class="dialog-benefits">
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Pay Once, Use Forever</div>
+                  <!-- <div class="dialog-benefit-info">No monthly fees, no subscriptions, no hidden costs.</div> -->
+                </div>
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">All Current & Future Pro Features</div>
+                  <!-- <div class="dialog-benefit-info">We'll add new features and books every week.</div> -->
+                </div>
+
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Save Money Over Time</div>
+                  <!-- <div class="dialog-benefit-info">If you were to pay $44.99/year for 3 years, you'd pay $134.97. With this offer, you pay $59.99 once.</div> -->
+                </div>
+                <div class="dialog-benefit">
+                  <div class="dialog-benefit-title">Limited Time Offer</div>
+                  <!-- <div class="dialog-benefit-info">If you were to pay $44.99/year for 3 years, you'd pay $134.97. With this offer, you pay $59.99 once.</div> -->
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="dialog-text" style="padding-top:0px">
+
+            <div class="dialog-testimonials">
+
+              <div class="dialog-testimonial">
+
+                <div class="dialog-testimonial-stars"></div>
+                <div class="dialog-testimonial-review"></div>
+                <div class="dialog-testimonial-user"></div>
+
+              </div>
+
+            </div>
+
+            <div class="dialog-heading-small" style="display:none;">What's part of Pro?</div>
+
+            <div class="dialog-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="dialog-table-features-heading">Compare Features
+                    </th>
+                    <th>Free</th>
+                    <th class="dialog-table-pro-column dialog-table-pro-header">Pro</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📖</i> Read Summaries
+                      <div>Read unlimited summaries. Free users get 3 per month</div>
+                    </td>
+                    <td class="dialog-table-check"><span></span></td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>🎧</i> Listen to Summaries
+                      <div>Listen to unlimited summaries in 40 languages</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>❤️</i> Unlimited Bookmarks
+                      <div>Free users are limited to 4</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📜</i> Unlimited History
+                      <div>Free users are limited to 4</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check"><span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="dialog-table-feature">
+                      <i>📥</i> Unlimited Downloads
+                      <div>Free users are limited to 1</div>
+                    </td>
+                    <td class="dialog-table-dash">&mdash;</td>
+                    <td class="dialog-table-pro-column dialog-table-check dialog-table-pro-footer"><span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="dialog-heading-small" style="padding-top:15px">Risk-Free Timeline</div>
+
+            
+<div class="timeline-item timeline-item-progress">
+  <div class="timeline-content">
+    <div class="timeline-icon lock">
+      <div class="pulsating-circle"></div>
+    </div>
+    <div class="timeline-text">
+      <div class="title">Today: Get Instant Access</div>
+      <div class="description">Listen to full summaries of <b>73,530</b> books. That's <b>12,000+ hours</b> of audio!</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item timeline-item-next">
+  <div class="timeline-content">
+    <div class="timeline-icon bell"></div>
+    <div class="timeline-text">
+      <div class="title">Day 4: Trial Reminder</div>
+      <div class="description">We'll send you a notification that your trial is ending soon.</div>
+    </div>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-content">
+    <div class="timeline-icon star"></div>
+    <div class="timeline-text">
+      <div class="title">Day 7: Your subscription begins</div>
+      
+      <div class="description">You'll be charged on Nov 5,<br /> cancel anytime before.</div>
+    </div>
+  </div>
+</div>
+
+
+            <div class="dialog-heading-small" style="padding-top:25px">Consume 2.8× More Books</div>
+
+            <div class="progress-chart">
+              <svg width="340" height="280">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#BBF7D0"></path>
+                  </marker>
+                  <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#E5E7EB"></path>
+                  </marker>
+                </defs>
+
+                <g class="fade-in-3">
+                  <circle cx="60" fill="#BBF7D0" r="42" cy="43"></circle>
+
+                  <text x="60" text-anchor="middle" fill="var(--text-color-alt)" style="font-size: 19px; font-weight: 600;" y="39">2.8×</text>
+                  <text x="60" text-anchor="middle" fill="var(--text-color-alt)" style="font-size: 12px;" y="56">more books</text>
+                </g>
+
+                <path class="fade-in-2" d="M 30,190 Q 170,150 310,30" stroke="#BBF7D0" fill="none" stroke-width="2" marker-end="url(#arrow)">
+                </path>
+                 <text class="fade-in-2" fill="var(--text-color)" style="font-size: 15px; font-weight: 400;" transform="rotate(-36 216 64)" y="81" x="219">Listening</text>
+                <line class="fade-in-1" x1="30" y1="190" x2="310" y2="130" stroke="#E5E7EB" stroke-width="2" marker-end="url(#arrow-gray)">
+                </line>
+                <text class="fade-in-1" fill="var(--text-color)" style="font-size: 15px; font-weight: 400; opacity:0.4;" transform="rotate(-12 250 164)" y="164" x="227">Reading</text>
+              </svg>
+            </div>
+
+            
+
+            <div class="dialog-heading-small" style="padding-top:0px">Our users love us</div>
+
+            <div class="rating-social-wrap-nowrap" style="padding-top:0px; padding-left:8px">
+              
+<div class="rating-social-wrap">
+  <div class="rating-social">
+
+    <!-- Keep avatars static -->
+    <div class="rating-avatars">
+        <div></div><div></div><div></div><div></div><div></div>
+    </div>
+    
+    
+      <!-- Animated content with rotation -->
+      <div class="rating-rotation-container">
+        
+        <!-- Social Rating Content -->
+        <div class="rating-content rating-rotation-item rating-rotation-active">
+            <div class="rating-stars social-rating">
+                <div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div><div class="rating-star"></div>
+            </div>
+            <div class="rating-info"><b>250,000+</b> readers</div>
+        </div>
+
+        <!-- Trustpilot Rating Content -->
+        <div class="rating-content rating-rotation-item">
+            <img src="https://files.sobrief.com/public/trustpilot-stars.png" alt="Trustpilot Rating" class="trustpilot-stars">
+            <div class="trustpilot-text-container">
+                <div class="trustpilot-text trustpilot-brand-text trustpilot-text-active">TrustPilot</div>
+                <div class="trustpilot-text trustpilot-rating-text">4.6 <b>Excellent</b></div>
+            </div>
+        </div>
+        
+      </div>
+    
+
+  </div>
+</div>
+
+            </div>
+
+            <!-- Rotating Quote Cards -->
+            <div class="dialog-quote-cards-container">
+              <div id="dialog_quote_1" class="dialog-quote-card dialog-quote-card-active">
+                <div class="dialog-quote-text">This site is a total game-changer. I've been flying through book summaries like never before. Highly, highly recommend.</div>
+                <div class="dialog-quote-author">— Dave G</div>
+              </div>
+
+              <div id="dialog_quote_2" class="dialog-quote-card">
+                <div class="dialog-quote-text">Worth my money and time, and really well made. I've never seen this quality of summaries on other websites. Very helpful!</div>
+                <div class="dialog-quote-author">— Em</div>
+              </div>
+
+              <div id="dialog_quote_3" class="dialog-quote-card">
+                <div class="dialog-quote-text">Highly recommended!! Fantastic service. Perfect for those that want a little more than a teaser but not all the intricate details of a full audio book.</div>
+                <div class="dialog-quote-author">— Greg M</div>
+              </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div id="dialog_quote_dots" class="dialog-quote-dots">
+              <div class="dialog-quote-dot dialog-quote-dot-active"></div>
+              <div class="dialog-quote-dot"></div>
+              <div class="dialog-quote-dot"></div>
+            </div>
+
+
+            
+
+          </div>
+
+        </div>
+
+        <div id="dialog_upgrade_view_checkout" style="display:none;">
+
+          <div id="dialog_lifetime_message" class="dialog-lifetime-message">
+            <div class="dialog-lifetime-message-heading">A one-time payment to access SoBrief Pro forever.</div>
+            <div class="dialog-lifetime-message-note">
+
+
+              ✓ Already subscribed? We'll automatically cancel your current plan and refund unused time 
+
+            </div>
+          </div>
+
+          <div id="checkout" style="position:relative; top:-15px;">
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id="dialog_upgrade_panel" class="dialog-panel">
+
+      <div id="upgrade_regular_panel">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_yearly" class="dialog-price-box dialog-price-box-selected"
+            onclick="setUpgradePlan('yearly')">
+            <div class="dialog-price-badge">Save 62%</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$119.88</s> $44.99<span class="year-full">/year</span><span class="year-short">/yr</span>
+            </div>
+            <div class="dialog-price-monthly">$3.75<span>/mo</span></div>
+          </div>
+
+          <div id="dialog_upgrade_plan_monthly" class="dialog-price-box" onclick="setUpgradePlan('monthly')">
+            <div class="dialog-price-label">Monthly</div>
+            <div class="dialog-price-monthly">$9.99<span>/mo</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Start a 7-Day Free Trial</div>
+
+        <div class="dialog-button-info">
+          7 days free, then <span class="upgrade-feature-price">$44.99</span><span
+            class="upgrade-feature-price-period">/year</span>. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_first_year_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_first_year" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Best Deal</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$44.99</s> $22.49/year
+            </div>
+            <div class="dialog-price-monthly">$0.06<span>/day</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Take 50% Off Now</div>
+
+        <div class="dialog-button-info">
+          <span class="upgrade-feature-price">$22.49</span><span
+            class="upgrade-feature-price-period">/year</span>, then $44.99/year. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_first_year_25_off_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_first_year_25_off" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Special Offer</div>
+            <div class="dialog-price-label">Yearly</div>
+            <div class="dialog-price-amount">
+              <s>$44.99</s> $33.74/year
+            </div>
+            <div class="dialog-price-monthly">3-day trial + $0.09<span>/day</span></div>
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Start 3-Day Free Trial</div>
+
+        <div class="dialog-button-info">
+          3 days free, then <span class="upgrade-feature-price">$33.74</span><span class="upgrade-feature-price-period">/year</span>, then $44.99/year. Cancel anytime.
+        </div>
+      </div>
+
+      <div id="upgrade_lifetime_20_off_panel" style="display:none;">
+        <div class="dialog-price-container">
+          <div id="dialog_upgrade_plan_lifetime_20_off" class="dialog-price-box dialog-price-box-selected">
+            <div class="dialog-price-badge">Best Value</div>
+            <div class="dialog-price-label">Lifetime</div>
+            <div class="dialog-price-amount">
+              <s>$79.99</s> $59.99 One-Time Payment
+            </div>
+            <!-- <div class="dialog-price-monthly">$2.25<span>/mo</span></div> -->
+          </div>
+        </div>
+
+        <div id="payment_button_instant" style="margin-bottom:10px; display:none;"></div>
+        <div id="payment_button_card" class="dialog-button-full" onclick="showUpgradeCheckout()">Pay $59.99 One-Time
+        </div>
+
+        <div class="dialog-button-info">
+          One-time payment. No subscriptions.
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div id="dialog_onboarding" class="dialog-wrap dialog-wrap-no-scroll dialog-transparent">
+
+  <div class="dialog-inner dialog-inner-upgrade-new dialog-inner-onboard">
+
+    <div class="dialog-close dialog-close-header" onclick="hideDialog()" style="top: 15px; right: 15px; background-size: 18px;"></div>
+
+    <iframe id="onboard_iframe" src="" class="onboard-iframe" title="Onboarding"></iframe>
+
+  </div>
+</div>
+
+
+
+<div id="dialog_book_scanner" class="dialog-book-scanner">
+  <div class="dialog-book-scanner-inner">
+
+    <div class="book-scanner-logo">
+      <div>
+        <img src="https://files.sobrief.com/public/logo-full-trans.png" loading="lazy" />
+      </div>
+    </div>
+  
+    <div class="book-scanner-close" onclick="hideBookScanner()"><div></div></div>
+    
+    <div class="book-scanner-title">Scanner</div>
+    
+    <div id="scanner-instructions" class="book-scanner-instructions"><div>Find a barcode to scan</div></div>
+
+    <div id="video-container" class="book-scanner-video-container">
+
+      <video id="scanner-video" class="book-scanner-video" playsinline autoplay></video>
+
+      <div id="scanner_video_canvas" class="book-scanner-video-canvas"></div>
+
+      <div id="scanner-overlay" class="book-scanner-overlay">
+        <div class="corner-top-left"></div>
+        <div class="corner-top-right"></div>
+        <div class="corner-bottom-left"></div>
+        <div class="corner-bottom-right"></div>
+      </div>
+
+    </div>
+
+    <div class="book-scanner-loading" id="loading">
+      <p></p>
+    </div>
+
+    <div id="scan-result" class="book-scanner-result">
+      <div class="book-scanner-result-inner">
+        <img src="" class="scan-result-cover" />
+        <div class="scan-result-title"></div>
+        <div class="scan-result-author"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_gift" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-gift">
+
+    <div class="dialog-gift-wrap">
+      
+      <!-- Animated stars -->
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+
+      <img src="https://files.sobrief.com/public/icon-gift-large.png" class="dialog-gift-icon" loading="lazy" />
+
+      <div class="dialog-gift-title">We have a special gift for you</div>
+
+      <div class="dialog-gift-button" onclick="openGiftDialog()">Open</div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_discount" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-close dialog-close-left" onclick="hideDiscountDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div class="discount-dialog-wrap">
+        
+        <div class="discount-offer-badge">
+          <div class="discount-offer-percent">38% OFF</div>
+          <div class="discount-offer-label">DISCOUNT FOR YOU</div>
+        </div>
+
+        <div class="discount-gift-icon-wrap">
+          <!-- Animated stars -->
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          
+          <img src="https://files.sobrief.com/public/icon-gift-large.png" class="discount-gift-icon" loading="lazy" />
+        </div>
+
+        <div class="discount-pricing">
+          <div class="discount-original-price">$79.99</div>
+          <div class="discount-final-price">$49.99/year</div>
+          <div class="discount-monthly-price">only $4.16 per month</div>
+        </div>
+
+        <div class="discount-continue-button" onclick="continueDiscountPurchase()">
+          Continue
+        </div>
+
+        <div class="discount-terms">
+          2 taps to start, super easy to cancel
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div id="dialog_settings" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-title">Settings</div>
+
+    <div class="dialog-close" onclick="triggerNativeAction('link_click'); hideSpecificDialog('settings')"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div id="settings_switcher_wrap" class="switcher-wrap" style="text-align:left;">
+        <div class="switcher switcher-small">
+          <div id="settings_switch_general" class="switch switch-selected" onclick="showSettingsSection('general')">General</div><div id="settings_switch_widget" class="switch" onclick="showSettingsSection('widget')">Widget</div>
+        </div>
+      </div>
+
+      <div class="dialog-text" style="padding-top:20px; padding-left:10px; padding-bottom:0px">
+
+        <div id="settings_general_wrap" class="settings-section settings-section-visible">
+
+          <div class="dialog-row">
+            <label for="setting_theme" class="dialog-label">Appearance</label>
+            <div class="dialog-setting">
+
+              <select id="setting_theme" class="dialog-dropdown" oninput="updateThemeSetting()">
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div id="delete_account_wrap" class="dialog-row" style="display:none; margin-top:70px;">
+
+            <div class="inline-button inline-button-small inline-button-delete" onclick="deleteAccount()">Delete Account
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="settings_widget_wrap" class="settings-section">
+
+          <div id="widget_settings_loading" style="font-size:16px; text-align:center; margin-top:20px;">
+            Loading...
+          </div>
+
+          <div id="widget_settings_message" style="display:none; text-align:center; margin-top:5px; margin-bottom:10px;">
+
+            <img src="https://files.sobrief.com/public/screenshot-native-home-screen.jpg" style="width:100%; max-width:300px; border-radius:10px; margin-bottom:10px;" loading="lazy" />
+
+            <div style="font-size:15px; line-height:20px; text-align:center; margin-top:15px;">Download our iOS app, add the widget, then come back here to configure it.</div>
+
+            <a class="inline-button inline-button-small" style="margin-top:20px;" href="https://apps.apple.com/us/app/sobrief-book-summaries/id6723865613" target="_blank">Download iOS App</a>
+          </div>
+
+          <div id="widget_settings_wrap" style="display:none">
+
+            <div class="dialog-row">
+              <div class="dialog-label">Topic</div>
+              <div class="dialog-setting">
+
+                <select id="user_setting_widget_topic" class="dialog-dropdown" onchange="saveUserSettings()">
+                  <option value="best-self-help-books">Self-Help</option>
+                  <option value="best-productivity-books">Productivity</option>
+                  <option value="best-technology-books">Technology</option>
+                  <option value="best-mental-health-books">Mental Health</option>
+                  <option value="best-buisness-books">Buisness</option>
+                  <option value="best-inspirational-books">Inspirational</option>
+                  <option value="best-relationships-books">Relationships</option>
+                  <option value="best-design-books">Design</option>
+                  <option value="best-food-books">Food</option>
+                  <option value="best-family-books">Family</option>
+                  <option value="best-psychology-books">Psychology</option>
+                  <option value="best-philosophy-books">Philosophy</option>
+                  <option value="best-leadership-books">Leadership</option>
+                  <option value="best-science-books">Science</option>
+                  <option value="best-history-books">History</option>
+                  <option value="best-finance-books">Finance</option>
+                  <option value="best-spirituality-books">Spirituality</option>
+                  <option value="best-biography-books">Biography</option>
+                  <option value="best-economics-books">Economics</option>
+                  <option value="best-politics-books">Politics</option>
+                  <option value="best-management-books">Management</option>
+                  <option value="best-health-books">Health</option>
+                  <option value="best-entrepreneurship-books">Entrepreneurship</option>
+                </select>
+
+              </div>
+            </div>
+
+            <div class="dialog-row">
+              <div class="dialog-label">Start Time</div>
+              <div class="dialog-setting">
+
+                <select id="user_setting_widget_start_time" class="dialog-dropdown" onchange="saveUserSettings()">
+                  
+                  <option value="0">12 am</option>
+                  <option value="1">1 am</option>
+                  <option value="2">2 am</option>
+                  <option value="3">3 am</option> 
+                  <option value="4">4 am</option> 
+                  <option value="5">5 am</option> 
+                  <option value="6">6 am</option>
+                  <option value="7">7 am</option>
+                  <option value="8">8 am</option>
+                  <option value="9">9 am</option>
+                  <option value="10">10 am</option>
+                  <option value="11">11 am</option>
+                  <option value="12">12 pm</option> 
+                  <option value="13">1 pm</option>
+                  <option value="14">2 pm</option> 
+                  <option value="15">3 pm</option> 
+                  <option value="16">4 pm</option> 
+                  <option value="17">5 pm</option>
+                  <option value="18">6 pm</option>
+                  <option value="19">7 pm</option>
+                  <option value="20">8 pm</option>
+                  <option value="21">9 pm</option>
+                  <option value="22">10 pm</option>
+                  <option value="23">11 pm</option> 
+                </select>
+
+              </div>
+            </div>
+
+            <p style="margin-top:50px; font-size:14px; line-height:20px; opacity:0.82"><b>Note:</b> It takes a few seconds after changing settings here for iOS widgets to update.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- 
+<script>
+  document.querySelector('.dialog-content-scrollable').addEventListener('scroll', function() {
+    const arrow = this.querySelector('.bounce-arrow');
+    if (this.scrollTop > 20) { // Hide after scrolling 20px
+      arrow.style.display = 'none';
+    } else {
+      arrow.style.display = 'block';
+    }
+  });
+</script> -->
+
+
+
+    <!-- <div class="dialog" data-name="first-year-off">
+  <div class="dialog-content">
+    <div class="dialog-close">×</div>
+    <h2>Special Offer!</h2>
+    <p>Get your first year at 50% off</p>
+    <button class="upgrade-button">First Year 50% Off</button>
+  </div>
+</div>
+
+<div class="dialog" data-name="lifetime-20-off">
+  <div class="dialog-content">
+    <div class="dialog-close">×</div>
+    <h2>Special Offer!</h2>
+    <p>Get $20 off</p>
+    <button class="upgrade-button">Get $20 Off →</button>
+  </div>
+</div>
+
+ -->
+
+
+
+<div id="dialog_gift" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-gift">
+
+    <div class="dialog-gift-wrap">
+      
+      <!-- Animated stars -->
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+      <div class="dialog-gift-star">⭐</div>
+
+      <img src="https://files.sobrief.com/public/icon-gift-large.png" class="dialog-gift-icon" loading="lazy" />
+
+      <div class="dialog-gift-title">We have a special gift for you</div>
+
+      <div class="dialog-gift-button" onclick="openGiftDialog()">Open</div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog_discount" class="dialog-wrap">
+  <div class="dialog-inner dialog-inner-settings">
+
+    <div class="dialog-close dialog-close-left" onclick="hideDiscountDialog()"></div>
+
+    <div class="dialog-upgrade-wrap">
+
+      <div class="discount-dialog-wrap">
+        
+        <div class="discount-offer-badge">
+          <div class="discount-offer-percent">38% OFF</div>
+          <div class="discount-offer-label">DISCOUNT FOR YOU</div>
+        </div>
+
+        <div class="discount-gift-icon-wrap">
+          <!-- Animated stars -->
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          <div class="discount-gift-star">⭐</div>
+          
+          <img src="https://files.sobrief.com/public/icon-gift-large.png" class="discount-gift-icon" loading="lazy" />
+        </div>
+
+        <div class="discount-pricing">
+          <div class="discount-original-price">$79.99</div>
+          <div class="discount-final-price">$49.99/year</div>
+          <div class="discount-monthly-price">only $4.16 per month</div>
+        </div>
+
+        <div class="discount-continue-button" onclick="continueDiscountPurchase()">
+          Continue
+        </div>
+
+        <div class="discount-terms">
+          2 taps to start, super easy to cancel
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Debug comment: foot isLocalEnvironment = false -->
+
+<script data-cfasync="false">
+// Create priority queue system for scripts
+const scriptQueue = {
+  essential: [], // Core functionality needed immediately 
+  functional: [], // Enhances UX but not critical
+  marketing: []  // Analytics, tracking, etc.
+};
+
+// Helper function to add a script to the queue
+function queueScript(category, src, callback = null, isInline = false, inlineCode = '', scriptType = null) {
+  scriptQueue[category].push({
+    src: src,
+    callback: callback,
+    isInline: isInline,
+    inlineCode: inlineCode,
+    type: scriptType
+  });
+}
+
+// Helper to load a script properly
+function loadQueuedScript(scriptObj) {
+  if (scriptObj.isInline) {
+    // For inline scripts
+    const script = document.createElement('script');
+    script.textContent = scriptObj.inlineCode;
+    if (scriptObj.type) script.type = scriptObj.type;
+    script.setAttribute('data-cfasync', 'false'); // Bypass Cloudflare
+    document.head.appendChild(script);
+    if (scriptObj.callback) scriptObj.callback();
+    return;
+  }
+  
+  // For external scripts
+  const script = document.createElement('script');
+  script.src = scriptObj.src;
+  script.async = true;
+  script.setAttribute('data-cfasync', 'false'); // Bypass Cloudflare
+  if (scriptObj.type) script.type = scriptObj.type;
+  if (scriptObj.callback) {
+    script.onload = scriptObj.callback;
+  }
+  document.head.appendChild(script);
+}
+
+// Function to load a batch of scripts when browser is idle
+function loadScriptBatch(scripts, fallbackDelay = 100) {
+  if (scripts.length === 0) return;
+  
+  // Create a copy of the scripts array and clear the original to prevent reloading
+  const scriptsToLoad = [...scripts];
+  scripts.length = 0;
+  
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      scriptsToLoad.forEach(loadQueuedScript);
+    }, { timeout: 2000 });
+  } else {
+    setTimeout(() => {
+      scriptsToLoad.forEach(loadQueuedScript);
+    }, fallbackDelay);
+  }
+}
+
+// Load main scripts (jQuery, marked, and main.js)
+function loadMainScripts() {
+  // Load jQuery as essential script first
+  queueScript('essential', 'https://files.sobrief.com/public/scripts/jquery-3.5.1.min.js', function() {
+    // After jQuery loads, load marked as essential since main.js depends on it
+    queueScript('essential', 'https://files.sobrief.com/public/scripts/marked.min.js', function() {
+      // After marked loads, queue main.js as essential
+      queueScript('essential', 'https://files.sobrief.com/public/scripts/main_bundled_1761597186757.js', function() {
+        // Set up other scripts after main.js loads
+        setupMarketingScripts();
+      }, false, '', 'module');
+      
+      // Load essential scripts again to get main.js
+      loadScriptBatch(scriptQueue.essential);
+    });
+    
+    // Load essential scripts again to get marked
+    loadScriptBatch(scriptQueue.essential);
+  });
+  
+  // Load essential scripts immediately to start with jQuery
+  loadScriptBatch(scriptQueue.essential);
+}
+
+// Setup all marketing and functional scripts
+function setupMarketingScripts() {
+  // Add PostHog to functional queue for faster loading
+  queueScript('functional', '', () => {
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId setPersonProperties".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_OBwm9CCxFzaiEJ3cMO1e1bxngeSXD2r1GHd2V0bYMdp',{api_host:'https://php.sobrief.com', person_profiles: 'always', disable_session_recording: true});
+  }, true);
+  
+  // Add Quagga to functional queue
+  queueScript('functional', 'https://files.sobrief.com/public/scripts/quagga.min.js');
+  
+  // Add Intercom to marketing queue and load Firebase after Intercom is available
+  
+  queueScript('functional', '', () => {
+    console.log("Loading Intercom");
+    window.intercomSettings = {
+      api_base: "https://api-iam.intercom.io",
+      app_id: "qiymoi1o",
+      hide_default_launcher: true
+    };
+    
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/qiymoi1o';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};l();}})();
+    console.log("Intercom loaded, will load Firebase shortly");
+    
+    // Update Intercom theme once it's loaded
+    setTimeout(() => {
+      if (typeof window.updateIntercomTheme === 'function') {
+        window.updateIntercomTheme();
+      }
+    }, 100);
+    
+    // Load Firebase after Intercom has loaded with reduced timeout
+    setTimeout(function() {
+      loadFirebase();
+    }, 200); // Reduced from 500ms
+  }, true);
+  
+  
+  // Add GTM to functional queue for faster loading
+  queueScript('functional', '', () => {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6R665R5');
+  }, true);
+  
+  // Add GTM Ads to marketing queue
+  queueScript('marketing', 'https://www.googletagmanager.com/gtag/js?id=AW-835161720', function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-835161720');
+  });
+  
+  // Add Reddit Pixel to marketing queue
+  queueScript('marketing', '', () => {
+    !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','t2_tj0mkt7');rdt('track', 'PageVisit');
+  }, true);
+  
+  // Add Meta Pixel to marketing queue
+  queueScript('marketing', '', () => {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '7071272849663998');
+    fbq('track', 'PageView');
+  }, true);
+  
+  // Add Twitter UWT to marketing queue
+  queueScript('marketing', '', () => {
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('config','oere4');
+  }, true);
+  
+  // Add Rewardful to marketing queue
+  queueScript('marketing', '', function() {
+    // Create script with the proper attribute
+    const rewardfulScript = document.createElement('script');
+    rewardfulScript.src = 'https://r.wdfl.co/rw.js';
+    rewardfulScript.setAttribute('data-rewardful', '155fb3');
+    document.head.appendChild(rewardfulScript);
+
+    // Initialize Rewardful
+    (function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');
+  }, true);
+
+  // Begin loading functional scripts with a small delay
+  setTimeout(() => {
+    console.log("Loading functional scripts batch");
+    loadScriptBatch(scriptQueue.functional, 200);
+  }, 500);
+  
+  // Set up interaction-based loading for marketing scripts
+  initMarketingScriptsLoadingStrategy();
+}
+
+// The new improved initialization method using interaction detection
+function initMarketingScriptsLoadingStrategy() {
+  let hasInteracted = false;
+  let marketingLoaded = false;
+  
+  function userInteracted() {
+    if (hasInteracted || marketingLoaded) return;
+    hasInteracted = true;
+    
+    // Load marketing scripts after first interaction
+    loadScriptBatch(scriptQueue.marketing);
+    marketingLoaded = true;
+    
+    // Clean up event listeners
+    document.removeEventListener('scroll', userInteracted, {passive: true});
+    document.removeEventListener('mousemove', userInteracted, {passive: true});
+    document.removeEventListener('touchstart', userInteracted, {passive: true});
+    document.removeEventListener('click', userInteracted, {passive: true});
+  }
+  
+  // Add interaction listeners
+  document.addEventListener('scroll', userInteracted, {passive: true, once: true});
+  document.addEventListener('mousemove', userInteracted, {passive: true, once: true});
+  document.addEventListener('touchstart', userInteracted, {passive: true, once: true});
+  document.addEventListener('click', userInteracted, {passive: true, once: true});
+  
+  // Fallback - load marketing after 5 seconds regardless of interaction
+  setTimeout(function() {
+    if (!marketingLoaded) {
+      loadScriptBatch(scriptQueue.marketing);
+      marketingLoaded = true;
+    }
+  }, 5000);
+}
+
+// Delay main script loading very slightly for better initial render
+function loadMainScriptsAfterDelay() {
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    // Use requestIdleCallback if available for better timing
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => loadMainScripts(), { timeout: 1000 });
+    } else {
+      setTimeout(loadMainScripts, 500); // Original 500ms delay as fallback
+    }
+  } else {
+    // Wait for DOMContentLoaded for better initial paint
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(loadMainScripts, 100);
+    });
+  }
+}
+
+// Optimize Firebase loading function
+function loadFirebase() {
+  console.log("Starting Firebase loading process");
+  // Add retry counter to the function itself
+  loadFirebase.retryCount = (loadFirebase.retryCount || 0) + 1;
+  if (loadFirebase.retryCount > 3) {
+    console.error("Failed to load Firebase after multiple attempts");
+    return; // Prevent infinite retries
+  }
+
+  // Load firebase CSS after delay
+  const uiStylesheet = document.createElement('link');
+  uiStylesheet.type = "text/css";
+  uiStylesheet.rel = "stylesheet";
+  uiStylesheet.href = "https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css";
+  uiStylesheet.media = "print";
+  uiStylesheet.onload = function() { this.media = 'all'; };
+  document.head.appendChild(uiStylesheet);
+  console.log("Firebase CSS loaded");
+  
+  // Load JS files in sequence
+  const appScript = document.createElement('script');
+  appScript.src = "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js";
+  
+  // Add error handling for app script
+  appScript.onerror = function() {
+    console.error("Failed to load Firebase app script, retrying...");
+    setTimeout(loadFirebase, 300); // Reduced retry delay
+  };
+  
+  appScript.onload = function() {
+    console.log("Firebase app script loaded");
+    const authScript = document.createElement('script');
+    authScript.src = "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js";
+    
+    // Add error handling for auth script
+    authScript.onerror = function() {
+      console.error("Failed to load Firebase auth script, retrying...");
+      setTimeout(loadFirebase, 300); // Reduced retry delay
+    };
+    
+    authScript.onload = function() {
+      console.log("Firebase auth script loaded");
+      const uiScript = document.createElement('script');
+      uiScript.src = "https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js";
+      
+      // Add error handling for UI script
+      uiScript.onerror = function() {
+        console.error("Failed to load Firebase UI script, retrying...");
+        setTimeout(loadFirebase, 300); // Reduced retry delay
+      };
+      
+      uiScript.onload = function() {
+        console.log("Firebase UI script loaded");
+        // Reduced delay to ensure everything is initialized
+        setTimeout(function() {
+          if (typeof firebase === 'undefined') {
+            console.error("Firebase not initialized properly, retrying...");
+            setTimeout(loadFirebase, 300); // Reduced retry delay
+            return;
+          }
+          console.log("Setting up Firebase");
+          checkAndSetupFirebase();
+        }, 10); // Reduced from 50ms
+      };
+      document.head.appendChild(uiScript);
+    };
+    document.head.appendChild(authScript);
+  };
+  document.head.appendChild(appScript);
+  
+  // Add a verification timeout to check if Firebase loaded successfully
+  setTimeout(function() {
+    if (typeof firebase === 'undefined' && loadFirebase.retryCount <= 3) {
+      console.error("Firebase failed to initialize, triggering retry");
+      loadFirebase();
+    }
+  }, 3000); // Reduced from 5000ms
+}
+
+// Robust Firebase setup checker
+function checkAndSetupFirebase() {
+  const maxAttempts = 100; // 10 seconds total (100 * 100ms)
+  let attempts = 0;
+  
+  function attemptSetup() {
+    attempts++;
+    
+    if (typeof window.setupFirebase === 'function') {
+      if (attempts > 1) {
+        console.log(`setupFirebase found after ${attempts} attempts`);
+      }
+      window.setupFirebase();
+      return;
+    }
+    
+    if (attempts >= maxAttempts) {
+      console.error('setupFirebase not available after 10 seconds - main2.js may have failed to load');
+      return;
+    }
+    
+    // Try again in 100ms
+    setTimeout(attemptSetup, 100);
+  }
+  
+  // Start checking immediately
+  attemptSetup();
+}
+
+// Start loading process
+loadMainScriptsAfterDelay();
+</script>
+
+
+<script>
+// native app?
+if (navigator.userAgent.indexOf('SoBrief/') !== -1) 
+{
+  // add native class
+  document.body.classList.add("native-app");
+
+  // onboarded? show body instantly
+  if (localStorage.getItem("onboard_finished") == "true") {
+    $("#body_wrap").show();
+  }
+}
+</script>
+
+
+
+<script id="page_script">
+var bookId = 9078;
+var lang = 'en';
+var requestId = null;
+var fiction = false;
+
+function initPage()
+{
+  trackBookOpen(false);
+
+  
+
+    
+    loadBookPlaylist(false, false);
+    
+
+    updateMediaControls({
+      title: 'Food Rules',
+      artist: 'Michael Pollan',
+      album: 'SoBrief',
+      artwork: [
+        { src: 'https://files.sobrief.com/social/cover_food-rules_360px_1747161828.jpg' }
+      ]
+    });
+
+    
+
+    
+
+  
+}
+window.initPage = initPage;
+
+function handleFictionTranslation(languageCode, bookId, urlTitle) {
+  // console.log('fiction_translation_attempt', languageCode, bookId, urlTitle);
+  logEvent('fiction_translation_attempt', { book_id: bookId, language: languageCode, url_title: urlTitle });
+  showAlert(getTranslatedMessage(languageCode));
+}
+</script>
+
+</body>
+</html>
+

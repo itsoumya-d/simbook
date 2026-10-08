@@ -1,26 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/theme/theme.dart';
-import '../../../../shared/widgets/search_bar.dart';
+import '../../../../shared/models/book.dart';
+import '../../providers/search_provider.dart';
+import '../widgets/search_content.dart';
 
-/// Search page with real-time search functionality
-class SearchPage extends StatefulWidget {
+/// Local search over the same sample catalog used by the book detail pages.
+class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({super.key, this.initialQuery = ''});
 
   final String initialQuery;
 
   @override
-  State<SearchPage> createState() => _SearchPageState();
+  ConsumerState<SearchPage> createState() => _SearchPageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
-  late TextEditingController _controller;
+class _SearchPageState extends ConsumerState<SearchPage> {
+  late final TextEditingController _controller;
+  bool _openingBook = false;
 
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.initialQuery);
+    _searchInitialQuery();
+  }
+
+  @override
+  void didUpdateWidget(covariant SearchPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.initialQuery != widget.initialQuery) {
+      _controller.text = widget.initialQuery;
+      _searchInitialQuery();
+    }
+  }
+
+  void _searchInitialQuery() {
+    final query = widget.initialQuery;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && widget.initialQuery == query) {
+        ref.read(searchProvider.notifier).search(query, remember: false);
+      }
+    });
   }
 
   @override
@@ -29,89 +51,51 @@ class _SearchPageState extends State<SearchPage> {
     super.dispose();
   }
 
+  void _submit(String query) {
+    _controller.text = query;
+    FocusScope.of(context).unfocus();
+    ref.read(searchProvider.notifier).search(query);
+  }
+
+  Future<void> _openBook(Book book) async {
+    if (_openingBook) return;
+    _openingBook = true;
+    FocusScope.of(context).unfocus();
+    try {
+      await context.pushNamed(
+        'book-detail',
+        pathParameters: {'bookId': book.id},
+      );
+    } finally {
+      _openingBook = false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(searchProvider);
+    final notifier = ref.read(searchProvider.notifier);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.darkSurface,
-        elevation: 0,
+        title: const Text('Search'),
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: AppColors.darkTextPrimary,
-            size: 20.sp,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          'Search',
-          style: AppTypography.headlineMedium.copyWith(fontSize: 18.sp),
+          tooltip: 'Back',
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.canPop() ? context.pop() : context.go('/'),
         ),
       ),
-      body: Column(
-        children: [
-          // Search Bar
-          AppSearchBar(
-            controller: _controller,
-            autofocus: true,
-            hintText: 'Search books, authors, topics...',
-            suggestions: const [
-              'Atomic Habits',
-              'Sapiens',
-              'The Subtle Art',
-              'Thinking Fast and Slow',
-              'Psychology',
-              'Business',
-            ],
-            recentSearches: const [
-              'productivity',
-              'self help',
-              'Mark Manson',
-            ],
-            onChanged: (query) {
-              // TODO: Implement real-time search
-            },
-            onSubmitted: (query) {
-              // TODO: Implement search
-            },
-          ),
-          
-          // Search Results
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.search,
-                    size: 64.sp,
-                    color: AppColors.primaryOrange,
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    'Search Books',
-                    style: AppTypography.headlineMedium,
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    'Search through 73,530+ book summaries',
-                    style: AppTypography.bodyMedium.copyWith(
-                      color: AppColors.darkTextSecondary,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 24.h),
-                  Text(
-                    'Coming Soon!',
-                    style: AppTypography.titleMedium.copyWith(
-                      color: AppColors.primaryOrange,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+      body: SearchContent(
+        controller: _controller,
+        state: state,
+        onChanged: (query) => notifier.search(query, remember: false),
+        onSubmitted: _submit,
+        onClear: () {
+          _controller.clear();
+          notifier.clearSearch();
+        },
+        onRetry: () => notifier.search(_controller.text, remember: false),
+        onClearRecent: notifier.clearRecentSearches,
+        onBookTap: _openBook,
       ),
     );
   }

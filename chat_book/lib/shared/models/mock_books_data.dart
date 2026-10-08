@@ -1,4 +1,5 @@
 import 'book.dart';
+import 'catalog_search.dart';
 
 /// Mock data service providing sample books for development and testing
 class MockBooksData {
@@ -317,15 +318,10 @@ The book reveals the power of mental toughness and provides a blueprint for over
     return featured;
   }
 
-  /// Search books by title or author
-  static List<Book> searchBooks(String query) {
-    final lowercaseQuery = query.toLowerCase();
-    return _books.where((book) =>
-        book.title.toLowerCase().contains(lowercaseQuery) ||
-        book.author.toLowerCase().contains(lowercaseQuery) ||
-        book.genres.any((genre) => genre.toLowerCase().contains(lowercaseQuery))
-    ).toList();
-  }
+  /// Search the bundled sample catalog by title, author, subtitle and topics.
+  static List<Book> searchBooks(String query) => CatalogSearch.normalize(query).isEmpty
+      ? getAllBooks()
+      : CatalogSearch.filter(_books, query);
 
   /// Get book by ID
   static Book? getBookById(String id) {
